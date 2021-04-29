@@ -8,6 +8,7 @@ section.home {
   width: 100%;
   height: 100vh;
   position: relative;
+  overflow: hidden;
 }
 
 section.home .bigBackground {
@@ -16,7 +17,10 @@ section.home .bigBackground {
 }
 
 section.home .bigBackground img.background {
+  top: 0vh;
+  position: absolute;
   width: 100%;
+  z-index: -1;
 }
 
 section.home .bigBackground .introContainer {
@@ -41,48 +45,272 @@ section.home .bigBackground .introContainer {
 
 section.home .bigBackground .introContainer img.brand {
   width: 982px;
+  margin-top: 16px;
 }
 
 section.home .bigBackground .introContainer .introFrame {
   background-image: url("../img/introFrame.svg");
-  background-repeat: none;
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  width: 1195px;
+  height: 490px;
   background-size: 98%;
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 32px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0px 48px;
 }
 
 section.home .bigBackground .introContainer .introFrame img {
   visibility: hidden;
 }
 
-section.home .bigBackground .introContainer .introFrame p {
-  padding: 50px;
-}
-
 section.home .bigBackground .introContainer .introFrame p span.ch {
   font-family: "源雲明體";
   font-weight: 600;
-  font-size: 24pt;
-  line-height: 37pt;
+  font-size: 24px;
+  line-height: 37px;
   color: #d6d2c7;
 }
 
 section.home .bigBackground .introContainer .introFrame span.en {
   font-family: "Myanmar MN";
   font-weight: 400;
-  font-size: 24pt;
-  line-height: 37pt;
+  font-size: 24px;
+  line-height: 37px;
   color: #d6d2c7;
 }
 
 section.home .bigBackground .introContainer img.arrowIcon {
-  width: 80px;
+  margin-top: 16px;
+  width: 72px;
+}
+
+section.tutorial {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 50px;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: absolute;
+  top: 0;
+}
+
+section.tutorial article {
+  width: 100%;
+  height: 100%;
+}
+
+section.tutorial article.instructionArea {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+section.tutorial article.instructionArea .instructionBlock {
+  width: 100%;
+  height: 100%;
+}
+
+section.tutorial article.instructionArea .instruction {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+}
+
+section.tutorial article.instructionArea .step {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+section.tutorial article.displayArea {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  position: relative;
+}
+
+section.tutorial article.displayArea .instrument {
+  background-image: url("../img/instrumentComponent/gongche body.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 1251px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-size: 99%;
+  -webkit-transform: scale(0.65);
+          transform: scale(0.65);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  position: absolute;
+  -webkit-transform-origin: 200px 100px;
+          transform-origin: 200px 100px;
+}
+
+section.tutorial article.displayArea .instrument img {
+  position: absolute;
+}
+
+section.tutorial article.displayArea .instrument .drum {
+  width: 148px;
+}
+
+section.tutorial article.displayArea .instrument .leftDrum {
+  left: 168px;
+  top: 17px;
+}
+
+section.tutorial article.displayArea .instrument .rightDrum {
+  left: 318px;
+  top: 17px;
+}
+
+section.tutorial article.displayArea .instrument .body {
+  visibility: hidden;
+  position: relative;
+}
+
+section.tutorial article.displayArea .instrument .string {
+  width: 835px;
+  right: 4px;
+  bottom: 2px;
+}
+
+section.tutorial article.displayArea .instrument .godButtons {
+  width: 230px;
+  left: 139px;
+  top: 375px;
+}
+
+section.tutorial article.displayArea .instrument .god_button_1 {
+  width: 74px;
+  left: 324px;
+  top: 402px;
+}
+
+section.tutorial article.displayArea .instrument .god_button_2 {
+  width: 74px;
+  left: 352px;
+  top: 482px;
+}
+
+section.tutorial article.displayArea .instrument .flag_cut_top {
+  width: 111px;
+  left: 675px;
+  top: 140px;
+}
+
+section.tutorial article.displayArea .instrument .flag_cut_bottom {
+  width: 111px;
+  left: 638px;
+  top: 211px;
+}
+
+section.tutorial article.displayArea .instrument .head_flag {
+  width: 31px;
+  left: 560px;
+  top: 185px;
+}
+
+section.tutorial article.displayArea .instrument .long_flag_l,
+section.tutorial article.displayArea .instrument .long_flag_r {
+  width: 36.5px;
+  left: 1105px;
+  top: 180px;
+}
+
+section.tutorial article.displayArea .instrument .umbrella1 {
+  width: 22px;
+  left: 845px;
+  top: 153px;
+}
+
+section.tutorial article.displayArea .instrument .umbrella2 {
+  width: 22px;
+  left: 915px;
+  top: 153px;
+}
+
+section.tutorial article.displayArea .instrument .umbrella3 {
+  width: 22px;
+  left: 809px;
+  top: 224px;
+}
+
+section.tutorial article.displayArea .instrument .umbrella4 {
+  width: 22px;
+  left: 880px;
+  top: 224px;
+}
+
+section.tutorial article.displayArea .instrument .level_switch {
+  width: 91px;
+  left: 111px;
+  top: 348px;
+}
+
+section.tutorial article.displayArea .instrument .screen {
+  width: 90px;
+  left: 970px;
+  top: 155px;
+}
+
+section.tutorial article.displayArea .instrument .function_1 {
+  width: 76.3px;
+  left: 436px;
+  top: 207px;
+}
+
+section.tutorial article.displayArea .instrument .function_2 {
+  width: 99px;
+  left: 353px;
+  top: 286px;
+}
+
+section.tutorial img.manual {
+  position: absolute;
+  width: 100px;
+  right: 24px;
+  bottom: 24px;
+}
+
+section.tutorial img.manual_opening {
+  position: absolute;
+  opacity: 0;
+  width: 800px;
+  right: 140px;
+  bottom: 80px;
+}
+
+section.tutorial {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */
