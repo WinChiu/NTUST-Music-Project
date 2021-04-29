@@ -1,5 +1,16 @@
 $FontColor: #d6d2c7;
 $BGColor: #d32b2d;
+
+@font-face {
+  font-family: "GenWanMin SB";
+  src: url(../../assets/font/GenWanMin-SB.ttf);
+}
+
+@font-face {
+  font-family: "Myanmar MN";
+  src: url(../../assets/font/MyanmarMN.ttf);
+}
+
 @mixin size($w, $h) {
   width: $w;
   height: $h;
@@ -45,7 +56,7 @@ section.home {
         margin-top: 16px;
       }
       .introFrame {
-        background-image: url("../img/introFrame.svg");
+        background-image: url("../../img/introFrame.svg");
         @include imagePosition();
         @include size(1195px, 490px);
         background-size: 98%;
@@ -60,7 +71,7 @@ section.home {
         }
         p {
           span.ch {
-            font-family: "源雲明體";
+            font-family: "GenWanMin SB";
             font-weight: 600;
             //Should it be pt or px?
             font-size: 24px;
@@ -117,9 +128,9 @@ section.tutorial {
     flex: 3;
     position: relative;
     .instrument {
-      background-image: url("../img/instrumentComponent/gongche body.svg");
+      background-image: url("../../img/instrumentComponent/gongche_body.svg");
       @include imagePosition();
-      @include size(1251px, fit-content);
+      @include size(1251px, 668px);
       background-size: 99%;
       transform: scale(0.65);
       transform-origin: center;
@@ -133,11 +144,11 @@ section.tutorial {
       }
       .leftDrum {
         left: 168px;
-        top: 17px;
+        top: 15px;
       }
       .rightDrum {
         left: 318px;
-        top: 17px;
+        top: 15px;
       }
       .body {
         visibility: hidden;

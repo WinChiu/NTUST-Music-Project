@@ -1,4 +1,13 @@
-@charset "UTF-8";
+@font-face {
+  font-family: "GenWanMin SB";
+  src: url(../../assets/font/GenWanMin-SB.ttf);
+}
+
+@font-face {
+  font-family: "Myanmar MN";
+  src: url(../../assets/font/MyanmarMN.ttf);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -49,7 +58,7 @@ section.home .bigBackground .introContainer img.brand {
 }
 
 section.home .bigBackground .introContainer .introFrame {
-  background-image: url("../img/introFrame.svg");
+  background-image: url("../../img/introFrame.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -76,7 +85,7 @@ section.home .bigBackground .introContainer .introFrame img {
 }
 
 section.home .bigBackground .introContainer .introFrame p span.ch {
-  font-family: "源雲明體";
+  font-family: "GenWanMin SB";
   font-weight: 600;
   font-size: 24px;
   line-height: 37px;
@@ -157,14 +166,12 @@ section.tutorial article.displayArea {
 }
 
 section.tutorial article.displayArea .instrument {
-  background-image: url("../img/instrumentComponent/gongche body.svg");
+  background-image: url("../../img/instrumentComponent/gongche_body.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   width: 1251px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: 668px;
   background-size: 99%;
   -webkit-transform: scale(0.65);
           transform: scale(0.65);
@@ -185,12 +192,12 @@ section.tutorial article.displayArea .instrument .drum {
 
 section.tutorial article.displayArea .instrument .leftDrum {
   left: 168px;
-  top: 17px;
+  top: 15px;
 }
 
 section.tutorial article.displayArea .instrument .rightDrum {
   left: 318px;
-  top: 17px;
+  top: 15px;
 }
 
 section.tutorial article.displayArea .instrument .body {
