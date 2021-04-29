@@ -1,0 +1,81 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "GenWanMin-SB";
+  src: url(../../assets/font/GenWanMin-SB.ttf);
+}
+@font-face {
+  font-family: "方正姚体繁体";
+  src: url(../../assets/font/方正姚体繁体.ttf);
+}
+@font-face {
+  font-family: "MyanmarMN";
+  src: url(../../assets/font/MyanmarMN.ttf);
+}
+* {
+  border: solid 1px rgba(0, 0, 0, 0.3);
+  position: relative;
+  box-sizing: border-box;
+  font-family: "GenWanMin-SB", "MyanmarMN";
+}
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+#sectionDescription {
+  background-color: #DBDBDD;
+}
+
+#sectionDescription #logoRed {
+  display: flex;
+  justify-content: center;
+  padding-top: 2.6vh;
+}
+
+#sectionDescription #logoRed img {
+  width: 80vw;
+}
+
+#sectionDescription #background .title {
+  color: #B13234;
+  display: flex;
+  justify-content: center;
+  margin-top: 6vh;
+}
+#sectionDescription #background .title .ch {
+  font-size: 3.5vh;
+  letter-spacing: 1vh;
+  display: flex;
+  align-items: flex-end;
+}
+#sectionDescription #background .title span.en {
+  font-family: "MyanmarMN";
+  top: 0.5vh;
+  font-size: 2.5vh;
+  display: flex;
+  align-items: flex-end;
+}
+
+#sectionDescription #counterfactual .title {
+  color: #B13234;
+  display: flex;
+  justify-content: center;
+  margin-top: 6vh;
+}
+#sectionDescription #counterfactual .title .ch {
+  font-size: 3.5vh;
+  letter-spacing: 1vh;
+  display: flex;
+  align-items: flex-end;
+}
+#sectionDescription #counterfactual .title span.en {
+  font-family: "MyanmarMN";
+  top: 0.5vh;
+  font-size: 2.5vh;
+  display: flex;
+  align-items: flex-end;
+}
