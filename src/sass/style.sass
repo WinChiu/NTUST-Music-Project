@@ -3,8 +3,10 @@ $ScreenWidth: 1366px
 $ScreenHeight: 768px
 
 //Colors
-$colorRed: #B13234
+$colorDarkRed: #B13234
+$colorBlue: #4B647C
 $colorGrey: #DBDBDD
+$colorDarkGrey: #CACACA
 
 //functions
 @mixin size($w, $h:$w)
@@ -37,42 +39,127 @@ html, body
 
 #sectionDescription
     background-color: $colorGrey
+#sectionDescription p
+    font-size: 2vh
+    line-height: 3.5vh
+    letter-spacing: .2vh
+    color: $colorBlue
+
+#sectionDescription .title
+    color: $colorDarkRed
+    display: flex
+    justify-content: center
+    margin-top: 6vh
+    margin-bottom: 6vh
+    .ch
+        font-size: 3.5vh
+        letter-spacing: 1vh
+        display: flex
+        align-items: flex-end
+    span.en
+        font-family: "MyanmarMN"
+        top: .5vh
+        font-size: 2.5vh
+        display: flex
+        align-items: flex-end
 #sectionDescription #logoRed
     display: flex
     justify-content: center
     padding-top: 2.6vh
 #sectionDescription #logoRed img
     width: 80vw
-#sectionDescription #background .title
-    color: $colorRed
-    display: flex
-    justify-content: center
-    margin-top: 6vh
-    .ch
-        font-size: 3.5vh
-        letter-spacing: 1vh
-        display: flex
-        align-items: flex-end
-    span.en
-        font-family: "MyanmarMN"
-        top: .5vh
-        font-size: 2.5vh
-        display: flex
-        align-items: flex-end
 
-#sectionDescription #counterfactual .title
-    color: $colorRed
+#sectionDescription #background .synthesizer
     display: flex
-    justify-content: center
-    margin-top: 6vh
-    .ch
-        font-size: 3.5vh
-        letter-spacing: 1vh
+    justify-content: flex-end
+#sectionDescription #background .synthesizer img.keyboard
+    height: 60vh
+    width: 80vw
+#sectionDescription #background .synthesizer p
+    max-width: 30vw
+    position: absolute
+    left: 10vw
+    bottom: 5vh
+
+#sectionDescription #background .culture
+    display: flex
+    .left
+        flex: 6
+        img
+            +size(55vw,65vh)
+            margin-left: 3vh
+    .right
+        flex: 4
         display: flex
-        align-items: flex-end
-    span.en
-        font-family: "MyanmarMN"
-        top: .5vh
-        font-size: 2.5vh
+        flex-direction: column
+        justify-content: center
+        .col
+            display: flex
+            justify-content: space-around
+            .col1, .col2, .col3
+                display: flex
+                flex-direction: column
+        p
+            top: 10vh
+            margin-left: 3vh
+            margin-right: 3vh
+            
+#sectionDescription #background .culture .right .col img
+    +size(20vh)
+#sectionDescription #background .culture .right .col .name
+    font-size: 3vh
+    letter-spacing: 1vh
+    color: $colorDarkRed
+    text-align: center
+    margin-top: 2vh
+
+#sectionDescription #counterfactual .intro
+    display: flex
+    flex-direction: column
+    align-items: center
+    img
+        +size(80vw, 40vh)
+    p
+        max-width: 60vw
+
+#sectionDescription #counterfactual img.rendering
+    +size(100vw, 90vh)
+
+#sectionDescription #counterfactual .idea
+    display: flex
+    .left
+        flex: 6
         display: flex
-        align-items: flex-end
+        justify-content: center
+        align-items: center
+        img
+            +size(35vw, 60vh)
+    .right
+        flex: 4
+        display: flex
+        justify-content: center
+        align-items: center
+        p
+           left: 0
+           margin-right: 10vh
+
+#sectionDescription #counterfactual .showcases
+    margin: 10vh 0 10vh 0
+    .products
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        img
+            +size(80vw,45vh)
+            margin: 1vh 0 1vh 0
+#sectionDescription #counterfactual .designByPart
+    img
+        +size(100vw, 100vh)
+
+
+
+#sectionDescription #footer
+    +size(100vw, 30vh)
+    margin-top: 15vh
+    background-color: $colorDarkGrey
