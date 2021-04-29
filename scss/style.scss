@@ -1,5 +1,76 @@
+$FontColor: #d6d2c7;
+
+@mixin size($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+@mixin imagePosition {
+  background-repeat: none;
+  background-size: cover;
+  background-position: center;
+}
+
 * {
   margin: 0;
   padding: 0;
-  border: solid 10px red;
+  //border: 1px solid black;
+}
+
+section.home {
+  @include size(100%, 100vh);
+  position: relative;
+  .bigBackground {
+    @include size(100%, 100%);
+    //overflow: hidden;
+    img.background {
+      width: 100%;
+    }
+    .introContainer {
+      top: 100vh;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      @include size(100%, 100vh);
+      img.brand {
+        width: 982px;
+      }
+      .introFrame {
+        background-image: url("../img/introFrame.svg");
+        @include imagePosition();
+        @include size(fit-content, fit-content);
+        background-size: 98%;
+        display: block;
+        img {
+          visibility: hidden;
+        }
+        p {
+          padding: 50px;
+          span.ch {
+            font-family: "源雲明體";
+            font-weight: 600;
+            //Should it be pt or px?
+            font-size: 24pt;
+            line-height: 37pt;
+            color: $FontColor;
+          }
+        }
+        span.en {
+          //to be fix
+          font-family: "Myanmar MN";
+          font-weight: 400;
+          //Should it be pt or px?
+          font-size: 24pt;
+          line-height: 37pt;
+          color: $FontColor;
+        }
+      }
+
+      img.arrowIcon {
+        width: 80px;
+      }
+    }
+  }
 }

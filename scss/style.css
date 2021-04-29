@@ -1,6 +1,88 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
-  border: solid 10px red;
+}
+
+section.home {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+section.home .bigBackground {
+  width: 100%;
+  height: 100%;
+}
+
+section.home .bigBackground img.background {
+  width: 100%;
+}
+
+section.home .bigBackground .introContainer {
+  top: 100vh;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+section.home .bigBackground .introContainer img.brand {
+  width: 982px;
+}
+
+section.home .bigBackground .introContainer .introFrame {
+  background-image: url("../img/introFrame.svg");
+  background-repeat: none;
+  background-size: cover;
+  background-position: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-size: 98%;
+  display: block;
+}
+
+section.home .bigBackground .introContainer .introFrame img {
+  visibility: hidden;
+}
+
+section.home .bigBackground .introContainer .introFrame p {
+  padding: 50px;
+}
+
+section.home .bigBackground .introContainer .introFrame p span.ch {
+  font-family: "源雲明體";
+  font-weight: 600;
+  font-size: 24pt;
+  line-height: 37pt;
+  color: #d6d2c7;
+}
+
+section.home .bigBackground .introContainer .introFrame span.en {
+  font-family: "Myanmar MN";
+  font-weight: 400;
+  font-size: 24pt;
+  line-height: 37pt;
+  color: #d6d2c7;
+}
+
+section.home .bigBackground .introContainer img.arrowIcon {
+  width: 80px;
 }
 /*# sourceMappingURL=style.css.map */
