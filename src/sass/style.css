@@ -17,13 +17,13 @@
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #eee;
+  background-color: #DBDBDD;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: #B13234;
   border-radius: 20px;
-  border: solid 3px #eee;
+  border: solid 3px #DBDBDD;
 }
 ::-webkit-scrollbar-thumb:hover {
   background-color: #9d2c2e;
@@ -53,10 +53,10 @@ html, body {
 }
 
 #sectionDescription p {
-  font-size: 2vh;
-  line-height: 3.5vh;
-  letter-spacing: 0.2vh;
-  color: #4B647C;
+  font-size: 1.5vw;
+  line-height: 200%;
+  letter-spacing: 0.5vh;
+  color: #375A77;
 }
 
 #sectionDescription .title {
@@ -67,15 +67,15 @@ html, body {
   margin-bottom: 6vh;
 }
 #sectionDescription .title .ch {
-  font-size: 3.5vh;
+  font-size: 5vh;
   letter-spacing: 1vh;
   display: flex;
   align-items: flex-end;
 }
 #sectionDescription .title span.en {
   font-family: "MyanmarMN";
-  top: 0.5vh;
-  font-size: 2.5vh;
+  top: 0.6vh;
+  font-size: 3.5vh;
   display: flex;
   align-items: flex-end;
 }
@@ -86,36 +86,87 @@ html, body {
   padding-top: 2.6vh;
 }
 
-#sectionDescription #logoRed img {
-  width: 80vw;
+#sectionDescription #logoRed img.logo {
+  width: 100vw;
 }
 
-#sectionDescription #background .synthesizer {
+#sectionDescription #logoRed {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#sectionDescription #logoRed #menu {
+  margin-top: 3vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#sectionDescription #logoRed #menu img.arrow {
+  height: 3vh;
+}
+#sectionDescription #logoRed #menu .toggle {
+  width: 40vw;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#sectionDescription #logoRed #menu .toggle h3 {
+  flex: 1;
+  color: #B13234;
+  margin: 0;
+  margin-top: 3vh;
 }
 
-#sectionDescription #background .synthesizer img.keyboard {
-  height: 60vh;
-  width: 80vw;
+#sectionDescription #background .synthesizer .keyboard {
+  width: 100vw;
+  height: 100vh;
 }
-
-#sectionDescription #background .synthesizer p {
-  max-width: 30vw;
+#sectionDescription #background .synthesizer .keyboard .left {
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#sectionDescription #background .synthesizer .keyboard .left img {
+  width: 65vw;
   left: 10vw;
-  bottom: 5vh;
+  top: 10vh;
+  z-index: 1;
+}
+#sectionDescription #background .synthesizer .keyboard .left p {
+  z-index: 1;
+  max-width: 40vw;
+  margin-left: 5vw;
+}
+#sectionDescription #background .synthesizer .keyboard .right {
+  position: absolute;
+  right: 0;
+  max-width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+#sectionDescription #background .synthesizer .keyboard .right img.keyboard_img {
+  margin-top: 3vh;
+  width: 100%;
+}
+#sectionDescription #background .synthesizer .keyboard .right img.text {
+  margin-top: 5vh;
+  max-width: 25vw;
 }
 
 #sectionDescription #background .culture {
   display: flex;
+  margin-top: 15vh;
 }
 #sectionDescription #background .culture .left {
   flex: 6;
 }
 #sectionDescription #background .culture .left img {
-  width: 55vw;
-  height: 65vh;
   margin-left: 3vh;
 }
 #sectionDescription #background .culture .right {
@@ -134,13 +185,12 @@ html, body {
 }
 #sectionDescription #background .culture .right p {
   top: 10vh;
-  margin-left: 3vh;
-  margin-right: 3vh;
+  margin-left: 5vh;
+  margin-right: 5vh;
 }
 
 #sectionDescription #background .culture .right .col img {
-  width: 20vh;
-  height: 20vh;
+  width: 15vh;
 }
 
 #sectionDescription #background .culture .right .col .name {
@@ -151,50 +201,55 @@ html, body {
   margin-top: 2vh;
 }
 
+#sectionDescription #counterfactual {
+  margin-top: 30vh;
+}
+
 #sectionDescription #counterfactual .intro {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 #sectionDescription #counterfactual .intro img {
-  width: 80vw;
-  height: 40vh;
+  width: 90vw;
+  margin-top: 5vh;
 }
 #sectionDescription #counterfactual .intro p {
-  max-width: 60vw;
+  margin-top: 15vh;
+  max-width: 65vw;
 }
 
 #sectionDescription #counterfactual img.rendering {
   width: 100vw;
-  height: 90vh;
+  margin-top: 20vh;
 }
 
 #sectionDescription #counterfactual .idea {
   display: flex;
+  margin-top: 15vh;
 }
 #sectionDescription #counterfactual .idea .left {
-  flex: 6;
+  flex: 5;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 }
 #sectionDescription #counterfactual .idea .left img {
-  width: 35vw;
-  height: 60vh;
+  width: 45vw;
 }
 #sectionDescription #counterfactual .idea .right {
-  flex: 4;
+  flex: 5;
   display: flex;
+  top: 5vh;
   justify-content: center;
   align-items: center;
 }
 #sectionDescription #counterfactual .idea .right p {
-  left: 0;
-  margin-right: 10vh;
+  max-width: 80%;
 }
 
 #sectionDescription #counterfactual .showcases {
-  margin: 10vh 0 10vh 0;
+  margin: 15vh 0 10vh 0;
 }
 #sectionDescription #counterfactual .showcases .products {
   display: flex;
@@ -208,14 +263,50 @@ html, body {
   margin: 1vh 0 1vh 0;
 }
 
-#sectionDescription #counterfactual .designByPart img {
+#sectionDescription #counterfactual .level {
+  margin: 10vh 0 10vh 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#sectionDescription #counterfactual .level img {
+  max-width: 30vw;
+}
+
+#sectionDescription #counterfactual .designByPart .big {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+#sectionDescription #counterfactual .designByPart .big img {
   width: 100vw;
-  height: 100vh;
+}
+#sectionDescription #counterfactual .designByPart .big img.structure {
+  position: absolute;
+  width: 30vw;
+  z-index: 1;
+  right: 5vw;
+}
+#sectionDescription #counterfactual .designByPart .small {
+  margin-top: 10vh;
+  display: flex;
 }
 
 #sectionDescription #footer {
   width: 100vw;
   height: 30vh;
-  margin-top: 15vh;
+  margin-top: 20vh;
   background-color: #CACACA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#sectionDescription #footer .contributor {
+  color: #666;
+  font-size: 2vh;
+  line-height: 4vh;
+  letter-spacing: 0.1vh;
+}
+#sectionDescription #footer .contributor b {
+  color: #375A77;
 }
