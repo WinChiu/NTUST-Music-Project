@@ -62,25 +62,25 @@ section.home .bigBackground .introContainer .introFrame {
   flex-shrink: 0;
   margin-top: 8vh;
   box-sizing: border-box;
-  padding: 5vh 10vh 0 10vh;
+  padding: 6vh 10vh 0 10vh;
 }
 section.home .bigBackground .introContainer .introFrame img {
   visibility: hidden;
 }
 section.home .bigBackground .introContainer .introFrame p {
   margin-top: 5vh;
-  max-width: 80vw;
+  max-width: 65vw;
 }
 section.home .bigBackground .introContainer .introFrame p span.ch {
   font-family: "GenWanMin SB";
-  font-size: 3vh;
-  line-height: 5vh;
+  font-size: 1.5vw;
+  line-height: 3vw;
   color: #d6d2c7;
 }
 section.home .bigBackground .introContainer .introFrame span.en {
   font-family: "Myanmar MN";
-  font-size: 3vh;
-  line-height: 5vh;
+  font-size: 1.5vw;
+  line-height: 2.5vw;
   color: #d6d2c7;
 }
 section.home .bigBackground .introContainer img.arrowIcon {
