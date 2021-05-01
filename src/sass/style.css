@@ -3,14 +3,17 @@
   font-family: "GenWanMin-SB";
   src: url(../../assets/font/GenWanMin-SB.ttf);
 }
+
 @font-face {
   font-family: "方正姚体繁体";
   src: url(../../assets/font/方正姚体繁体.ttf);
 }
+
 @font-face {
   font-family: "MyanmarMN";
   src: url(../../assets/font/MyanmarMN.ttf);
 }
+
 ::-webkit-scrollbar {
   width: 1vw;
   background-color: rgba(255, 255, 255, 0.6);
@@ -25,8 +28,14 @@
   border-radius: 20px;
   border: solid 3px #DBDBDD;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background-color: #9d2c2e;
+}
+
+::-moz-selection {
+  background-color: #B13234;
+  color: #DBDBDD;
 }
 
 ::selection {
@@ -36,7 +45,8 @@
 
 * {
   position: relative;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-family: "GenWanMin-SB", "MyanmarMN";
 }
 
@@ -50,72 +60,123 @@ html, body {
 
 #sectionDescription {
   background-color: #DBDBDD;
+  position: absolute;
+  z-index: 5;
 }
 
 #sectionDescription p {
   font-size: 1.5vw;
   line-height: 200%;
-  letter-spacing: 0.5vh;
+  letter-spacing: .5vh;
   color: #375A77;
 }
 
 #sectionDescription .title {
   color: #B13234;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-top: 10vh;
   margin-bottom: 6vh;
 }
+
 #sectionDescription .title .ch {
   font-size: 5vh;
   letter-spacing: 1vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
+
 #sectionDescription .title span.en {
   font-family: "MyanmarMN";
-  top: 0.6vh;
+  top: .6vh;
   font-size: 3.5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
-#sectionDescription #logoRed {
+#logoRed {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding-top: 2.6vh;
+  z-index: 10;
 }
 
-#sectionDescription #logoRed img.logo {
+#logoRed img.logo {
   width: 100vw;
 }
 
-#sectionDescription #logoRed {
+#logoRed {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-#sectionDescription #logoRed #menu {
+
+#logoRed #menu {
   margin-top: 3vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-#sectionDescription #logoRed #menu img.arrow {
+
+#logoRed #menu img.arrow {
   height: 3vh;
 }
-#sectionDescription #logoRed #menu .toggle {
+
+#logoRed #menu .toggle {
   position: absolute;
   width: 40vw;
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-#sectionDescription #logoRed #menu .toggle h3 {
-  flex: 1;
+
+#logoRed #menu .toggle h3 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   color: #B13234;
   margin: 0;
   margin-top: 10vh;
@@ -126,65 +187,113 @@ html, body {
   width: 100vw;
   height: 100vh;
 }
+
 #sectionDescription #background .synthesizer .keyboard .left {
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
+
 #sectionDescription #background .synthesizer .keyboard .left img {
   width: 65vw;
   left: 10vw;
   top: 10vh;
   z-index: 1;
 }
+
 #sectionDescription #background .synthesizer .keyboard .left p {
   z-index: 1;
   max-width: 40vw;
   margin-left: 5vw;
 }
+
 #sectionDescription #background .synthesizer .keyboard .right {
   position: absolute;
   right: 0;
   max-width: 50vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 #sectionDescription #background .synthesizer .keyboard .right img.keyboard_img {
   margin-top: 3vh;
   width: 100%;
 }
+
 #sectionDescription #background .synthesizer .keyboard .right img.text {
   margin-top: 5vh;
   max-width: 25vw;
 }
 
 #sectionDescription #background .culture {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-top: 15vh;
 }
+
 #sectionDescription #background .culture .left {
-  flex: 6;
+  -webkit-box-flex: 6;
+      -ms-flex: 6;
+          flex: 6;
 }
+
 #sectionDescription #background .culture .left img {
   margin-left: 3vh;
 }
+
 #sectionDescription #background .culture .right {
-  flex: 4;
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
+
 #sectionDescription #background .culture .right .col {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
+
 #sectionDescription #background .culture .right .col .col1, #sectionDescription #background .culture .right .col .col2, #sectionDescription #background .culture .right .col .col3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
+
 #sectionDescription #background .culture .right p {
   top: 10vh;
   margin-left: 5vh;
@@ -208,14 +317,23 @@ html, body {
 }
 
 #sectionDescription #counterfactual .intro {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 #sectionDescription #counterfactual .intro img {
   width: 90vw;
   margin-top: 5vh;
 }
+
 #sectionDescription #counterfactual .intro p {
   margin-top: 15vh;
   max-width: 65vw;
@@ -227,25 +345,47 @@ html, body {
 }
 
 #sectionDescription #counterfactual .idea {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-top: 15vh;
 }
+
 #sectionDescription #counterfactual .idea .left {
-  flex: 5;
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 #sectionDescription #counterfactual .idea .left img {
   width: 45vw;
 }
+
 #sectionDescription #counterfactual .idea .right {
-  flex: 5;
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   top: 5vh;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 #sectionDescription #counterfactual .idea .right p {
   max-width: 80%;
 }
@@ -253,12 +393,23 @@ html, body {
 #sectionDescription #counterfactual .showcases {
   margin: 15vh 0 10vh 0;
 }
+
 #sectionDescription #counterfactual .showcases .products {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 #sectionDescription #counterfactual .showcases .products img {
   width: 80vw;
   height: 45vh;
@@ -267,30 +418,48 @@ html, body {
 
 #sectionDescription #counterfactual .level {
   margin: 10vh 0 10vh 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 #sectionDescription #counterfactual .level img {
   max-width: 30vw;
 }
 
 #sectionDescription #counterfactual .designByPart .big {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
+
 #sectionDescription #counterfactual .designByPart .big img {
   width: 100vw;
 }
+
 #sectionDescription #counterfactual .designByPart .big img.structure {
   position: absolute;
   width: 30vw;
   z-index: 1;
   right: 5vw;
 }
+
 #sectionDescription #counterfactual .designByPart .small {
   margin-top: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -299,16 +468,25 @@ html, body {
   height: 30vh;
   margin-top: 20vh;
   background-color: #CACACA;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 #sectionDescription #footer .contributor {
   color: #666;
   font-size: 2vh;
   line-height: 4vh;
-  letter-spacing: 0.1vh;
+  letter-spacing: .1vh;
 }
+
 #sectionDescription #footer .contributor b {
   color: #375A77;
 }
+/*# sourceMappingURL=style.css.map */

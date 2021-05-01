@@ -13,15 +13,15 @@ $colorDarkGrey: #CACACA
     width: $w
     height: $h
 
-@font-face 
+@font-face
     font-family: "GenWanMin-SB"
     src: url(../../assets/font/GenWanMin-SB.ttf)
 
-@font-face 
+@font-face
     font-family: "方正姚体繁体"
     src: url(../../assets/font/方正姚体繁体.ttf)
 
-@font-face 
+@font-face
     font-family: "MyanmarMN"
     src: url(../../assets/font/MyanmarMN.ttf)
 
@@ -55,6 +55,10 @@ html, body
 
 #sectionDescription
     background-color: $colorGrey
+    position: absolute
+    z-index: 5
+    //display: none
+
 #sectionDescription p
     font-size: 1.5vw
     line-height: 200%
@@ -78,14 +82,15 @@ html, body
         font-size: 3.5vh
         display: flex
         align-items: flex-end
-#sectionDescription #logoRed
+#logoRed
     display: flex
     justify-content: center
     padding-top: 2.6vh
-#sectionDescription #logoRed img.logo
+    z-index: 10
+#logoRed img.logo
     width: 100vw
 
-#sectionDescription #logoRed 
+#logoRed
     display: flex
     flex-direction: column
     justify-content: center
@@ -145,8 +150,8 @@ html, body
         img.text
             margin-top: 5vh
             max-width: 25vw
-        
-            
+
+
 
 
 #sectionDescription #background .culture
@@ -171,7 +176,7 @@ html, body
             top: 10vh
             margin-left: 5vh
             margin-right: 5vh
-            
+
 #sectionDescription #background .culture .right .col img
     width: 15vh
 #sectionDescription #background .culture .right .col .name
