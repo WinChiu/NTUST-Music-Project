@@ -1,24 +1,26 @@
-let arrowClick = false;
+"use strict";
 
+var arrowClick = false;
 $("#logoRed #menu img.arrow").click(function () {
   console.log(arrowClick);
+
   if (!arrowClick) {
     $("#logoRed #menu .toggle").fadeIn();
     $("#logoRed #menu .toggle").css("display", "flex");
   } else {
     $("#logoRed #menu .toggle").fadeOut();
   }
+
   arrowClick = !arrowClick;
 });
-
 var mainPage = true;
+
 if (mainPage) {
   window.addEventListener("swiped-up", function () {
     $(".home .bigBackground img.background").css("transform", "translateY(-46%)");
     $(".home .bigBackground .introContainer").css("top", "0vh");
     $("#logoRed").css("top", "1vh");
   });
-
   window.addEventListener("swiped-down", function () {
     $(".home .bigBackground img.background").css("transform", "translateY(0)");
     $(".home .bigBackground .introContainer").css("top", "100vh");
@@ -39,8 +41,6 @@ $(".arrowIcon").click(function () {
   $(".tutorial").fadeIn();
   $(".tutorial").css("display", "flex");
   $("#logoRed #menu .arrow").fadeIn();
-});
-
-// $(".arrowIcon").click(function () {
+}); // $(".arrowIcon").click(function () {
 //   $("img.logo").attr("src", "./assets/img/brandRed.svg");
 // });

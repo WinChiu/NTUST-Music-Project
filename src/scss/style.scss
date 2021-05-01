@@ -11,6 +11,15 @@ $Color_Orange: #ee8948;
   src: url(../../assets/font/MyanmarMN.ttf);
 }
 
+@keyframes arrowMove{
+  0%{
+    transform: translateY(0);
+  }
+  100%{
+    transform: translateY(1vh);
+  }
+}
+
 @mixin size($w, $h) {
   width: $w;
   height: $h;
@@ -43,13 +52,13 @@ section.home {
     img.background {
       transition-duration: 0.5s;
       //show main page
-      top: 0vh;
+      transform:  translateY(0);
       //show word
       //top: -92vh;
       //show tutorial
       //top: -100vh;
       position: absolute;
-      width: 100%;
+      width: 100vw;
       z-index: -1;
     }
     .introContainer {
@@ -73,42 +82,45 @@ section.home {
       .introFrame {
         background-image: url("../../assets/img/introFrame.svg");
         @include imagePosition();
-        @include size(1190px, 490px);
+        @include size(80vw, 65vh);
+        // height: 50vh;
         //@include size(85vw, 75vh);
-        background-size: 98%;
+        background-size: 95%;
         display: flex;
         justify-content: center;
         align-items: flex-start;
         flex-shrink: 0;
-        margin-top: 40px;
+        margin-top: 8vh;
         box-sizing: border-box;
-        padding: 44px 40px 0px 40px;
+        padding: 5vh 10vh 0 10vh;
         img {
           visibility: hidden;
         }
         p {
+          margin-top: 5vh;
+          max-width: 80vw;
           span.ch {
             font-family: "GenWanMin SB";
-
             //Should it be pt or px?
-            font-size: 24px;
-            line-height: 37pt;
+            font-size: 3vh;
+            line-height: 5vh;
             color: $FontColor;
           }
         }
         span.en {
           font-family: "Myanmar MN";
-
           //Should it be pt or px?
-          font-size: 24px;
-          line-height: 37pt;
+          font-size: 3vh;
+          line-height: 5vh;
           color: $FontColor;
         }
       }
 
       img.arrowIcon {
-        margin-top: 24px;
-        width: 56.12px;
+        cursor: pointer;
+        margin-top: 2vh;
+        width: 3.5vw;
+        animation: arrowMove .5s alternate infinite;
       }
     }
   }

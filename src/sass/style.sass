@@ -7,7 +7,7 @@ $colorDarkRed: #B13234
 $colorBlue: #375A77
 $colorGrey: #DBDBDD
 $colorDarkGrey: #CACACA
-
+$BGColor: #d32b2d
 //functions
 @mixin size($w, $h:$w)
     width: $w
@@ -55,6 +55,8 @@ html, body
     overflow-x: hidden
     overflow: hidden
 
+html
+
 #sectionDescription
     background-color: $colorGrey
     position: absolute
@@ -90,9 +92,9 @@ html, body
     transition-duration: 0.5s
     display: flex
     justify-content: center
-    top: 100vh
+    top: 105vh
     //top: 0vh
-    padding-top: 5vh
+    padding-top: 6vh
     //padding-top: 2.6vh
     z-index: 10
     position: absolute
@@ -118,7 +120,6 @@ html, body
         cursor: pointer
     #menu .toggle
         // left: 0vw
-
         position: absolute
         width: 30vw
         text-align: center
@@ -127,10 +128,10 @@ html, body
         align-items: center
         h3
             cursor: pointer
-            left: 1.6vw
-            color: $colorDarkRed
+            left: 2vw
+            color: white
             margin: 0
-            margin-top: 10vh
+            margin-top: 4vh
             font-size: 3vh
             letter-spacing: 1vh
 

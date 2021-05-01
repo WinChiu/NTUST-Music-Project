@@ -2,146 +2,116 @@
   font-family: "GenWanMin SB";
   src: url(../../assets/font/GenWanMin-SB.ttf);
 }
-
 @font-face {
   font-family: "Myanmar MN";
   src: url(../../assets/font/MyanmarMN.ttf);
 }
-
+@keyframes arrowMove {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(1vh);
+  }
+}
 section.home {
   width: 100%;
   height: 100vh;
   position: relative;
   overflow: hidden;
 }
-
 section.home .bigBackground {
   width: 100%;
   height: 100%;
 }
-
 section.home .bigBackground img.background {
-  -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
-  top: 0vh;
+  transition-duration: 0.5s;
+  transform: translateY(0);
   position: absolute;
-  width: 100%;
+  width: 100vw;
   z-index: -1;
 }
-
 section.home .bigBackground .introContainer {
-  -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
+  transition-duration: 0.5s;
   margin-top: 15vh;
   top: 100vh;
   position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   width: 100%;
   height: 100vh;
 }
-
 section.home .bigBackground .introContainer img.brand {
   width: 100%;
   margin-top: 40px;
 }
-
 section.home .bigBackground .introContainer .introFrame {
   background-image: url("../../assets/img/introFrame.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  width: 1190px;
-  height: 490px;
-  background-size: 98%;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  width: 80vw;
+  height: 65vh;
+  background-size: 95%;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  margin-top: 40px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 44px 40px 0px 40px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-shrink: 0;
+  margin-top: 8vh;
+  box-sizing: border-box;
+  padding: 5vh 10vh 0 10vh;
 }
-
 section.home .bigBackground .introContainer .introFrame img {
   visibility: hidden;
 }
-
+section.home .bigBackground .introContainer .introFrame p {
+  margin-top: 5vh;
+  max-width: 80vw;
+}
 section.home .bigBackground .introContainer .introFrame p span.ch {
   font-family: "GenWanMin SB";
-  font-size: 24px;
-  line-height: 37pt;
+  font-size: 3vh;
+  line-height: 5vh;
   color: #d6d2c7;
 }
-
 section.home .bigBackground .introContainer .introFrame span.en {
   font-family: "Myanmar MN";
-  font-size: 24px;
-  line-height: 37pt;
+  font-size: 3vh;
+  line-height: 5vh;
   color: #d6d2c7;
 }
-
 section.home .bigBackground .introContainer img.arrowIcon {
-  margin-top: 24px;
-  width: 56.12px;
+  cursor: pointer;
+  margin-top: 2vh;
+  width: 3.5vw;
+  animation: arrowMove 0.5s alternate infinite;
 }
 
 section.tutorial {
-  -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
+  transition-duration: 0.5s;
   background-color: #d32b2d;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 140px 50px 0px 30px;
   width: 100vw;
   height: 100vh;
   position: relative;
   display: none;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   position: absolute;
   top: 0;
 }
-
 section.tutorial article {
   width: 100%;
   height: 100%;
 }
-
 section.tutorial article.instructionArea {
   max-width: 350px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  flex-direction: column;
+  box-sizing: border-box;
 }
-
 section.tutorial article.instructionArea .instruction {
   background-image: url("../../assets/img/detail_full_img/detail_full_img_1.png");
   background-repeat: no-repeat;
@@ -149,11 +119,9 @@ section.tutorial article.instructionArea .instruction {
   background-position: center;
   background-size: 99%;
 }
-
 section.tutorial article.instructionArea .instruction img {
   visibility: hidden;
 }
-
 section.tutorial article.instructionArea .step {
   background-image: url("../../assets/img/order_frame.svg");
   background-repeat: no-repeat;
@@ -163,16 +131,13 @@ section.tutorial article.instructionArea .step {
   height: 220px;
   margin-top: 8px;
 }
-
 section.tutorial article.instructionArea .step img.order_frame {
   visibility: hidden;
 }
-
 section.tutorial article.displayArea {
   position: relative;
   overflow: hidden;
 }
-
 section.tutorial article.displayArea .instrument {
   background-image: url("../../assets/img/instrumentComponent/gongche body.svg");
   background-repeat: no-repeat;
@@ -181,140 +146,116 @@ section.tutorial article.displayArea .instrument {
   width: 900px;
   height: 480px;
   background-size: 99%;
-  -webkit-transform-origin: center;
-          transform-origin: center;
+  transform-origin: center;
   position: absolute;
   right: 0px;
   bottom: 50px;
 }
-
 section.tutorial article.displayArea .instrument img {
   position: absolute;
 }
-
 section.tutorial article.displayArea .instrument .drum {
   width: 106.5px;
 }
-
 section.tutorial article.displayArea .instrument .leftDrum {
   left: 120px;
   top: 11px;
 }
-
 section.tutorial article.displayArea .instrument .rightDrum {
   left: 229px;
   top: 11px;
 }
-
 section.tutorial article.displayArea .instrument .body {
   visibility: hidden;
   position: relative;
 }
-
 section.tutorial article.displayArea .instrument .string {
   width: 604.5px;
   right: 2px;
   bottom: 1px;
 }
-
 section.tutorial article.displayArea .instrument .godButtons {
   width: 166px;
   left: 100px;
   top: 260px;
 }
-
 section.tutorial article.displayArea .instrument .god_button_1 {
   width: 53.22px;
   left: 234px;
   top: 275px;
 }
-
 section.tutorial article.displayArea .instrument .god_button_2 {
   width: 53.22px;
   left: 251px;
   top: 339px;
 }
-
 section.tutorial article.displayArea .instrument .flag_cut_top {
   width: 80px;
   left: 485px;
   top: 101px;
 }
-
 section.tutorial article.displayArea .instrument .flag_cut_bottom {
   width: 80px;
   left: 458px;
   top: 152px;
 }
-
 section.tutorial article.displayArea .instrument .head_flag {
   width: 22.35px;
   left: 403px;
   top: 133px;
 }
-
 section.tutorial article.displayArea .instrument .long_flag_l,
 section.tutorial article.displayArea .instrument .long_flag_r {
   width: 26.24px;
   left: 795px;
   top: 130px;
 }
-
 section.tutorial article.displayArea .instrument .umbrella1 {
   width: 15.69px;
   left: 608px;
   top: 110px;
 }
-
 section.tutorial article.displayArea .instrument .umbrella2 {
   width: 15.69px;
   left: 659px;
   top: 110px;
 }
-
 section.tutorial article.displayArea .instrument .umbrella3 {
   width: 15.69px;
   left: 583px;
   top: 161px;
 }
-
 section.tutorial article.displayArea .instrument .umbrella4 {
   width: 15.69px;
   left: 633px;
   top: 161px;
 }
-
 section.tutorial article.displayArea .instrument .level_switch {
   width: 65.5px;
   left: 80px;
   top: 252px;
 }
-
 section.tutorial article.displayArea .instrument .screen {
   width: 64.6px;
   left: 698px;
   top: 111px;
 }
-
 section.tutorial article.displayArea .instrument .function_1 {
   width: 55px;
   left: 314px;
   top: 145px;
 }
-
 section.tutorial article.displayArea .instrument .function_2 {
   width: 71px;
   left: 255px;
   top: 204px;
 }
-
 section.tutorial img.manual {
   position: absolute;
   width: 50.64px;
   right: 51.364px;
   bottom: 60.36px;
 }
-
 section.tutorial img.manual_opening {
   position: absolute;
   opacity: 0;
@@ -322,4 +263,3 @@ section.tutorial img.manual_opening {
   right: 43.3px;
   bottom: 48.5px;
 }
-/*# sourceMappingURL=style.css.map */
