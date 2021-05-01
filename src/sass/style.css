@@ -63,7 +63,7 @@ html, body {
   color: #B13234;
   display: flex;
   justify-content: center;
-  margin-top: 6vh;
+  margin-top: 10vh;
   margin-bottom: 6vh;
 }
 #sectionDescription .title .ch {
@@ -107,6 +107,7 @@ html, body {
   height: 3vh;
 }
 #sectionDescription #logoRed #menu .toggle {
+  position: absolute;
   width: 40vw;
   text-align: center;
   display: flex;
@@ -117,7 +118,8 @@ html, body {
   flex: 1;
   color: #B13234;
   margin: 0;
-  margin-top: 3vh;
+  margin-top: 10vh;
+  letter-spacing: 1vh;
 }
 
 #sectionDescription #background .synthesizer .keyboard {
