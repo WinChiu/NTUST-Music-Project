@@ -42,7 +42,7 @@ Scroll Bar
     color: $colorGrey
 
 *
-    // border: solid 1px rgba(black,0.3)
+    border: solid 1px rgba(black,0.3)
     position: relative
     box-sizing: border-box
     font-family: "GenWanMin-SB", "MyanmarMN"
@@ -53,10 +53,11 @@ html, body
     margin: 0
     padding: 0
     overflow-x: hidden
-    overflow: hidden
+    // background-color: $BGColor
+    // overflow: hidden
 
-html
-
+body
+    background-color: $BGColor
 #sectionDescription
     background-color: $colorGrey
     position: absolute
@@ -106,6 +107,7 @@ html
     flex-direction: column
     justify-content: center
     align-items: center
+    opacity: 1
     #menu
         margin-top: 3vh
         display: flex
@@ -129,7 +131,7 @@ html
         h3
             cursor: pointer
             left: 2vw
-            color: white
+            color: $colorGrey
             margin: 0
             margin-top: 4vh
             font-size: 3vh

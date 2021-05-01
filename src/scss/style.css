@@ -26,7 +26,6 @@ section.home .bigBackground {
 }
 section.home .bigBackground img.background {
   transition-duration: 0.5s;
-  transform: translateY(0);
   position: absolute;
   width: 100vw;
   z-index: -1;
@@ -35,6 +34,8 @@ section.home .bigBackground .introContainer {
   transition-duration: 0.5s;
   margin-top: 15vh;
   top: 100vh;
+  transform: translateY(0);
+  opacity: 1;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -93,7 +94,6 @@ section.tutorial {
   transition-duration: 0.5s;
   background-color: #d32b2d;
   box-sizing: border-box;
-  padding: 140px 50px 0px 30px;
   width: 100vw;
   height: 100vh;
   position: relative;
@@ -102,39 +102,41 @@ section.tutorial {
   position: absolute;
   top: 0;
 }
-section.tutorial article {
-  width: 100%;
-  height: 100%;
-}
 section.tutorial article.instructionArea {
-  max-width: 350px;
-  display: flex;
-  flex-direction: column;
+  flex: 3;
   box-sizing: border-box;
 }
-section.tutorial article.instructionArea .instruction {
+section.tutorial article.instructionArea .instructionContainer {
+  position: absolute;
+  bottom: 4vh;
+  left: 3vw;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+}
+section.tutorial article.instructionArea .instructionContainer .instruction {
   background-image: url("../../assets/img/detail_full_img/detail_full_img_1.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-size: 99%;
 }
-section.tutorial article.instructionArea .instruction img {
+section.tutorial article.instructionArea .instructionContainer .instruction img {
   visibility: hidden;
 }
-section.tutorial article.instructionArea .step {
+section.tutorial article.instructionArea .instructionContainer .step {
   background-image: url("../../assets/img/order_frame.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-size: 99%;
-  height: 220px;
   margin-top: 8px;
 }
-section.tutorial article.instructionArea .step img.order_frame {
+section.tutorial article.instructionArea .instructionContainer .step img.order_frame {
   visibility: hidden;
 }
 section.tutorial article.displayArea {
+  flex: 7;
   position: relative;
   overflow: hidden;
 }
@@ -146,10 +148,11 @@ section.tutorial article.displayArea .instrument {
   width: 900px;
   height: 480px;
   background-size: 99%;
-  transform-origin: center;
+  transform-origin: right bottom;
+  transform: scale(0.9);
   position: absolute;
-  right: 0px;
-  bottom: 50px;
+  right: 6vh;
+  bottom: 6vh;
 }
 section.tutorial article.displayArea .instrument img {
   position: absolute;
@@ -251,15 +254,22 @@ section.tutorial article.displayArea .instrument .function_2 {
   top: 204px;
 }
 section.tutorial img.manual {
+  cursor: pointer;
   position: absolute;
-  width: 50.64px;
-  right: 51.364px;
-  bottom: 60.36px;
+  width: 8vh;
+  right: 5vh;
+  bottom: 2vh;
 }
-section.tutorial img.manual_opening {
+section.tutorial .openingPage {
+  display: none;
   position: absolute;
-  opacity: 0;
-  width: 880.69px;
-  right: 43.3px;
-  bottom: 48.5px;
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+}
+section.tutorial .openingPage img.manual_opening {
+  position: absolute;
+  height: 72vh;
+  right: 5vw;
+  bottom: 3vw;
 }
