@@ -35,7 +35,6 @@
 }
 
 * {
-  border: solid 1px rgba(0, 0, 0, 0.3);
   position: relative;
   box-sizing: border-box;
   font-family: "GenWanMin-SB", "MyanmarMN";
@@ -46,6 +45,7 @@ html, body {
   height: 100vh;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 #sectionDescription {
@@ -303,8 +303,14 @@ html, body {
   margin-top: 10vh;
   display: flex;
 }
-#sectionDescription #counterfactual .designByPart .small img {
-  max-width: 100%;
+#sectionDescription #counterfactual .designByPart .small img.pic1 {
+  width: 25.695vw;
+}
+#sectionDescription #counterfactual .designByPart .small img.pic2 {
+  width: 40.556vw;
+}
+#sectionDescription #counterfactual .designByPart .small img.pic3 {
+  width: 33.821vw;
 }
 
 #sectionDescription #footer {
