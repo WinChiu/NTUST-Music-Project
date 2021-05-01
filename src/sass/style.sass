@@ -47,11 +47,13 @@ Scroll Bar
     box-sizing: border-box
     font-family: "GenWanMin-SB", "MyanmarMN"
 
+
 html, body
     +size(100vw, 100vh)
     margin: 0
     padding: 0
     overflow-x: hidden
+    overflow: hidden
 
 #sectionDescription
     background-color: $colorGrey
@@ -59,7 +61,7 @@ html, body
     z-index: 5
     width: 100vw
     padding-top: 25vh
-    //display: none
+    display: none
 
 #sectionDescription p
     font-size: 1.5vw
@@ -85,9 +87,13 @@ html, body
         display: flex
         align-items: flex-end
 #logoRed
+    transition-duration: 0.5s
     display: flex
     justify-content: center
-    padding-top: 2.6vh
+    top: 100vh
+    //top: 0vh
+    padding-top: 5vh
+    //padding-top: 2.6vh
     z-index: 10
     position: absolute
 #logoRed img.logo
@@ -105,6 +111,8 @@ html, body
         justify-content: center
         align-items: center
     #menu img.arrow
+        display: none
+        transform: translateY(-20px)
         width: 3.5vw
         z-index: 10
         cursor: pointer

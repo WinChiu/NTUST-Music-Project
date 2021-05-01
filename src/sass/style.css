@@ -56,6 +56,7 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  overflow: hidden;
 }
 
 #sectionDescription {
@@ -64,6 +65,7 @@ html, body {
   z-index: 5;
   width: 100vw;
   padding-top: 25vh;
+  display: none;
 }
 
 #sectionDescription p {
@@ -109,13 +111,16 @@ html, body {
 }
 
 #logoRed {
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-top: 2.6vh;
+  top: 100vh;
+  padding-top: 5vh;
   z-index: 10;
   position: absolute;
 }
@@ -158,6 +163,9 @@ html, body {
 }
 
 #logoRed #menu img.arrow {
+  display: none;
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
   width: 3.5vw;
   z-index: 10;
   cursor: pointer;

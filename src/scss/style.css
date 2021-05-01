@@ -21,17 +21,19 @@ section.home .bigBackground {
 }
 
 section.home .bigBackground img.background {
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
   top: 0vh;
-  top: -92vh;
-  top: -100vh;
   position: absolute;
   width: 100%;
   z-index: -1;
 }
 
 section.home .bigBackground .introContainer {
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  margin-top: 15vh;
   top: 100vh;
-  top: 0;
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -104,6 +106,8 @@ section.home .bigBackground .introContainer img.arrowIcon {
 }
 
 section.tutorial {
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
   background-color: #d32b2d;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -111,9 +115,7 @@ section.tutorial {
   width: 100vw;
   height: 100vh;
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -319,13 +321,5 @@ section.tutorial img.manual_opening {
   width: 880.69px;
   right: 43.3px;
   bottom: 48.5px;
-}
-
-section.home {
-  display: none;
-}
-
-section.tutorial {
-  display: none;
 }
 /*# sourceMappingURL=style.css.map */
