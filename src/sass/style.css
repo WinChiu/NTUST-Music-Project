@@ -46,6 +46,7 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  overflow: hidden;
 }
 
 #sectionDescription {
@@ -79,7 +80,6 @@ html, body {
   display: flex;
   align-items: flex-end;
 }
-
 #sectionDescription #logoRed {
   display: flex;
   justify-content: center;
@@ -87,6 +87,7 @@ html, body {
 }
 
 #sectionDescription #logoRed img.logo {
+  fill: black;
   width: 100vw;
 }
 
@@ -105,6 +106,8 @@ html, body {
 }
 #sectionDescription #logoRed #menu img.arrow {
   height: 3vh;
+  cursor: pointer;
+  z-index: 200;
 }
 #sectionDescription #logoRed #menu .toggle {
   position: absolute;

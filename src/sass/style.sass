@@ -52,6 +52,7 @@ html, body
     margin: 0
     padding: 0
     overflow-x: hidden
+    overflow: hidden
 
 #sectionDescription
     background-color: $colorGrey
@@ -77,12 +78,16 @@ html, body
         top: .6vh
         font-size: 3.5vh
         display: flex
+        transfrm: 
         align-items: flex-end
 #sectionDescription #logoRed
+
     display: flex
     justify-content: center
     padding-top: 2.6vh
 #sectionDescription #logoRed img.logo
+    fill: black
+    // background-color: red
     width: 100vw
 
 #sectionDescription #logoRed 
@@ -98,6 +103,8 @@ html, body
         align-items: center
     #menu img.arrow
         height: 3vh
+        cursor: pointer
+        z-index: 200
     #menu .toggle
         position: absolute
         width: 40vw
