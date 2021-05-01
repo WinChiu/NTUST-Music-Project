@@ -1,0 +1,308 @@
+$FontColor: #d6d2c7;
+$BGColor: #d32b2d;
+$Color_Orange: #ee8948;
+@font-face {
+  font-family: "GenWanMin SB";
+  src: url(../../assets/font/GenWanMin-SB.ttf);
+}
+
+@font-face {
+  font-family: "Myanmar MN";
+  src: url(../../assets/font/MyanmarMN.ttf);
+}
+
+@mixin size($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+@mixin imagePosition {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@mixin shadow {
+  filter: drop-shadow(0px 0px 30px $Color_Orange);
+}
+@mixin doubleShadow {
+  filter: drop-shadow(0px 0px 30px $Color_Orange) drop-shadow(0px 0px 10px $Color_Orange);
+}
+* {
+  margin: 0;
+  padding: 0;
+  // border: 1px solid black;
+}
+
+section.home {
+  @include size(100%, 100vh);
+  position: relative;
+  overflow: hidden;
+  .bigBackground {
+    @include size(100%, 100%);
+
+    img.background {
+      //show main page
+      top: 0vh;
+      //show word
+      top: -92vh;
+      //show tutorial
+      top: -100vh;
+      position: absolute;
+      width: 100%;
+      z-index: -1;
+    }
+    .introContainer {
+      //show main page
+      top: 100vh;
+      //show word
+      top: 0;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      @include size(100%, 100vh);
+      img.brand {
+        width: 100%;
+        margin-top: 40px;
+        //margin-top: 18px;
+      }
+      .introFrame {
+        background-image: url("../../assets/img/introFrame.svg");
+        @include imagePosition();
+        @include size(1190px, 490px);
+        //@include size(85vw, 75vh);
+        background-size: 98%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-shrink: 0;
+        margin-top: 40px;
+        box-sizing: border-box;
+        padding: 44px 40px 0px 40px;
+        img {
+          visibility: hidden;
+        }
+        p {
+          span.ch {
+            font-family: "GenWanMin SB";
+
+            //Should it be pt or px?
+            font-size: 24px;
+            line-height: 37pt;
+            color: $FontColor;
+          }
+        }
+        span.en {
+          font-family: "Myanmar MN";
+
+          //Should it be pt or px?
+          font-size: 24px;
+          line-height: 37pt;
+          color: $FontColor;
+        }
+      }
+
+      img.arrowIcon {
+        margin-top: 24px;
+        width: 56.12px;
+      }
+    }
+  }
+}
+
+section.tutorial {
+  box-sizing: border-box;
+  padding: 140px 50px 0px 30px;
+  @include size(100vw, 100vh);
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 0;
+  nav {
+    top: 0;
+    position: absolute;
+    width: 322px;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    margin-top: 117px;
+    img {
+      height: 12.39px;
+      margin-bottom: 8px;
+    }
+    .navItems {
+      display: flex;
+      justify-content: space-between;
+      img {
+        height: 22.5px;
+        margin-bottom: 0;
+      }
+    }
+  }
+  article {
+    @include size(100%, 100%);
+  }
+  article.instructionArea {
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    .instruction {
+      background-image: url("../../assets/img/detail_full_img/detail_full_img_1.png");
+      @include imagePosition();
+      background-size: 99%;
+      img {
+        visibility: hidden;
+      }
+    }
+    .step {
+      background-image: url("../../assets/img/order_frame.svg");
+      @include imagePosition();
+      background-size: 99%;
+      height: 220px;
+      margin-top: 8px;
+      img.order_frame {
+        visibility: hidden;
+      }
+    }
+  }
+  article.displayArea {
+    position: relative;
+    overflow: hidden;
+    .instrument {
+      background-image: url("../../assets/img/instrumentComponent/gongche\ body.svg");
+      @include imagePosition();
+      @include size(900px, 480px);
+      background-size: 99%;
+      transform-origin: center;
+      position: absolute;
+      right: 0px;
+      bottom: 50px;
+      img {
+        position: absolute;
+      }
+      .drum {
+        width: 106.5px;
+      }
+      .leftDrum {
+        left: 120px;
+        top: 11px;
+      }
+      .rightDrum {
+        left: 229px;
+        top: 11px;
+      }
+      .body {
+        visibility: hidden;
+        position: relative;
+      }
+      .string {
+        width: 604.5px;
+        right: 2px;
+        bottom: 1px;
+      }
+      .godButtons {
+        width: 166px;
+        left: 100px;
+        top: 260px;
+      }
+      .god_button_1 {
+        width: 53.22px;
+        left: 234px;
+        top: 275px;
+      }
+      .god_button_2 {
+        width: 53.22px;
+        left: 251px;
+        top: 339px;
+      }
+      .flag_cut_top {
+        width: 80px;
+        left: 485px;
+        top: 101px;
+      }
+      .flag_cut_bottom {
+        width: 80px;
+        left: 458px;
+        top: 152px;
+      }
+      .head_flag {
+        width: 22.35px;
+        left: 403px;
+        top: 133px;
+      }
+      .long_flag_l,
+      .long_flag_r {
+        width: 26.24px;
+        left: 795px;
+        top: 130px;
+      }
+
+      .umbrella1 {
+        width: 15.69px;
+        left: 608px;
+        top: 110px;
+      }
+      .umbrella2 {
+        width: 15.69px;
+        left: 659px;
+        top: 110px;
+      }
+      .umbrella3 {
+        width: 15.69px;
+        left: 583px;
+        top: 161px;
+      }
+      .umbrella4 {
+        width: 15.69px;
+        left: 633px;
+        top: 161px;
+      }
+      .level_switch {
+        width: 65.5px;
+        left: 80px;
+        top: 252px;
+      }
+      .screen {
+        width: 64.6px;
+        left: 698px;
+        top: 111px;
+      }
+      .function_1 {
+        width: 55px;
+        left: 314px;
+        top: 145px;
+      }
+      .function_2 {
+        width: 71px;
+        left: 255px;
+        top: 204px;
+      }
+    }
+  }
+  img.manual {
+    position: absolute;
+    width: 50.64px;
+    right: 51.364px;
+    bottom: 60.36px;
+  }
+  img.manual_opening {
+    position: absolute;
+    opacity: 0;
+    width: 880.69px;
+    right: 43.3px;
+    bottom: 48.5px;
+  }
+}
+
+section.home {
+  //display: none;
+}
+section.tutorial {
+  display: none;
+}
