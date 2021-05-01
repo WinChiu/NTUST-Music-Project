@@ -31,7 +31,7 @@ $Color_Orange: #ee8948;
 * {
   margin: 0;
   padding: 0;
-  // border: 1px solid black;
+  //border: 1px solid black;
 }
 
 section.home {
@@ -122,29 +122,29 @@ section.tutorial {
   flex-direction: row;
   position: absolute;
   top: 0;
-  nav {
-    top: 0;
-    position: absolute;
-    width: 322px;
-    display: flex;
-    flex-direction: column;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    margin-top: 117px;
-    img {
-      height: 12.39px;
-      margin-bottom: 8px;
-    }
-    .navItems {
-      display: flex;
-      justify-content: space-between;
-      img {
-        height: 22.5px;
-        margin-bottom: 0;
-      }
-    }
-  }
+  // nav {
+  //   top: 0;
+  //   position: absolute;
+  //   width: 322px;
+  //   display: flex;
+  //   flex-direction: column;
+  //   left: 0;
+  //   right: 0;
+  //   margin: 0 auto;
+  //   margin-top: 117px;
+  //   img {
+  //     height: 12.39px;
+  //     margin-bottom: 8px;
+  //   }
+  //   .navItems {
+  //     display: flex;
+  //     justify-content: space-between;
+  //     img {
+  //       height: 22.5px;
+  //       margin-bottom: 0;
+  //     }
+  //   }
+  // }
   article {
     @include size(100%, 100%);
   }
@@ -302,7 +302,7 @@ section.tutorial {
 }
 
 section.home {
-  //display: none;
+  display: none;
 }
 section.tutorial {
   display: none;

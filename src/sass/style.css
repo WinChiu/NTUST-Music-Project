@@ -138,7 +138,7 @@ html, body {
 }
 
 #logoRed #menu {
-  margin-top: 3vh;
+  margin-top: 8px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -155,31 +155,28 @@ html, body {
 }
 
 #logoRed #menu img.arrow {
-  height: 3vh;
+  width: 44.6px;
 }
 
 #logoRed #menu .toggle {
   position: absolute;
-  width: 40vw;
+  width: 322px;
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
 #logoRed #menu .toggle h3 {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
   color: #B13234;
   margin: 0;
-  margin-top: 10vh;
+  margin-top: 48px;
   letter-spacing: 1vh;
 }
 

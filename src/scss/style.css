@@ -127,42 +127,6 @@ section.tutorial {
   top: 0;
 }
 
-section.tutorial nav {
-  top: 0;
-  position: absolute;
-  width: 322px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  margin-top: 117px;
-}
-
-section.tutorial nav img {
-  height: 12.39px;
-  margin-bottom: 8px;
-}
-
-section.tutorial nav .navItems {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-section.tutorial nav .navItems img {
-  height: 22.5px;
-  margin-bottom: 0;
-}
-
 section.tutorial article {
   width: 100%;
   height: 100%;
@@ -360,6 +324,10 @@ section.tutorial img.manual_opening {
   width: 880.69px;
   right: 43.3px;
   bottom: 48.5px;
+}
+
+section.home {
+  display: none;
 }
 
 section.tutorial {
