@@ -69,7 +69,7 @@ section.home {
     }
 
     .introContainer {
-      transition-duration: .5s;
+      transition-duration: 0.5s;
       margin-top: 15vh;
       //show main page
       top: 100vh;
@@ -259,12 +259,14 @@ section.tutorial {
       }
 
       .flag_cut_top {
+        transition-duration: 0.3s;
         width: 80px;
         left: 485px;
         top: 101px;
       }
 
       .flag_cut_bottom {
+        transition-duration: 0.3s;
         width: 80px;
         left: 458px;
         top: 152px;
