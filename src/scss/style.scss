@@ -44,7 +44,7 @@ $Color_Orange: #ee8948;
 * {
   // margin: 0;
   // padding: 0;
-  //border: 1px solid black;
+  border: 1px solid black;
 }
 
 section.home {
@@ -135,7 +135,7 @@ section.home {
         cursor: pointer;
         margin-top: -1vh;
         width: 3vw;
-        animation: arrowMove .5s alternate infinite;
+        animation: arrowMove 0.5s alternate infinite;
       }
     }
   }
@@ -183,13 +183,36 @@ section.tutorial {
       }
 
       .step {
-        background-image: url("../../assets/img/order_frame.svg");
+        background-image: url("../../assets/img/order_full_img/order_full_img_1.svg");
         @include imagePosition();
         background-size: 99%;
         margin-top: 2vh;
-
+        position: relative;
         img.order_frame {
           visibility: hidden;
+        }
+        .stepBtn {
+          height: 18px;
+          position: absolute;
+          bottom: 1.5vh;
+          &.review {
+            left: 1.5vw;
+          }
+          &.next {
+            right: 1.5vw;
+          }
+          &.start {
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            bottom: 5vh;
+          }
+        }
+        p {
+          position: absolute;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
         }
       }
     }

@@ -24,7 +24,7 @@ const umbrellaD = ["#D1", "#D2", "#D3", "#D4", "#D5"];
 const umbrellaDelay1 = ["#delay1", "#delay2", "#delay3"];
 const umbrellaDelay2 = ["#delay4-1", "#delay4-2", "#delay4-3"];
 const tracks = ["#track1", "#track2", "#track3", "#track4"];
-let function1Pressing = false;
+let function1Pressing = true;
 let function2Pressing = true;
 
 const stopPlaying = () => {
@@ -61,8 +61,8 @@ rightDrum.click(() => {
   playSound(drumSound[0]);
 });
 
-leftDrum.unbind("click");
-rightDrum.unbind("click");
+leftDrum.unbind();
+rightDrum.unbind();
 
 //=====================
 //step2
@@ -102,7 +102,6 @@ rightDrum.click(() => {
   }
 });
 
-function_1.unbind();
 leftDrum.unbind();
 rightDrum.unbind();
 //=====================
@@ -128,7 +127,6 @@ player1.connect(pitchShift1);
 player2.connect(pitchShift2);
 
 string.on("touchstart", () => {
-  //playSound(stringSound);
   player1.start();
   setTimeout(() => {
     player2.start();
@@ -140,8 +138,8 @@ string.on("touchmove", function (e) {
   let mousePosition = e.touches[0].clientX;
   let middle = (stringRightBoundary + stringLeftBoundary) / 2;
   if (mousePosition < stringRightBoundary && mousePosition > stringLeftBoundary) {
-    pitchShift1.pitch = mousePosition / 650 + (mousePosition - middle) / 150;
-    pitchShift2.pitch = mousePosition / 650 + (mousePosition - middle) / 150;
+    pitchShift1.pitch = mousePosition / 1000 + (mousePosition - middle) / 300;
+    pitchShift2.pitch = mousePosition / 1000 + (mousePosition - middle) / 300;
   } else {
     player1.stop();
     player2.stop();
@@ -156,13 +154,6 @@ string.unbind();
 //step4
 
 let nowPlayingMelodySound = 0;
-function_1.on("touchstart", () => {
-  function1Pressing = true;
-});
-
-function_1.on("touchend", () => {
-  function1Pressing = false;
-});
 
 string.on("swiped-left", () => {
   if (function1Pressing) {
@@ -190,7 +181,6 @@ string.on("swiped-right", () => {
   }
 });
 
-function_1.unbind();
 string.unbind();
 
 //=====================
@@ -203,14 +193,14 @@ flag_cut_top.on("swiped-down", () => {
     flag_cut_top.css("top", "113px");
     flagCutTopStatus = 0;
     stopPlaying();
-    playSound(`.${flagCutTopStatus}_${flagCutBottomStatus}`);
+    playSound(`#${flagCutTopStatus}_${flagCutBottomStatus}`);
     return;
   }
   if (flagCutTopStatus === 0) {
     flag_cut_top.css("top", "125px");
     flagCutTopStatus = -1;
     stopPlaying();
-    playSound(`.${flagCutTopStatus}_${flagCutBottomStatus}`);
+    playSound(`#${flagCutTopStatus}_${flagCutBottomStatus}`);
     return;
   }
 });
@@ -220,14 +210,14 @@ flag_cut_top.on("swiped-up", () => {
     flag_cut_top.css("top", "113px");
     flagCutTopStatus = 0;
     stopPlaying();
-    playSound(`.${flagCutTopStatus}_${flagCutBottomStatus}`);
+    playSound(`#${flagCutTopStatus}_${flagCutBottomStatus}`);
     return;
   }
   if (flagCutTopStatus === 0) {
     flag_cut_top.css("top", "101px");
     flagCutTopStatus = 1;
     stopPlaying();
-    playSound(`.${flagCutTopStatus}_${flagCutBottomStatus}`);
+    playSound(`#${flagCutTopStatus}_${flagCutBottomStatus}`);
     return;
   }
 });
@@ -237,14 +227,14 @@ flag_cut_bottom.on("swiped-down", () => {
     flag_cut_bottom.css("top", "164px");
     flagCutBottomStatus = 0;
     stopPlaying();
-    playSound(`.${flagCutTopStatus}_${flagCutBottomStatus}`);
+    playSound(`#${flagCutTopStatus}_${flagCutBottomStatus}`);
     return;
   }
   if (flagCutBottomStatus === 0) {
     flag_cut_bottom.css("top", "176px");
     flagCutBottomStatus = -1;
     stopPlaying();
-    playSound(`.${flagCutTopStatus}_${flagCutBottomStatus}`);
+    playSound(`#${flagCutTopStatus}_${flagCutBottomStatus}`);
     return;
   }
 });
@@ -254,14 +244,14 @@ flag_cut_bottom.on("swiped-up", () => {
     flag_cut_bottom.css("top", "164px");
     flagCutBottomStatus = 0;
     stopPlaying();
-    playSound(`.${flagCutTopStatus}_${flagCutBottomStatus}`);
+    playSound(`#${flagCutTopStatus}_${flagCutBottomStatus}`);
     return;
   }
   if (flagCutBottomStatus === 0) {
     flag_cut_bottom.css("top", "152px");
     flagCutBottomStatus = 1;
     stopPlaying();
-    playSound(`.${flagCutTopStatus}_${flagCutBottomStatus}`);
+    playSound(`#${flagCutTopStatus}_${flagCutBottomStatus}`);
     return;
   }
 });
@@ -334,13 +324,64 @@ umbrella4.click(() => {
 umbrella4.unbind();
 //=====================
 //step11
-
+let longFlagMode = false;
 document.querySelector("#sonahigh").playbackRate = 8;
 long_flag.click(() => {
-  document.querySelector("#sonahigh").play();
-  //$("#sonahigh")[0].playbackRate = 3;
-  //playSound("#sonahigh");
+  if (!longFlagMode) {
+    $(".long_flag").attr("src", "./assets/img/instrumentComponent/long_flag_r.svg");
+  } else {
+    $(".long_flag").attr("src", "./assets/img/instrumentComponent/long_flag_l.svg");
+  }
+  longFlagMode = !longFlagMode;
 });
+
+let player3 = new Tone.Player({
+  url: "./assets/audio/壓帆旗/sonahigh_noStop.mp3",
+  loop: true,
+});
+let player4 = new Tone.Player({
+  url: "./assets/audio/菜刀旗/sonahigh_noStop.mp3",
+  loop: true,
+});
+
+var pitchShift3 = new Tone.PitchShift({
+  pitch: 0,
+}).toMaster();
+var pitchShift4 = new Tone.PitchShift({
+  pitch: 0,
+}).toMaster();
+
+player3.connect(pitchShift3);
+player4.connect(pitchShift4);
+
+string.on("touchstart", () => {
+  if (longFlagMode) {
+    player3.start();
+    setTimeout(() => {
+      player4.start();
+    }, 5);
+  }
+});
+string.on("touchmove", function (e) {
+  let stringRightBoundary = this.getBoundingClientRect().right - 30;
+  let stringLeftBoundary = this.getBoundingClientRect().left + 50;
+  let mousePosition = e.touches[0].clientX;
+  let middle = (stringRightBoundary + stringLeftBoundary) / 2;
+  if (mousePosition < stringRightBoundary && mousePosition > stringLeftBoundary) {
+    pitchShift3.pitch = mousePosition / 1000 + (mousePosition - middle) / 300;
+    pitchShift4.pitch = mousePosition / 1000 + (mousePosition - middle) / 300;
+  } else {
+    player3.stop();
+    player4.stop();
+  }
+});
+string.on("touchend", () => {
+  if (longFlagMode) {
+    player3.stop();
+    player4.stop();
+  }
+});
+string.unbind();
 long_flag.unbind();
 //=====================
 //step12
@@ -355,31 +396,28 @@ long_flag.unbind();
 //step15
 let step15IsPlaying = false;
 
-function_1.on("touchstart", () => {
-  function1Pressing = true;
-});
-
-function_1.on("touchend", () => {
-  function1Pressing = false;
+rightDrum.click(() => {
+  $("#BeiguanD1")[0].loop = true;
+  $("#BeiguanD1")[0].playbackRate = 4.58;
+  if (function1Pressing && !step15IsPlaying) {
+    step15IsPlaying = true;
+    playPausedSound("#BeiguanD1");
+  }
 });
 
 leftDrum.click(() => {
   $("#BeiguanD1")[0].loop = true;
   $("#BeiguanD1")[0].playbackRate = 4.58;
   if (function1Pressing) {
-    if (step15IsPlaying) {
-      pauseSound("#BeiguanD1");
-      step15IsPlaying = !step15IsPlaying;
-    } else {
-      playPausedSound("#BeiguanD1");
-      step15IsPlaying = !step15IsPlaying;
-    }
+    step15IsPlaying = false;
+    pauseSound("#BeiguanD1");
   }
 });
-function_1.unbind();
+
 leftDrum.unbind();
-//=====================
-//step16
+rightDrum.unbind();
+// //=====================
+// //step16
 
 let isRecording = false;
 
@@ -391,25 +429,28 @@ function_2.on("touchend", () => {
   function2Pressing = false;
 });
 
+rightDrum.click(() => {
+  $("#BeiguanD1")[0].loop = true;
+  $("#BeiguanD1")[0].playbackRate = 4.58;
+  $("#BeiguanD1")[0].volume = 0.3;
+  if (function1Pressing && !step15IsPlaying) {
+    step15IsPlaying = true;
+    playPausedSound("#BeiguanD1");
+  }
+});
+
 leftDrum.click(() => {
-  console.log(123);
   $("#BeiguanD1")[0].loop = true;
   $("#BeiguanD1")[0].playbackRate = 4.58;
   $("#BeiguanD1")[0].volume = 0.3;
   if (function1Pressing) {
-    if (isRecording) {
-      pauseSound("#BeiguanD1");
-      isRecording = !isRecording;
-    } else {
-      playPausedSound("#BeiguanD1");
-      isRecording = !isRecording;
-    }
+    step15IsPlaying = false;
+    pauseSound("#BeiguanD1");
   }
 });
 
 leftDrum.unbind();
-function_2.unbind();
-
+rightDrum.unbind();
 //=====================
 //step17
 
@@ -435,13 +476,40 @@ leftDrum.click(() => {
 rightDrum.click(() => {
   if (godButtonMode === 1) playPausedSound(drumSound[5]);
 });
+
+string.on("touchstart", () => {
+  if (godButtonMode === 2) {
+    player1.start();
+    setTimeout(() => {
+      player2.start();
+    }, 5);
+  }
+});
+string.on("touchmove", function (e) {
+  let stringRightBoundary = this.getBoundingClientRect().right - 30;
+  let stringLeftBoundary = this.getBoundingClientRect().left + 50;
+  let mousePosition = e.touches[0].clientX;
+  let middle = (stringRightBoundary + stringLeftBoundary) / 2;
+
+  if (mousePosition < stringRightBoundary && mousePosition > stringLeftBoundary) {
+    pitchShift1.pitch = mousePosition / 1000 + (mousePosition - middle) / 300;
+    pitchShift2.pitch = mousePosition / 1000 + (mousePosition - middle) / 300;
+  } else {
+    player1.stop();
+    player2.stop();
+  }
+});
+string.on("touchend", () => {
+  player1.stop();
+  player2.stop();
+});
+
 function_1.unbind();
 god_button_1.unbind();
 god_button_2.unbind();
 leftDrum.unbind();
 rightDrum.unbind();
-
-//Add the function the same as step3
+string.unbind();
 
 //=====================
 //step18
@@ -459,16 +527,11 @@ head_flag.click(() => {
   $("#track1")[0].loop = true;
   playPausedSound("#track1");
 });
-
+head_flag.unbind();
 //=====================
 //step21
 let track2Playing = false;
-function_1.on("touchstart", () => {
-  function1Pressing = true;
-});
-function_1.on("touchend", () => {
-  function1Pressing = false;
-});
+
 rightDrum.click(() => {
   if (function1Pressing) {
     $("#track2")[0].loop = true;
@@ -484,27 +547,19 @@ leftDrum.click(() => {
   }
 });
 
-head_flag.unbind();
-function_1.unbind();
 rightDrum.unbind();
 leftDrum.unbind();
 
 //=====================
 //step22
 
-let unMutedTracks = ["#track1", "#track4"];
+let unMutedTracks = [];
 let isHeadFlagOpen = false;
 let selectedTrack = 0;
 tracks.forEach((track) => {
   $(`${track}`)[0].loop = true;
 });
 
-function_1.on("touchstart", () => {
-  function1Pressing = true;
-});
-function_1.on("touchend", () => {
-  function1Pressing = false;
-});
 head_flag.click(() => {
   stopPlaying();
   if (!isHeadFlagOpen) {
@@ -544,8 +599,6 @@ string.on("swiped-right", () => {
 leftDrum.click(() => {
   if (function1Pressing) {
     unMutedTracks = unMutedTracks.filter((track) => track !== tracks[selectedTrack]);
-  } else {
-    playPausedSound(drumSound[0]);
   }
   console.log(unMutedTracks);
 });
@@ -556,11 +609,70 @@ rightDrum.click(() => {
   console.log(unMutedTracks);
 });
 
+head_flag.unbind();
+string.unbind();
+leftDrum.unbind();
+rightDrum.unbind();
 //=====================
 //step23
+head_flag.click(() => {
+  stopPlaying();
+  if (!isHeadFlagOpen) {
+    alignSoundTracks();
+    unMutedTracks.forEach((track) => {
+      playPausedSound(track);
+    });
+    isHeadFlagOpen = true;
+  } else {
+    unMutedTracks.forEach((track) => {
+      pauseSound(track);
+    });
+    isHeadFlagOpen = false;
+  }
+});
 
-//=====================
-//step24
+god_button_1.click(() => {
+  godButtonMode = 1;
+});
+god_button_2.click(() => {
+  godButtonMode = 2;
+});
+leftDrum.click(() => {
+  if (godButtonMode === 1) playPausedSound(drumSound[5]);
+});
+rightDrum.click(() => {
+  if (godButtonMode === 1) playPausedSound(drumSound[5]);
+});
 
-//=====================
-//step25
+string.on("touchstart", () => {
+  if (godButtonMode === 2) {
+    player1.start();
+    setTimeout(() => {
+      player2.start();
+    }, 5);
+  }
+});
+string.on("touchmove", function (e) {
+  let stringRightBoundary = this.getBoundingClientRect().right - 30;
+  let stringLeftBoundary = this.getBoundingClientRect().left + 50;
+  let mousePosition = e.touches[0].clientX;
+  let middle = (stringRightBoundary + stringLeftBoundary) / 2;
+
+  if (mousePosition < stringRightBoundary && mousePosition > stringLeftBoundary) {
+    pitchShift1.pitch = mousePosition / 1000 + (mousePosition - middle) / 300;
+    pitchShift2.pitch = mousePosition / 1000 + (mousePosition - middle) / 300;
+  } else {
+    player1.stop();
+    player2.stop();
+  }
+});
+string.on("touchend", () => {
+  player1.stop();
+  player2.stop();
+});
+
+// //=====================
+// //step24
+
+// //=====================
+// //step25
