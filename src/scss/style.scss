@@ -44,7 +44,7 @@ $Color_Orange: #ee8948;
 * {
   // margin: 0;
   // padding: 0;
-  border: 1px solid black;
+  //border: 1px solid black;
 }
 
 section.home {
@@ -173,6 +173,7 @@ section.tutorial {
       flex-direction: column;
 
       .instruction {
+        transition-duration: 0.3s;
         background-image: url("../../assets/img/detail_full_img/detail_full_img_1.png");
         @include imagePosition();
         background-size: 99%;
@@ -183,6 +184,7 @@ section.tutorial {
       }
 
       .step {
+        transition-duration: 0.3s;
         background-image: url("../../assets/img/order_full_img/order_full_img_1.svg");
         @include imagePosition();
         background-size: 99%;
@@ -205,7 +207,7 @@ section.tutorial {
             left: 0;
             right: 0;
             margin: 0 auto;
-            bottom: 5vh;
+            bottom: 2.5vh;
           }
         }
         p {
@@ -235,6 +237,7 @@ section.tutorial {
       bottom: 6vh;
 
       img {
+        transition-duration: 0.1s;
         position: absolute;
       }
 
