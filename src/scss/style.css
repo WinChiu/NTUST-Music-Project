@@ -2,52 +2,85 @@
   font-family: "GenWanMin SB";
   src: url(../../assets/font/GenWanMin-SB.ttf);
 }
+
 @font-face {
   font-family: "Myanmar MN";
   src: url(../../assets/font/MyanmarMN.ttf);
 }
-@keyframes arrowMove {
+
+@-webkit-keyframes arrowMove {
   0% {
-    transform: translateY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
   100% {
-    transform: translateY(1vh);
+    -webkit-transform: translateY(1vh);
+            transform: translateY(1vh);
   }
 }
+
+@keyframes arrowMove {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(1vh);
+            transform: translateY(1vh);
+  }
+}
+
 section.home {
   width: 100%;
   height: 100vh;
   position: relative;
   overflow: hidden;
 }
+
 section.home .bigBackground {
   width: 100%;
   height: 100%;
 }
+
 section.home .bigBackground img.background {
-  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
   position: absolute;
   width: 100vw;
   z-index: -1;
 }
+
 section.home .bigBackground .introContainer {
-  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
   margin-top: 15vh;
   top: 100vh;
-  transform: translateY(0);
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
   opacity: 1;
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   height: 100vh;
 }
+
 section.home .bigBackground .introContainer img.brand {
   width: 100%;
   margin-top: 40px;
 }
+
 section.home .bigBackground .introContainer .introFrame {
   background-image: url("../../assets/img/introFrame.svg");
   background-repeat: no-repeat;
@@ -56,64 +89,94 @@ section.home .bigBackground .introContainer .introFrame {
   width: 80vw;
   height: 65vh;
   background-size: 95%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-shrink: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
   margin-top: 8vh;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 6vh 10vh 0 10vh;
 }
+
 section.home .bigBackground .introContainer .introFrame img {
   visibility: hidden;
 }
+
 section.home .bigBackground .introContainer .introFrame p {
   margin-top: 5vh;
   max-width: 65vw;
 }
+
 section.home .bigBackground .introContainer .introFrame p span.ch {
   font-family: "GenWanMin SB";
   font-size: 1.5vw;
   line-height: 3vw;
   color: #d6d2c7;
 }
+
 section.home .bigBackground .introContainer .introFrame span.en {
   font-family: "Myanmar MN";
   font-size: 1.5vw;
   line-height: 2.5vw;
   color: #d6d2c7;
 }
+
 section.home .bigBackground .introContainer img.arrowIcon {
   cursor: pointer;
   margin-top: 2vh;
   width: 3.5vw;
-  animation: arrowMove 0.5s alternate infinite;
+  -webkit-animation: arrowMove 0.5s alternate infinite;
+          animation: arrowMove 0.5s alternate infinite;
 }
 
 section.tutorial {
-  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
   background-color: #d32b2d;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   width: 100vw;
   height: 100vh;
   position: relative;
   display: none;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   position: absolute;
   top: 0;
 }
+
 section.tutorial article.instructionArea {
-  flex: 3;
-  box-sizing: border-box;
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
+
 section.tutorial article.instructionArea .instructionContainer {
   position: absolute;
   bottom: 4vh;
   left: 3vw;
   width: 75%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
+
 section.tutorial article.instructionArea .instructionContainer .instruction {
   background-image: url("../../assets/img/detail_full_img/detail_full_img_1.png");
   background-repeat: no-repeat;
@@ -121,9 +184,11 @@ section.tutorial article.instructionArea .instructionContainer .instruction {
   background-position: center;
   background-size: 99%;
 }
+
 section.tutorial article.instructionArea .instructionContainer .instruction img {
   visibility: hidden;
 }
+
 section.tutorial article.instructionArea .instructionContainer .step {
   background-image: url("../../assets/img/order_frame.svg");
   background-repeat: no-repeat;
@@ -132,14 +197,19 @@ section.tutorial article.instructionArea .instructionContainer .step {
   background-size: 99%;
   margin-top: 8px;
 }
+
 section.tutorial article.instructionArea .instructionContainer .step img.order_frame {
   visibility: hidden;
 }
+
 section.tutorial article.displayArea {
-  flex: 7;
+  -webkit-box-flex: 7;
+      -ms-flex: 7;
+          flex: 7;
   position: relative;
   overflow: hidden;
 }
+
 section.tutorial article.displayArea .instrument {
   background-image: url("../../assets/img/instrumentComponent/gongche body.svg");
   background-repeat: no-repeat;
@@ -148,111 +218,139 @@ section.tutorial article.displayArea .instrument {
   width: 900px;
   height: 480px;
   background-size: 99%;
-  transform-origin: right bottom;
-  transform: scale(0.9);
+  -webkit-transform-origin: right bottom;
+          transform-origin: right bottom;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
   position: absolute;
   right: 6vh;
   bottom: 6vh;
 }
+
 section.tutorial article.displayArea .instrument img {
   position: absolute;
 }
+
 section.tutorial article.displayArea .instrument .drum {
   width: 106.5px;
 }
+
 section.tutorial article.displayArea .instrument .leftDrum {
   left: 120px;
   top: 11px;
 }
+
 section.tutorial article.displayArea .instrument .rightDrum {
   left: 229px;
   top: 11px;
 }
+
 section.tutorial article.displayArea .instrument .body {
   visibility: hidden;
   position: relative;
 }
+
 section.tutorial article.displayArea .instrument .string {
   width: 604.5px;
   right: 2px;
   bottom: 1px;
 }
+
 section.tutorial article.displayArea .instrument .godButtons {
   width: 166px;
   left: 100px;
   top: 260px;
 }
+
 section.tutorial article.displayArea .instrument .god_button_1 {
   width: 53.22px;
   left: 234px;
   top: 275px;
 }
+
 section.tutorial article.displayArea .instrument .god_button_2 {
   width: 53.22px;
   left: 251px;
   top: 339px;
 }
+
 section.tutorial article.displayArea .instrument .flag_cut_top {
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
   width: 80px;
   left: 485px;
   top: 101px;
 }
+
 section.tutorial article.displayArea .instrument .flag_cut_bottom {
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
   width: 80px;
   left: 458px;
   top: 152px;
 }
+
 section.tutorial article.displayArea .instrument .head_flag {
   width: 22.35px;
   left: 403px;
   top: 133px;
 }
+
 section.tutorial article.displayArea .instrument .long_flag_l,
 section.tutorial article.displayArea .instrument .long_flag_r {
   width: 26.24px;
   left: 795px;
   top: 130px;
 }
+
 section.tutorial article.displayArea .instrument .umbrella1 {
   width: 15.69px;
   left: 608px;
   top: 110px;
 }
+
 section.tutorial article.displayArea .instrument .umbrella2 {
   width: 15.69px;
   left: 659px;
   top: 110px;
 }
+
 section.tutorial article.displayArea .instrument .umbrella3 {
   width: 15.69px;
   left: 583px;
   top: 161px;
 }
+
 section.tutorial article.displayArea .instrument .umbrella4 {
   width: 15.69px;
   left: 633px;
   top: 161px;
 }
+
 section.tutorial article.displayArea .instrument .level_switch {
   width: 65.5px;
   left: 80px;
   top: 252px;
 }
+
 section.tutorial article.displayArea .instrument .screen {
   width: 64.6px;
   left: 698px;
   top: 111px;
 }
+
 section.tutorial article.displayArea .instrument .function_1 {
   width: 55px;
   left: 314px;
   top: 145px;
 }
+
 section.tutorial article.displayArea .instrument .function_2 {
   width: 71px;
   left: 255px;
   top: 204px;
 }
+
 section.tutorial img.manual {
   cursor: pointer;
   position: absolute;
@@ -260,6 +358,7 @@ section.tutorial img.manual {
   right: 5vh;
   bottom: 2vh;
 }
+
 section.tutorial .openingPage {
   display: none;
   position: absolute;
@@ -267,9 +366,11 @@ section.tutorial .openingPage {
   width: 100vw;
   height: 100vh;
 }
+
 section.tutorial .openingPage img.manual_opening {
   position: absolute;
   height: 72vh;
   right: 5vw;
   bottom: 3vw;
 }
+/*# sourceMappingURL=style.css.map */
