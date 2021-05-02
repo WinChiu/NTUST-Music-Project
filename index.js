@@ -3,7 +3,7 @@ function moveHomePageUp_Hand() {
   $(".home .bigBackground .introContainer").css("top", "100vh");
   $("#logoRed").css("opacity", "1");
   $("#logoRed").css("top", "105vh");
-};
+}
 
 function moveHomePage_Scroll(e) {
   if (e.deltaY > 0) {
@@ -17,20 +17,20 @@ function moveHomePage_Scroll(e) {
     $("#logoRed").css("top", "105vh");
     $("#logoRed").css("opacity", "1");
   }
-};
+}
 
 function moveHomePageDown_Hand() {
   $(".home .bigBackground img.background").css("transform", "translateY(-46%)");
   $(".home .bigBackground .introContainer").css("top", "0vh");
   $("#logoRed").css("top", "1vh");
-};
+}
 
 function controlInstrumentSize() {
   var vw = window.innerWidth;
   console.log("controllingSize");
   console.log(vw);
-  $("section.tutorial article.displayArea .instrument").css("transform", "scale(" + (0.9 * vw / 1280) + ")");
-};
+  $("section.tutorial article.displayArea .instrument").css("transform", "scale(" + (0.9 * vw) / 1280 + ")");
+}
 
 function closeOpeningPage() {
   $(".openingPage").fadeOut();
@@ -39,7 +39,6 @@ function closeOpeningPage() {
 function OpeningPage() {
   $(".openingPage").fadeIn();
 }
-
 
 let arrowClick = false;
 
@@ -59,7 +58,6 @@ window.addEventListener("wheel", moveHomePage_Scroll);
 window.addEventListener("swiped-up", moveHomePageDown_Hand);
 window.addEventListener("swiped-down", moveHomePageUp_Hand);
 
-
 $(".arrowIcon").click(function () {
   window.removeEventListener("wheel", moveHomePage_Scroll);
   window.removeEventListener("swiped-up", moveHomePageDown_Hand);
@@ -70,7 +68,7 @@ $(".arrowIcon").click(function () {
   $(".home .bigBackground .introContainer").css("transform", "translateY(50vh)");
   $(".home .bigBackground .introContainer").css({
     // top: "120vh",
-    opacity: "0"
+    opacity: "0",
   });
 
   $(".tutorial").fadeIn();
@@ -102,11 +100,10 @@ $("#logoRed #menu .home").click(function () {
   $(".home .bigBackground img.background").css("top", "0");
   $(".home .bigBackground .introContainer").css({
     top: "100vh",
-    opacity: "1"
+    opacity: "1",
   });
   $(".home .bigBackground .introContainer").css("transform", "translateY(0vh)");
-
-})
+});
 
 // $(".arrowIcon").click(function () {
 //   $("img.logo").attr("src", "./assets/img/brandRed.svg");
