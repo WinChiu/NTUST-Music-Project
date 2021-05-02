@@ -25,6 +25,12 @@ $BGColor: #d32b2d
     font-family: "MyanmarMN"
     src: url(../../assets/font/MyanmarMN.ttf)
 
+@keyframes backTopMove 
+  0% 
+    transform: translateY(0)
+  100% 
+    transform: translateY(1vh)
+
 Scroll Bar
 ::-webkit-scrollbar
     width: 1vw
@@ -53,18 +59,34 @@ html, body
     margin: 0
     padding: 0
     overflow-x: hidden
-    // background-color: $BGColor
-    // overflow: hidden
+    overflow: hidden
 
 body
     background-color: $BGColor
 #sectionDescription
     background-color: $colorGrey
-    position: absolute
     z-index: 5
     width: 100vw
     padding-top: 25vh
     display: none
+
+#sectionDescription #backTop
+    border-radius: 50%
+    position: fixed
+    width: 8vh
+    height: 8vh
+    right: 5vh
+    bottom: 5vh
+    z-index: 1000
+    animation: backTopMove alternate .5s infinite
+    img
+        position: absolute
+        width: 99%
+        cursor: pointer
+    a
+        position: absolute
+        +size(100%)
+    
 
 #sectionDescription p
     font-size: 1.5vw
@@ -115,11 +137,11 @@ body
         justify-content: center
         align-items: center
     #menu img.arrow
+        cursor: pointer
         display: none
         transform: translateY(-20px)
         width: 3.5vw
         z-index: 10
-        cursor: pointer
     #menu .toggle
         // left: 0vw
         position: absolute

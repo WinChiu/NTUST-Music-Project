@@ -54,7 +54,7 @@ section.home .bigBackground .introContainer .introFrame {
   background-size: cover;
   background-position: center;
   width: 80vw;
-  height: 65vh;
+  height: 70vh;
   background-size: 95%;
   display: flex;
   justify-content: center;
@@ -62,13 +62,13 @@ section.home .bigBackground .introContainer .introFrame {
   flex-shrink: 0;
   margin-top: 8vh;
   box-sizing: border-box;
-  padding: 6vh 10vh 0 10vh;
+  padding: 7vh 10vh 0 10vh;
 }
 section.home .bigBackground .introContainer .introFrame img {
   visibility: hidden;
 }
 section.home .bigBackground .introContainer .introFrame p {
-  margin-top: 5vh;
+  margin-top: 6vh;
   max-width: 65vw;
 }
 section.home .bigBackground .introContainer .introFrame p span.ch {
@@ -85,14 +85,16 @@ section.home .bigBackground .introContainer .introFrame span.en {
 }
 section.home .bigBackground .introContainer img.arrowIcon {
   cursor: pointer;
-  margin-top: 2vh;
-  width: 3.5vw;
+  margin-top: -1vh;
+  width: 3vw;
   animation: arrowMove 0.5s alternate infinite;
 }
 
 section.tutorial {
+  user-select: none;
   transition-duration: 0.5s;
   background-color: #d32b2d;
+  transform: translateY(0);
   box-sizing: border-box;
   width: 100vw;
   height: 100vh;
@@ -130,7 +132,7 @@ section.tutorial article.instructionArea .instructionContainer .step {
   background-size: cover;
   background-position: center;
   background-size: 99%;
-  margin-top: 8px;
+  margin-top: 2vh;
 }
 section.tutorial article.instructionArea .instructionContainer .step img.order_frame {
   visibility: hidden;
@@ -258,7 +260,8 @@ section.tutorial img.manual {
   position: absolute;
   width: 8vh;
   right: 5vh;
-  bottom: 2vh;
+  bottom: 4vh;
+  transform: scale(0.99);
 }
 section.tutorial .openingPage {
   display: none;

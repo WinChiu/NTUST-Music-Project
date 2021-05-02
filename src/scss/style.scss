@@ -93,7 +93,7 @@ section.home {
       .introFrame {
         background-image: url("../../assets/img/introFrame.svg");
         @include imagePosition();
-        @include size(80vw, 65vh);
+        @include size(80vw, 70vh);
         // height: 50vh;
         //@include size(85vw, 75vh);
         background-size: 95%;
@@ -103,14 +103,14 @@ section.home {
         flex-shrink: 0;
         margin-top: 8vh;
         box-sizing: border-box;
-        padding: 6vh 10vh 0 10vh;
+        padding: 7vh 10vh 0 10vh;
 
         img {
           visibility: hidden;
         }
 
         p {
-          margin-top: 5vh;
+          margin-top: 6vh;
           max-width: 65vw;
 
           span.ch {
@@ -133,8 +133,8 @@ section.home {
 
       img.arrowIcon {
         cursor: pointer;
-        margin-top: 2vh;
-        width: 3.5vw;
+        margin-top: -1vh;
+        width: 3vw;
         animation: arrowMove .5s alternate infinite;
       }
     }
@@ -142,8 +142,10 @@ section.home {
 }
 
 section.tutorial {
+  user-select: none;
   transition-duration: 0.5s;
   background-color: $BGColor;
+  transform: translateY(0);
   box-sizing: border-box;
   // padding: 20vh 10vh 0px 10vh;
   @include size(100vw, 100vh);
@@ -184,7 +186,7 @@ section.tutorial {
         background-image: url("../../assets/img/order_frame.svg");
         @include imagePosition();
         background-size: 99%;
-        margin-top: 8px;
+        margin-top: 2vh;
 
         img.order_frame {
           visibility: hidden;
@@ -336,7 +338,8 @@ section.tutorial {
     position: absolute;
     width: 8vh;
     right: 5vh;
-    bottom: 2vh;
+    bottom: 4vh;
+    transform: scale(0.99);
   }
 
   .openingPage {
