@@ -23,12 +23,18 @@ const umbrellaA = ["#A1", "#A2", "#A3", "#A4"];
 const umbrellaD = ["#D1", "#D2", "#D3", "#D4", "#D5"];
 const umbrellaDelay1 = ["#delay1", "#delay2", "#delay3"];
 const umbrellaDelay2 = ["#delay4-1", "#delay4-2", "#delay4-3"];
-let function1Pressing = true;
+const tracks = ["#track1", "#track2", "#track3", "#track4"];
+let function1Pressing = false;
 let function2Pressing = true;
 
 const stopPlaying = () => {
   $("audio").each(function () {
     this.pause();
+    this.currentTime = 0;
+  });
+};
+const alignSoundTracks = () => {
+  $("audio").each(function () {
     this.currentTime = 0;
   });
 };
@@ -40,6 +46,7 @@ const playSound = (soundCode) => {
   }
 };
 const playPausedSound = (soundCode) => {
+  $(soundCode)[0].currentTime = 0;
   $(soundCode)[0].play();
 };
 const pauseSound = (soundCode) => {
@@ -101,6 +108,50 @@ rightDrum.unbind();
 //=====================
 //step3
 
+let player1 = new Tone.Player({
+  url: "./assets/audio/菜刀旗/sona0 0_noStop.mp3",
+  loop: true,
+});
+let player2 = new Tone.Player({
+  url: "./assets/audio/菜刀旗/sona0 0_noStop.mp3",
+  loop: true,
+});
+
+var pitchShift1 = new Tone.PitchShift({
+  pitch: 0,
+}).toMaster();
+var pitchShift2 = new Tone.PitchShift({
+  pitch: 0,
+}).toMaster();
+
+player1.connect(pitchShift1);
+player2.connect(pitchShift2);
+
+string.on("touchstart", () => {
+  //playSound(stringSound);
+  player1.start();
+  setTimeout(() => {
+    player2.start();
+  }, 5);
+});
+string.on("touchmove", function (e) {
+  let stringRightBoundary = this.getBoundingClientRect().right - 30;
+  let stringLeftBoundary = this.getBoundingClientRect().left + 50;
+  let mousePosition = e.touches[0].clientX;
+  let middle = (stringRightBoundary + stringLeftBoundary) / 2;
+  if (mousePosition < stringRightBoundary && mousePosition > stringLeftBoundary) {
+    pitchShift1.pitch = mousePosition / 650 + (mousePosition - middle) / 150;
+    pitchShift2.pitch = mousePosition / 650 + (mousePosition - middle) / 150;
+  } else {
+    player1.stop();
+    player2.stop();
+  }
+});
+string.on("touchend", () => {
+  player1.stop();
+  player2.stop();
+});
+string.unbind();
 //=====================
 //step4
 
@@ -287,7 +338,6 @@ umbrella4.unbind();
 document.querySelector("#sonahigh").playbackRate = 8;
 long_flag.click(() => {
   document.querySelector("#sonahigh").play();
-
   //$("#sonahigh")[0].playbackRate = 3;
   //playSound("#sonahigh");
 });
@@ -313,7 +363,7 @@ function_1.on("touchend", () => {
   function1Pressing = false;
 });
 
-rightDrum.click(() => {
+leftDrum.click(() => {
   $("#BeiguanD1")[0].loop = true;
   $("#BeiguanD1")[0].playbackRate = 4.58;
   if (function1Pressing) {
@@ -327,11 +377,11 @@ rightDrum.click(() => {
   }
 });
 function_1.unbind();
-rightDrum.unbind();
+leftDrum.unbind();
 //=====================
 //step16
 
-let step16IsPlaying = false;
+let isRecording = false;
 
 function_2.on("touchstart", () => {
   function2Pressing = true;
@@ -341,27 +391,176 @@ function_2.on("touchend", () => {
   function2Pressing = false;
 });
 
-rightDrum.click(() => {
+leftDrum.click(() => {
+  console.log(123);
   $("#BeiguanD1")[0].loop = true;
   $("#BeiguanD1")[0].playbackRate = 4.58;
   $("#BeiguanD1")[0].volume = 0.3;
   if (function1Pressing) {
-    if (step16IsPlaying) {
+    if (isRecording) {
       pauseSound("#BeiguanD1");
-      step16IsPlaying = !step16IsPlaying;
+      isRecording = !isRecording;
     } else {
       playPausedSound("#BeiguanD1");
-      step16IsPlaying = !step16IsPlaying;
+      isRecording = !isRecording;
     }
   }
 });
-// function_2.unbind();
-// rightDrum.unbind();
+
+leftDrum.unbind();
+function_2.unbind();
+
 //=====================
 //step17
 
-//=====================
-//step18
+let godButtonMode = 1; // 1 or 2
+
+//Directly play BeiguanD1
+function_1.click(() => {
+  $("#BeiguanD1")[0].loop = true;
+  $("#BeiguanD1")[0].playbackRate = 4.58;
+  $("#BeiguanD1")[0].volume = 1;
+  playPausedSound("#BeiguanD1");
+});
+
+god_button_1.click(() => {
+  godButtonMode = 1;
+});
+god_button_2.click(() => {
+  godButtonMode = 2;
+});
+leftDrum.click(() => {
+  if (godButtonMode === 1) playPausedSound(drumSound[5]);
+});
+rightDrum.click(() => {
+  if (godButtonMode === 1) playPausedSound(drumSound[5]);
+});
+function_1.unbind();
+god_button_1.unbind();
+god_button_2.unbind();
+leftDrum.unbind();
+rightDrum.unbind();
+
+//Add the function the same as step3
 
 //=====================
+//step18
+//Nothing happen
+//=====================
 //step19
+//Nothing happen
+
+//=====================
+//step20
+
+//Should be twitch
+
+head_flag.click(() => {
+  $("#track1")[0].loop = true;
+  playPausedSound("#track1");
+});
+
+//=====================
+//step21
+let track2Playing = false;
+function_1.on("touchstart", () => {
+  function1Pressing = true;
+});
+function_1.on("touchend", () => {
+  function1Pressing = false;
+});
+rightDrum.click(() => {
+  if (function1Pressing) {
+    $("#track2")[0].loop = true;
+    alignSoundTracks();
+    playPausedSound("#track2");
+    track2Playing = true;
+  }
+});
+leftDrum.click(() => {
+  if (function1Pressing) {
+    pauseSound("#track2");
+    track2Playing = false;
+  }
+});
+
+head_flag.unbind();
+function_1.unbind();
+rightDrum.unbind();
+leftDrum.unbind();
+
+//=====================
+//step22
+
+let unMutedTracks = ["#track1", "#track4"];
+let isHeadFlagOpen = false;
+let selectedTrack = 0;
+tracks.forEach((track) => {
+  $(`${track}`)[0].loop = true;
+});
+
+function_1.on("touchstart", () => {
+  function1Pressing = true;
+});
+function_1.on("touchend", () => {
+  function1Pressing = false;
+});
+head_flag.click(() => {
+  stopPlaying();
+  if (!isHeadFlagOpen) {
+    alignSoundTracks();
+    unMutedTracks.forEach((track) => {
+      playPausedSound(track);
+    });
+    isHeadFlagOpen = true;
+  } else {
+    unMutedTracks.forEach((track) => {
+      pauseSound(track);
+    });
+    isHeadFlagOpen = false;
+  }
+});
+string.on("swiped-left", () => {
+  if (function1Pressing) {
+    if (selectedTrack === 0) {
+      selectedTrack = tracks.length - 1;
+    } else {
+      selectedTrack--;
+    }
+    console.log(tracks[selectedTrack]);
+  }
+});
+string.on("swiped-right", () => {
+  if (function1Pressing) {
+    if (selectedTrack === tracks.length - 1) {
+      selectedTrack = 0;
+    } else {
+      selectedTrack++;
+    }
+    console.log(tracks[selectedTrack]);
+  }
+});
+
+leftDrum.click(() => {
+  if (function1Pressing) {
+    unMutedTracks = unMutedTracks.filter((track) => track !== tracks[selectedTrack]);
+  } else {
+    playPausedSound(drumSound[0]);
+  }
+  console.log(unMutedTracks);
+});
+rightDrum.click(() => {
+  if (function1Pressing) {
+    if (!unMutedTracks.find((track) => track === tracks[selectedTrack])) unMutedTracks.push(tracks[selectedTrack]);
+  }
+  console.log(unMutedTracks);
+});
+
+//=====================
+//step23
+
+//=====================
+//step24
+
+//=====================
+//step25

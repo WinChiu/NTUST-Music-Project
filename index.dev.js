@@ -9,8 +9,6 @@ function moveHomePageUp_Hand() {
   $("#logoRed").css("top", "105vh");
 }
 
-;
-
 function moveHomePage_Scroll(e) {
   if (e.deltaY > 0) {
     $(".home .bigBackground img.background").css("transform", "translateY(-46%)");
@@ -25,24 +23,18 @@ function moveHomePage_Scroll(e) {
   }
 }
 
-;
-
 function moveHomePageDown_Hand() {
   $(".home .bigBackground img.background").css("transform", "translateY(-46%)");
   $(".home .bigBackground .introContainer").css("top", "0vh");
   $("#logoRed").css("top", "1vh");
 }
 
-;
-
 function controlInstrumentSize() {
   var vw = window.innerWidth;
   console.log("controllingSize");
   console.log(vw);
-  $("section.tutorial article.displayArea .instrument").css("transform", "scale(" + 0.9 * vw / 1280 + ")");
+  $("section.tutorial article.displayArea .instrument").css("transform", "scale(" + (0.9 * vw) / 1280 + ")");
 }
-
-;
 
 function closeOpeningPage() {
   $(".openingPage").fadeOut();
@@ -88,7 +80,7 @@ function addWindowScrollControl() {
 }
 
 function toHome() {
-  $("#logoRed #menu .toggle h3.home").css('color', "rgba(0,0,0,0.6)");
+  $("#logoRed #menu .toggle h3.home").css("color", "rgba(0,0,0,0.6)");
   $("section.home").fadeIn();
   $("#logoRed").fadeIn(1000);
   $("#logoRed").css("display", "flex");
@@ -101,7 +93,7 @@ function toHome() {
   $(".home .bigBackground img.background").css("top", "0");
   $(".home .bigBackground .introContainer").css({
     top: "100vh",
-    opacity: "1"
+    opacity: "1",
   });
   $(".home .bigBackground .introContainer").css("transform", "translateY(0vh)");
 }
@@ -111,14 +103,14 @@ function toDescription() {
   $("html").css("overflow-y", "initial");
   $("body").css("background", "#DBDBDD");
   $("#logoRed #menu .toggle h3").css("color", "#B13234");
-  $("#logoRed #menu .toggle h3.description").css('color', "rgba(0,0,0,0.6)");
+  $("#logoRed #menu .toggle h3.description").css("color", "rgba(0,0,0,0.6)");
   $("#logoRed img.logo").attr("src", "./assets/img/brandRed.svg");
   $("#logoRed #menu img.arrow").attr("src", "./assets/img/menu/menuArrowRed.svg");
   $("#sectionDescription").fadeIn();
 }
 
 function toTutorial() {
-  $("#logoRed #menu h3.play").css('color', "rgba(0,0,0,0.6)");
+  $("#logoRed #menu h3.play").css("color", "rgba(0,0,0,0.6)");
   $("#logoRed #menu .toggle").fadeOut();
   $(".tutorial").fadeIn();
   $(".tutorial").css("display", "flex");
@@ -127,26 +119,26 @@ function toTutorial() {
 }
 
 function leaveTutorialToHome() {
-  $('.tutorial').fadeOut();
-  $('.tutorial').css("transform", "translateY(100vh)");
+  $(".tutorial").fadeOut();
+  $(".tutorial").css("transform", "translateY(100vh)");
   setTimeout(function () {
-    $('.tutorial').css("transform", "translateY(0vh)");
+    $(".tutorial").css("transform", "translateY(0vh)");
   }, 600);
 }
 
 function leaveTutorial() {
-  $("#logoRed #menu h3.play").css('color', "#DBDBDD");
-  $('.tutorial').fadeOut();
+  $("#logoRed #menu h3.play").css("color", "#DBDBDD");
+  $(".tutorial").fadeOut();
 }
 
 function leaveHome() {
-  $("#logoRed #menu .toggle h3.home").css('color', "#DBDBDD");
+  $("#logoRed #menu .toggle h3.home").css("color", "#DBDBDD");
   $("#logoRed").css("top", "0vh");
   $("#logoRed").css("padding-top", "2vh");
   $(".home .bigBackground img.background").css("top", "-100vh");
   $(".home .bigBackground .introContainer").css("transform", "translateY(100vh)");
   $(".home .bigBackground .introContainer").css({
-    opacity: "0"
+    opacity: "0",
   });
   setTimeout(function () {
     $("section.home").fadeOut();
@@ -154,7 +146,7 @@ function leaveHome() {
 }
 
 function leaveDescription() {
-  $("#logoRed #menu .toggle h3.description").css('color', "#B13234");
+  $("#logoRed #menu .toggle h3.description").css("color", "#B13234");
   $("body").css("overflow-y", "hidden");
   $("html").css("overflow-y", "hidden");
   $("body").css("background", "#d32b2d");
@@ -163,7 +155,6 @@ function leaveDescription() {
   $("#logoRed #menu img.arrow").attr("src", "./assets/img/menu/meun_arrow.svg");
   $("#sectionDescription").fadeOut();
 } //Arrow Control
-
 
 $("#logoRed #menu").click(controlArrow); //Home Page Control
 
@@ -198,10 +189,13 @@ $("#logoRed #menu .play").click(function () {
   toTutorial();
 }); //BackTop Transition
 
-$(document).on('click', 'a', function (e) {
+$(document).on("click", "a", function (e) {
   e.preventDefault();
   var target = $(this).attr("href");
-  $("html, body").animate({
-    scrollTop: $(target).offset().top
-  }, 500);
+  $("html, body").animate(
+    {
+      scrollTop: $(target).offset().top,
+    },
+    500
+  );
 });
