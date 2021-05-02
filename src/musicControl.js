@@ -6,6 +6,7 @@ const god_button_2 = $(".god_button_2");
 const flag_cut_top = $(".flag_cut_top");
 const flag_cut_bottom = $(".flag_cut_bottom");
 const head_flag = $(".head_flag");
+const long_flag = $(".long_flag");
 const long_flag_r = $(".long_flag_r");
 const long_flag_l = $(".long_flag_l");
 const umbrella1 = $(".umbrella1");
@@ -20,8 +21,10 @@ const drumSound = ["#BeiguanC1", "#BeiguanC4", "#BeiguanC6", "#BeiguanC8", "#Bei
 const melodySound = []; //to be added
 const umbrellaA = ["#A1", "#A2", "#A3", "#A4"];
 const umbrellaD = ["#D1", "#D2", "#D3", "#D4", "#D5"];
-const umbrellaDelay1 = [];
-const umbrellaDelay2 = [];
+const umbrellaDelay1 = ["#delay1", "#delay2", "#delay3"];
+const umbrellaDelay2 = ["#delay4-1", "#delay4-2", "#delay4-3"];
+let function1Pressing = true;
+let function2Pressing = true;
 
 const stopPlaying = () => {
   $("audio").each(function () {
@@ -35,6 +38,12 @@ const playSound = (soundCode) => {
     $(soundCode)[0].currentTime = 0;
     $(soundCode)[0].play();
   }
+};
+const playPausedSound = (soundCode) => {
+  $(soundCode)[0].play();
+};
+const pauseSound = (soundCode) => {
+  $(soundCode)[0].pause();
 };
 
 //step1
@@ -51,7 +60,6 @@ rightDrum.unbind("click");
 //=====================
 //step2
 
-let function1Pressing = false;
 let nowPlayingDrumSound = 0;
 function_1.on("touchstart", () => {
   function1Pressing = true;
@@ -211,9 +219,149 @@ flag_cut_top.unbind();
 flag_cut_bottom.unbind();
 //=====================
 //step6
+//Nothing happen
 
 //=====================
 //step7
 
+let nowPlayingUmbrellaASound = 0;
+
+umbrella1.click(() => {
+  console.log(nowPlayingUmbrellaASound);
+  if (nowPlayingUmbrellaASound === umbrellaA.length - 1) {
+    nowPlayingUmbrellaASound = 0;
+  } else {
+    nowPlayingUmbrellaASound++;
+  }
+  playSound(umbrellaA[nowPlayingUmbrellaASound]);
+});
+
+umbrella1.unbind();
 //=====================
 //step8
+
+let nowPlayingUmbrellaDSound = 0;
+
+umbrella2.click(() => {
+  if (nowPlayingUmbrellaDSound === umbrellaD.length - 1) {
+    nowPlayingUmbrellaDSound = 0;
+  } else {
+    nowPlayingUmbrellaDSound++;
+  }
+  playSound(umbrellaD[nowPlayingUmbrellaDSound]);
+});
+
+umbrella2.unbind();
+
+//=====================
+//step9
+let nowPlayingUmbrellaDelay1Sound = 0;
+
+umbrella3.click(() => {
+  if (nowPlayingUmbrellaDelay1Sound === umbrellaDelay1.length - 1) {
+    nowPlayingUmbrellaDelay1Sound = 0;
+  } else {
+    nowPlayingUmbrellaDelay1Sound++;
+  }
+  playSound(umbrellaDelay1[nowPlayingUmbrellaDelay1Sound]);
+});
+
+umbrella3.unbind();
+//=====================
+//step10
+let nowPlayingUmbrellaDelay2Sound = 0;
+
+umbrella4.click(() => {
+  if (nowPlayingUmbrellaDelay2Sound === umbrellaDelay2.length - 1) {
+    nowPlayingUmbrellaDelay2Sound = 0;
+  } else {
+    nowPlayingUmbrellaDelay2Sound++;
+  }
+  playSound(umbrellaDelay2[nowPlayingUmbrellaDelay2Sound]);
+});
+
+umbrella4.unbind();
+//=====================
+//step11
+
+document.querySelector("#sonahigh").playbackRate = 8;
+long_flag.click(() => {
+  document.querySelector("#sonahigh").play();
+
+  //$("#sonahigh")[0].playbackRate = 3;
+  //playSound("#sonahigh");
+});
+long_flag.unbind();
+//=====================
+//step12
+//Nothing happen
+//=====================
+//step13
+//Nothing happen
+//=====================
+//step14
+//Nothing happen
+//=====================
+//step15
+let step15IsPlaying = false;
+
+function_1.on("touchstart", () => {
+  function1Pressing = true;
+});
+
+function_1.on("touchend", () => {
+  function1Pressing = false;
+});
+
+rightDrum.click(() => {
+  $("#BeiguanD1")[0].loop = true;
+  $("#BeiguanD1")[0].playbackRate = 4.58;
+  if (function1Pressing) {
+    if (step15IsPlaying) {
+      pauseSound("#BeiguanD1");
+      step15IsPlaying = !step15IsPlaying;
+    } else {
+      playPausedSound("#BeiguanD1");
+      step15IsPlaying = !step15IsPlaying;
+    }
+  }
+});
+function_1.unbind();
+rightDrum.unbind();
+//=====================
+//step16
+
+let step16IsPlaying = false;
+
+function_2.on("touchstart", () => {
+  function2Pressing = true;
+});
+
+function_2.on("touchend", () => {
+  function2Pressing = false;
+});
+
+rightDrum.click(() => {
+  $("#BeiguanD1")[0].loop = true;
+  $("#BeiguanD1")[0].playbackRate = 4.58;
+  $("#BeiguanD1")[0].volume = 0.3;
+  if (function1Pressing) {
+    if (step16IsPlaying) {
+      pauseSound("#BeiguanD1");
+      step16IsPlaying = !step16IsPlaying;
+    } else {
+      playPausedSound("#BeiguanD1");
+      step16IsPlaying = !step16IsPlaying;
+    }
+  }
+});
+// function_2.unbind();
+// rightDrum.unbind();
+//=====================
+//step17
+
+//=====================
+//step18
+
+//=====================
+//step19
