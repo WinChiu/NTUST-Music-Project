@@ -33,7 +33,7 @@ function controlInstrumentSize() {
   var vw = window.innerWidth;
   console.log("controllingSize");
   console.log(vw);
-  $("section.tutorial article.displayArea .instrument").css("transform", "scale(" + (0.9 * vw) / 1280 + ")");
+  $("section.tutorial article.displayArea .instrument").css("transform", "scale(" + 0.9 * vw / 1280 + ")");
 }
 
 function closeOpeningPage() {
@@ -93,7 +93,7 @@ function toHome() {
   $(".home .bigBackground img.background").css("top", "0");
   $(".home .bigBackground .introContainer").css({
     top: "100vh",
-    opacity: "1",
+    opacity: "1"
   });
   $(".home .bigBackground .introContainer").css("transform", "translateY(0vh)");
 }
@@ -136,9 +136,9 @@ function leaveHome() {
   $("#logoRed").css("top", "0vh");
   $("#logoRed").css("padding-top", "2vh");
   $(".home .bigBackground img.background").css("top", "-100vh");
-  $(".home .bigBackground .introContainer").css("transform", "translateY(100vh)");
+  $(".home .bigBackground .introContainer").css("transform", "translateY(10vh)");
   $(".home .bigBackground .introContainer").css({
-    opacity: "0",
+    opacity: "0"
   });
   setTimeout(function () {
     $("section.home").fadeOut();
@@ -155,6 +155,7 @@ function leaveDescription() {
   $("#logoRed #menu img.arrow").attr("src", "./assets/img/menu/meun_arrow.svg");
   $("#sectionDescription").fadeOut();
 } //Arrow Control
+
 
 $("#logoRed #menu").click(controlArrow); //Home Page Control
 
@@ -192,10 +193,7 @@ $("#logoRed #menu .play").click(function () {
 $(document).on("click", "a", function (e) {
   e.preventDefault();
   var target = $(this).attr("href");
-  $("html, body").animate(
-    {
-      scrollTop: $(target).offset().top,
-    },
-    500
-  );
+  $("html, body").animate({
+    scrollTop: $(target).offset().top
+  }, 500);
 });
