@@ -369,9 +369,11 @@ section.tutorial article.displayArea .instrument .umbrella4 {
 }
 
 section.tutorial article.displayArea .instrument .level_switch {
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
   width: 65.5px;
-  left: 80px;
-  top: 252px;
+  left: 70px;
+  top: 262px;
 }
 
 section.tutorial article.displayArea .instrument .screen {

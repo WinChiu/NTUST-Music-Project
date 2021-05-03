@@ -13,27 +13,42 @@
   font-family: "MyanmarMN";
   src: url(../../assets/font/MyanmarMN.ttf);
 }
-@keyframes backTopMove {
+
+@-webkit-keyframes backTopMove {
   0% {
-    transform: translateY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
   100% {
-    transform: translateY(1vh);
+    -webkit-transform: translateY(1vh);
+            transform: translateY(1vh);
   }
 }
+
+@keyframes backTopMove {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(1vh);
+            transform: translateY(1vh);
+  }
+}
+
 ::-webkit-scrollbar {
   width: 1vw;
   background-color: rgba(255, 255, 255, 0.6);
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #dbdbdd;
+  background-color: #DBDBDD;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #b13234;
+  background-color: #B13234;
   border-radius: 20px;
-  border: solid 3px #dbdbdd;
+  border: solid 3px #DBDBDD;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -41,24 +56,23 @@
 }
 
 ::-moz-selection {
-  background-color: #b13234;
-  color: #dbdbdd;
+  background-color: #B13234;
+  color: #DBDBDD;
 }
 
 ::selection {
-  background-color: #b13234;
-  color: #dbdbdd;
+  background-color: #B13234;
+  color: #DBDBDD;
 }
 
 * {
   position: relative;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   font-family: "GenWanMin-SB", "MyanmarMN";
 }
 
-html,
-body {
+html, body {
   width: 100vw;
   height: 100vh;
   margin: 0;
@@ -72,7 +86,7 @@ body {
 }
 
 #sectionDescription {
-  background-color: #dbdbdd;
+  background-color: #DBDBDD;
   z-index: 5;
   width: 100vw;
   padding-top: 25vh;
@@ -87,13 +101,16 @@ body {
   right: 5vh;
   bottom: 5vh;
   z-index: 1000;
-  animation: backTopMove alternate 0.5s infinite;
+  -webkit-animation: backTopMove alternate .5s infinite;
+          animation: backTopMove alternate .5s infinite;
 }
+
 #sectionDescription #backTop img {
   position: absolute;
   width: 99%;
   cursor: pointer;
 }
+
 #sectionDescription #backTop a {
   position: absolute;
   width: 100%;
@@ -103,18 +120,18 @@ body {
 #sectionDescription p {
   font-size: 1.5vw;
   line-height: 200%;
-  letter-spacing: 0.5vh;
-  color: #375a77;
+  letter-spacing: .5vh;
+  color: #375A77;
 }
 
 #sectionDescription .title {
-  color: #b13234;
+  color: #B13234;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-top: 10vh;
   margin-bottom: 6vh;
 }
@@ -126,31 +143,31 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 #sectionDescription .title span.en {
   font-family: "MyanmarMN";
-  top: 0.6vh;
+  top: .6vh;
   font-size: 3.5vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 #logoRed {
   -webkit-transition-duration: 0.5s;
-  transition-duration: 0.5s;
+          transition-duration: 0.5s;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   top: 105vh;
   padding-top: 6vh;
   z-index: 10;
@@ -167,14 +184,14 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   opacity: 1;
 }
 
@@ -185,21 +202,21 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #logoRed #menu img.arrow {
   cursor: pointer;
   display: none;
   -webkit-transform: translateY(-20px);
-  transform: translateY(-20px);
+          transform: translateY(-20px);
   width: 3.5vw;
   z-index: 10;
 }
@@ -210,16 +227,16 @@ body {
   text-align: center;
   display: none;
   -ms-flex-pack: distribute;
-  justify-content: space-around;
+      justify-content: space-around;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #logoRed #menu .toggle h3 {
   cursor: pointer;
   left: 2vw;
-  color: #dbdbdd;
+  color: #DBDBDD;
   margin: 0;
   margin-top: 4vh;
   font-size: 3vh;
@@ -238,11 +255,11 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 #sectionDescription #background .synthesizer .keyboard .left img {
@@ -267,13 +284,13 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -ms-flex-pack: distribute;
-  justify-content: space-around;
+      justify-content: space-around;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #sectionDescription #background .synthesizer .keyboard .right img.keyboard_img {
@@ -295,8 +312,8 @@ body {
 
 #sectionDescription #background .culture .left {
   -webkit-box-flex: 6;
-  -ms-flex: 6;
-  flex: 6;
+      -ms-flex: 6;
+          flex: 6;
 }
 
 #sectionDescription #background .culture .left img {
@@ -306,18 +323,18 @@ body {
 
 #sectionDescription #background .culture .right {
   -webkit-box-flex: 4;
-  -ms-flex: 4;
-  flex: 4;
+      -ms-flex: 4;
+          flex: 4;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 #sectionDescription #background .culture .right .col {
@@ -325,19 +342,17 @@ body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-  justify-content: space-around;
+      justify-content: space-around;
 }
 
-#sectionDescription #background .culture .right .col .col1,
-#sectionDescription #background .culture .right .col .col2,
-#sectionDescription #background .culture .right .col .col3 {
+#sectionDescription #background .culture .right .col .col1, #sectionDescription #background .culture .right .col .col2, #sectionDescription #background .culture .right .col .col3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 #sectionDescription #background .culture .right p {
@@ -353,7 +368,7 @@ body {
 #sectionDescription #background .culture .right .col .name {
   font-size: 3vh;
   letter-spacing: 1vh;
-  color: #b13234;
+  color: #B13234;
   text-align: center;
   margin-top: 2vh;
 }
@@ -368,11 +383,11 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #sectionDescription #counterfactual .intro img {
@@ -399,17 +414,17 @@ body {
 
 #sectionDescription #counterfactual .idea .left {
   -webkit-box-flex: 5;
-  -ms-flex: 5;
-  flex: 5;
+      -ms-flex: 5;
+          flex: 5;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #sectionDescription #counterfactual .idea .left img {
@@ -418,18 +433,18 @@ body {
 
 #sectionDescription #counterfactual .idea .right {
   -webkit-box-flex: 5;
-  -ms-flex: 5;
-  flex: 5;
+      -ms-flex: 5;
+          flex: 5;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   top: 5vh;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #sectionDescription #counterfactual .idea .right p {
@@ -446,14 +461,14 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #sectionDescription #counterfactual .showcases .products img {
@@ -468,11 +483,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #sectionDescription #counterfactual .level img {
@@ -488,11 +503,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 #sectionDescription #counterfactual .designByPart .big img {
@@ -530,26 +545,26 @@ body {
   width: 100vw;
   height: 30vh;
   margin-top: 20vh;
-  background-color: #cacaca;
+  background-color: #CACACA;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #sectionDescription #footer .contributor {
   color: #666;
   font-size: 2vh;
   line-height: 4vh;
-  letter-spacing: 0.1vh;
+  letter-spacing: .1vh;
 }
 
 #sectionDescription #footer .contributor b {
-  color: #375a77;
+  color: #375A77;
 }
 /*# sourceMappingURL=style.css.map */

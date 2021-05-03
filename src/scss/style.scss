@@ -1,7 +1,7 @@
 $FontColor: #d6d2c7;
 $BGColor: #d32b2d;
 $Color_Orange: #ee8948;
-
+$Color_OrangeGlass: #ee8848af;
 @font-face {
   font-family: "GenWanMin SB";
   src: url(../../assets/font/GenWanMin-SB.ttf);
@@ -336,9 +336,10 @@ section.tutorial {
       }
 
       .level_switch {
+        transition-duration: 0.3s;
         width: 65.5px;
-        left: 80px;
-        top: 252px;
+        left: 70px;
+        top: 262px;
       }
 
       .screen {
