@@ -69,6 +69,7 @@ section.home {
     }
 
     .introContainer {
+      z-index: 10;
       transition-duration: .5s;
       margin-top: 15vh;
       //show main page

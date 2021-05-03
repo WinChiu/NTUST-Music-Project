@@ -31,6 +31,7 @@ section.home .bigBackground img.background {
   z-index: -1;
 }
 section.home .bigBackground .introContainer {
+  z-index: 10;
   transition-duration: 0.5s;
   margin-top: 15vh;
   top: 100vh;

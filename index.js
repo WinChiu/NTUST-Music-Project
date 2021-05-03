@@ -122,7 +122,7 @@ function leaveHome(){
   $("#logoRed").css("top", "0vh");
   $("#logoRed").css("padding-top", "2vh");
   $(".home .bigBackground img.background").css("top", "-100vh");
-  $(".home .bigBackground .introContainer").css("transform", "translateY(100vh)");
+  $(".home .bigBackground .introContainer").css("transform", "translateY(10vh)");
   $(".home .bigBackground .introContainer").css({
     opacity: "0"
   });
