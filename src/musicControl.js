@@ -517,58 +517,7 @@ const setListener = (step) => {
       let isRecording = false;
 
       function_2.on("touchstart", () => {
-        function2Pressing = true;
-      });
-
-      function_2.on("touchend", () => {
-        function2Pressing = false;
-      });
-
-      rightDrum.click(() => {
-        $("#BeiguanD1")[0].loop = true;
-        $("#BeiguanD1")[0].playbackRate = 4.58;
-        $("#BeiguanD1")[0].volume = 0.3;
-        if (function1Pressing && !step15IsPlaying) {
-          step15IsPlaying = true;
-          playPausedSound("#BeiguanD1");
-        }
-      });
-
-      leftDrum.click(() => {
-        $("#BeiguanD1")[0].loop = true;
-        $("#BeiguanD1")[0].playbackRate = 4.58;
-        $("#BeiguanD1")[0].volume = 0.3;
-        if (function1Pressing) {
-          step15IsPlaying = false;
-          pauseSound("#BeiguanD1");
-        }
-      });
-      break;
-    case 17:
-      unSelectAll();
-      selectInstrumentComponent(leftDrum, "left_drum_select.svg", false);
-      selectInstrumentComponent(rightDrum, "right_drum_select.svg", false);
-      selectInstrumentComponent(string, "string_select.svg", false);
-      selectInstrumentComponent(god_button_1, "god_button_1_select.svg", false);
-      selectInstrumentComponent(god_button_2, "god_button_2_select.svg", false);
-
-      unBindAll();
-      //Directly play BeiguanD1
-      $("#BeiguanD1")[0].loop = true;
-      $("#BeiguanD1")[0].playbackRate = 4.58;
-      $("#BeiguanD1")[0].volume = 1;
-      playPausedSound("#BeiguanD1");
-
-      god_button_1.click(() => {
-        godButtonMode = 1;
-      });
-      god_button_2.click(() => {
-        godButtonMode = 2;
-      });
-      leftDrum.click(() => {
-        if (godButtonMode === 1) playPausedSound(drumSound[5]);
-      });
-      rightDrum.click(() => {
+  
         if (godButtonMode === 1) playPausedSound(drumSound[5]);
       });
 
