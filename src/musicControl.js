@@ -517,7 +517,7 @@ const setListener = (step) => {
       let isRecording = false;
 
       function_2.on("touchstart", () => {
-  
+
         if (godButtonMode === 1) playPausedSound(drumSound[5]);
       });
 
