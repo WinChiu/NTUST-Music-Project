@@ -42,9 +42,9 @@ $Color_OrangeGlass: #ee8848af;
 }
 
 // * {
-  // margin: 0;
-  // padding: 0;
-  //border: 1px solid black;
+// margin: 0;
+// padding: 0;
+//border: 1px solid black;
 // }
 
 section.home {
@@ -69,12 +69,12 @@ section.home {
     }
 
     .introContainer {
-// <<<<<<< HEAD
+      // <<<<<<< HEAD
       transition-duration: 0.5s;
-// =======
+      // =======
       z-index: 10;
-      transition-duration: .5s;
-// >>>>>>> transition
+      transition-duration: 0.5s;
+      // >>>>>>> transition
       margin-top: 15vh;
       //show main page
       top: 100vh;
@@ -162,7 +162,7 @@ section.tutorial {
   top: 0;
 
   // article {
-    // @include size(80vw, 80vh);
+  // @include size(80vw, 80vh);
   // }
 
   article.instructionArea {
@@ -229,8 +229,13 @@ section.tutorial {
     flex: 7;
     position: relative;
     overflow: hidden;
-
+    height: 70vh;
+    align-self: flex-end;
+    margin-bottom: 6vh;
+    margin-right: 6vh;
+    transition-duration: 0.3s;
     .instrument {
+      transition-duration: 0.3s;
       background-image: url("../../assets/img/instrumentComponent/gongche\ body.svg");
       @include imagePosition();
       @include size(900px, 480px);
@@ -238,8 +243,8 @@ section.tutorial {
       transform-origin: right bottom;
       transform: scale(0.9);
       position: absolute;
-      right: 6vh;
-      bottom: 6vh;
+      right: 5vh;
+      bottom: 3vh;
 
       img {
         transition-duration: 0.1s;
@@ -392,5 +397,5 @@ section.tutorial {
 }
 
 // section.home {
-  //display: none;
+//display: none;
 // }

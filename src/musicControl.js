@@ -22,6 +22,29 @@ const umbrellaD = ["#D1", "#D2", "#D3", "#D4", "#D5"];
 const umbrellaDelay1 = ["#delay1", "#delay2", "#delay3"];
 const umbrellaDelay2 = ["#delay4-1", "#delay4-2", "#delay4-3"];
 const tracks = ["#track1", "#track2", "#track3", "#track4"];
+
+const instrumentContainer = $(".instrument");
+const instrumentDisplayArea = $(".displayArea");
+const originalSize = () => {
+  instrumentContainer.css("transform", "translate(0,0) scale(0.9) rotate(0)");
+  instrumentDisplayArea.css("margin-bottom", "6vh");
+};
+const cutFlagZoomIn = () => {
+  instrumentContainer.css("transform", "translate(10vw, 30vh) scale(1.5)");
+  instrumentDisplayArea.css("margin-bottom", "4vh");
+};
+const longFlagZoomIn = () => {
+  instrumentContainer.css("transform", "translate(-3vw, 5vh) scale(1.2) rotate(4deg)");
+  instrumentDisplayArea.css("margin-bottom", "4vh");
+};
+const umbrellaZoomIn = () => {
+  instrumentContainer.css("transform", "translate(0vw, 60vh) scale(1.8) rotate(6deg)");
+  instrumentDisplayArea.css("margin-bottom", "4vh");
+};
+const headFlagZoomIn = () => {
+  instrumentContainer.css("transform", "translate(20vw, 50vh) scale(1.8)");
+  instrumentDisplayArea.css("margin-bottom", "4vh");
+};
 let rotate = 0;
 let function1Pressing = true;
 let function2Pressing = true;
@@ -288,6 +311,8 @@ const setListener = (step) => {
       break;
     case 5:
       unSelectAll();
+      originalSize();
+      cutFlagZoomIn();
       selectInstrumentComponent(flag_cut_top, "flag_cut.svg", true);
       selectInstrumentComponent(flag_cut_bottom, "flag_cut.svg", true);
       unBindAll();
@@ -364,7 +389,7 @@ const setListener = (step) => {
       break;
     case 6:
       unSelectAll();
-
+      originalSize();
       selectInstrumentComponent(function_2, "function_2_select.svg", false);
       selectInstrumentComponent(leftDrum, "left_drum_select.svg", false);
       selectInstrumentComponent(rightDrum, "right_drum_select.svg", false);
@@ -373,6 +398,8 @@ const setListener = (step) => {
       break;
     case 7:
       unSelectAll();
+      originalSize();
+      umbrellaZoomIn();
       selectInstrumentComponent(umbrella1, "umbrella.svg", true);
       unBindAll();
       let nowPlayingUmbrellaASound = 0;
@@ -447,6 +474,8 @@ const setListener = (step) => {
       break;
     case 11:
       unSelectAll();
+      originalSize();
+      longFlagZoomIn();
       selectInstrumentComponent(string, "string_select.svg", false);
       selectInstrumentComponent(long_flag, "long_flag_l.svg", true);
       unBindAll();
@@ -495,6 +524,7 @@ const setListener = (step) => {
       break;
     case 12:
       unSelectAll();
+      originalSize();
       selectInstrumentComponent(god_button_1, "god_button_1_select.svg", false);
       selectInstrumentComponent(god_button_2, "god_button_2_select.svg", false);
       unBindAll();
@@ -656,6 +686,7 @@ const setListener = (step) => {
       break;
     case 20:
       unSelectAll();
+      headFlagZoomIn();
       selectInstrumentComponent(head_flag, "head_flag.svg", true);
 
       unBindAll();
@@ -676,6 +707,7 @@ const setListener = (step) => {
     case 21:
       isHeadFlagOpen = false;
       unSelectAll();
+      originalSize();
       selectInstrumentComponent(leftDrum, "left_drum_select.svg", false);
       selectInstrumentComponent(rightDrum, "right_drum_select.svg", false);
       selectInstrumentComponent(function_1, "function_1_select.svg", false);

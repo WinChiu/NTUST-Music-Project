@@ -54,8 +54,7 @@ section.home .bigBackground .introContainer {
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
   z-index: 10;
-  -webkit-transition-duration: .5s;
-          transition-duration: .5s;
+  transition-duration: 0.5s;
   margin-top: 15vh;
   top: 100vh;
   -webkit-transform: translateY(0);
@@ -250,9 +249,18 @@ section.tutorial article.displayArea {
           flex: 7;
   position: relative;
   overflow: hidden;
+  height: 70vh;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-bottom: 6vh;
+  margin-right: 6vh;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
 }
 
 section.tutorial article.displayArea .instrument {
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
   background-image: url("../../assets/img/instrumentComponent/gongche body.svg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -265,8 +273,8 @@ section.tutorial article.displayArea .instrument {
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
   position: absolute;
-  right: 6vh;
-  bottom: 6vh;
+  right: 5vh;
+  bottom: 3vh;
 }
 
 section.tutorial article.displayArea .instrument img {
