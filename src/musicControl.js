@@ -22,17 +22,19 @@ const umbrellaD = ["#D1", "#D2", "#D3", "#D4", "#D5"];
 const umbrellaDelay1 = ["#delay1", "#delay2", "#delay3"];
 const umbrellaDelay2 = ["#delay4-1", "#delay4-2", "#delay4-3"];
 const tracks = ["#track1", "#track2", "#track3", "#track4"];
-
+let rotate = 0;
 let function1Pressing = true;
 let function2Pressing = true;
 let godButtonMode = 1;
 let nowPlayingUmbrellaDSound = 0;
+let nowPlayingUmbrellaDelay1Sound = 0;
+let nowPlayingUmbrellaDelay2Sound = 0;
 let unMutedTracks = [];
 let isHeadFlagOpen = false;
 let selectedTrack = 0;
 let step15IsPlaying = false;
 let instrumentComponentSrc = "./assets/img/instrumentComponent/";
-
+let longFlagMode = false;
 function leaveTutorial() {
   $("#logoRed #menu h3.play").css("color", "#DBDBDD");
   $(".tutorial").fadeOut();
@@ -382,6 +384,9 @@ const setListener = (step) => {
         } else {
           nowPlayingUmbrellaASound++;
         }
+
+        rotate += 90;
+        umbrella1.css("transform", `rotate(${rotate}deg)`);
         playSound(umbrellaA[nowPlayingUmbrellaASound]);
       });
       break;
@@ -389,12 +394,17 @@ const setListener = (step) => {
       unSelectAll();
       selectInstrumentComponent(umbrella2, "umbrella.svg", true);
       unBindAll();
+      rotate = 0;
+      umbrella1.css("transform", `rotate(${rotate}deg)`);
+
       umbrella2.click(() => {
         if (nowPlayingUmbrellaDSound === umbrellaD.length - 1) {
           nowPlayingUmbrellaDSound = 0;
         } else {
           nowPlayingUmbrellaDSound++;
         }
+        rotate += 90;
+        umbrella2.css("transform", `rotate(${rotate}deg)`);
         playSound(umbrellaD[nowPlayingUmbrellaDSound]);
       });
 
@@ -403,7 +413,9 @@ const setListener = (step) => {
       unSelectAll();
       selectInstrumentComponent(umbrella3, "umbrella.svg", true);
       unBindAll();
-      let nowPlayingUmbrellaDelay1Sound = 0;
+
+      rotate = 0;
+      umbrella2.css("transform", `rotate(${rotate}deg)`);
 
       umbrella3.click(() => {
         if (nowPlayingUmbrellaDelay1Sound === umbrellaDelay1.length - 1) {
@@ -411,6 +423,8 @@ const setListener = (step) => {
         } else {
           nowPlayingUmbrellaDelay1Sound++;
         }
+        rotate += 90;
+        umbrella3.css("transform", `rotate(${rotate}deg)`);
         playSound(umbrellaDelay1[nowPlayingUmbrellaDelay1Sound]);
       });
       break;
@@ -418,14 +432,16 @@ const setListener = (step) => {
       unSelectAll();
       selectInstrumentComponent(umbrella4, "umbrella.svg", true);
       unBindAll();
-      let nowPlayingUmbrellaDelay2Sound = 0;
-
+      rotate = 0;
+      umbrella3.css("transform", `rotate(${rotate}deg)`);
       umbrella4.click(() => {
         if (nowPlayingUmbrellaDelay2Sound === umbrellaDelay2.length - 1) {
           nowPlayingUmbrellaDelay2Sound = 0;
         } else {
           nowPlayingUmbrellaDelay2Sound++;
         }
+        rotate += 90;
+        umbrella4.css("transform", `rotate(${rotate}deg)`);
         playSound(umbrellaDelay2[nowPlayingUmbrellaDelay2Sound]);
       });
       break;
@@ -434,7 +450,9 @@ const setListener = (step) => {
       selectInstrumentComponent(string, "string_select.svg", false);
       selectInstrumentComponent(long_flag, "long_flag_l.svg", true);
       unBindAll();
-      let longFlagMode = false;
+      rotate = 0;
+      umbrella4.css("transform", `rotate(${rotate}deg)`);
+
       document.querySelector("#sonahigh").playbackRate = 8;
       long_flag.click(() => {
         if (!longFlagMode) {
@@ -565,6 +583,58 @@ const setListener = (step) => {
       });
 
       break;
+    case 17:
+      unSelectAll();
+      selectInstrumentComponent(god_button_1, "god_button_1_select.svg", false);
+      selectInstrumentComponent(god_button_2, "god_button_2_select.svg", false);
+      selectInstrumentComponent(leftDrum, "left_drum_select.svg", false);
+      selectInstrumentComponent(rightDrum, "right_drum_select.svg", false);
+      selectInstrumentComponent(string, "string_select.svg", false);
+      $("#BeiguanD1")[0].loop = true;
+      $("#BeiguanD1")[0].playbackRate = 4.58;
+      $("#BeiguanD1")[0].volume = 1;
+      playPausedSound("#BeiguanD1");
+
+      god_button_1.click(() => {
+        godButtonMode = 1;
+      });
+      god_button_2.click(() => {
+        godButtonMode = 2;
+      });
+      leftDrum.click(() => {
+        if (godButtonMode === 1) playPausedSound(drumSound[5]);
+      });
+      rightDrum.click(() => {
+        if (godButtonMode === 1) playPausedSound(drumSound[5]);
+      });
+
+      string.on("touchstart", () => {
+        if (godButtonMode === 2) {
+          player1.start();
+          setTimeout(() => {
+            player2.start();
+          }, 5);
+        }
+      });
+      string.on("touchmove", function (e) {
+        let stringRightBoundary = this.getBoundingClientRect().right - 30;
+        let stringLeftBoundary = this.getBoundingClientRect().left + 50;
+        let mousePosition = e.touches[0].clientX;
+        let middle = (stringRightBoundary + stringLeftBoundary) / 2;
+
+        if (mousePosition < stringRightBoundary && mousePosition > stringLeftBoundary) {
+          pitchShift1.pitch = mousePosition / 1000 + (mousePosition - middle) / 300;
+          pitchShift2.pitch = mousePosition / 1000 + (mousePosition - middle) / 300;
+        } else {
+          player1.stop();
+          player2.stop();
+        }
+      });
+      string.on("touchend", () => {
+        player1.stop();
+        player2.stop();
+      });
+      break;
     case 18:
       unSelectAll();
       selectInstrumentComponent(level_switch, "level_switch.svg", true);
@@ -589,22 +659,30 @@ const setListener = (step) => {
       selectInstrumentComponent(head_flag, "head_flag.svg", true);
 
       unBindAll();
+      $("#track1")[0].loop = true;
       head_flag.click(() => {
-        $("#track1")[0].loop = true;
-        playPausedSound("#track1");
+        if (!isHeadFlagOpen) {
+          playPausedSound("#track1");
+          head_flag.css("transform", "rotate(90deg)");
+          isHeadFlagOpen = true;
+        } else {
+          pauseSound("#track1");
+          head_flag.css("transform", "rotate(0deg)");
+          isHeadFlagOpen = false;
+        }
       });
 
       break;
     case 21:
+      isHeadFlagOpen = false;
       unSelectAll();
       selectInstrumentComponent(leftDrum, "left_drum_select.svg", false);
       selectInstrumentComponent(rightDrum, "right_drum_select.svg", false);
       selectInstrumentComponent(function_1, "function_1_select.svg", false);
-
       unBindAll();
       stopPlaying();
       let track2Playing = false;
-
+      head_flag.css("transform", "rotate(0deg)");
       rightDrum.click(() => {
         if (function1Pressing) {
           $("#track2")[0].loop = true;
@@ -797,9 +875,11 @@ $(".stepBtn.start").click(() => {
   if (currentStep === 24) {
     leaveTutorial();
     toDescription();
+    currentStep = 0;
+  } else {
+    currentStep = 1;
   }
 
-  currentStep = 0;
   $(".stepBtn.next").css("display", "block");
   $(".stepBtn.review").css("display", "block");
   $(".stepBtn.start").css("display", "none");
