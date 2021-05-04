@@ -32,6 +32,23 @@ let isHeadFlagOpen = false;
 let selectedTrack = 0;
 let step15IsPlaying = false;
 let instrumentComponentSrc = "./assets/img/instrumentComponent/";
+
+function leaveTutorial() {
+  $("#logoRed #menu h3.play").css("color", "#DBDBDD");
+  $(".tutorial").fadeOut();
+}
+function toDescription() {
+  $("body").css("overflow-y", "initial");
+  $("html").css("overflow-y", "initial");
+  $("body").css("background", "#DBDBDD");
+  $("#logoRed #menu .toggle h3").css("color", "#B13234");
+  $("#logoRed #menu .toggle h3.description").css("color", "rgba(0,0,0,0.6)");
+
+  $("#logoRed img.logo").attr("src", "./assets/img/brandRed.svg");
+  $("#logoRed #menu img.arrow").attr("src", "./assets/img/menu/menuArrowRed.svg");
+  $("#sectionDescription").fadeIn();
+}
+
 const stopPlaying = () => {
   $("audio").each(function () {
     this.pause();
@@ -776,7 +793,13 @@ $(".stepBtn.review").click(() => {
 
 $(".stepBtn.start").click(() => {
   unSelectAll();
-  currentStep = 1;
+
+  if (currentStep === 24) {
+    leaveTutorial();
+    toDescription();
+  }
+
+  currentStep = 0;
   $(".stepBtn.next").css("display", "block");
   $(".stepBtn.review").css("display", "block");
   $(".stepBtn.start").css("display", "none");
@@ -788,5 +811,6 @@ $(".stepBtn.start").click(() => {
     "background-image",
     `url("../../assets/img/detail_full_img/detail_full_img_${currentStep + 1}.png")`
   );
+
   setListener(currentStep);
 });
