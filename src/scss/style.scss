@@ -227,19 +227,22 @@ section.tutorial {
 
   article.displayArea {
     flex: 7;
+    align-self: flex-end;
+    height: 70vh;
+    margin-bottom: 4vh;
+    margin-right: 6vh;
     position: relative;
     overflow: hidden;
-
     .instrument {
       background-image: url("../../assets/img/instrumentComponent/gongche\ body.svg");
       @include imagePosition();
       @include size(900px, 480px);
       background-size: 99%;
       transform-origin: right bottom;
-      transform: scale(0.9);
+      transform: translate(10vw, 30vh) scale(1.5);
       position: absolute;
-      right: 6vh;
-      bottom: 6vh;
+      right: 0vh;
+      bottom: 0vh;
 
       img {
         transition-duration: 0.1s;
