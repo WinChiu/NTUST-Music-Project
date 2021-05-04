@@ -1,7 +1,7 @@
 $FontColor: #d6d2c7;
 $BGColor: #d32b2d;
 $Color_Orange: #ee8948;
-
+$Color_OrangeGlass: #ee8848af;
 @font-face {
   font-family: "GenWanMin SB";
   src: url(../../assets/font/GenWanMin-SB.ttf);
@@ -140,7 +140,7 @@ section.home {
         cursor: pointer;
         margin-top: -1vh;
         width: 3vw;
-        animation: arrowMove .5s alternate infinite;
+        animation: arrowMove 0.5s alternate infinite;
       }
     }
   }
@@ -178,6 +178,7 @@ section.tutorial {
       flex-direction: column;
 
       .instruction {
+        transition-duration: 0.3s;
         background-image: url("../../assets/img/detail_full_img/detail_full_img_1.png");
         @include imagePosition();
         background-size: 99%;
@@ -188,13 +189,37 @@ section.tutorial {
       }
 
       .step {
-        background-image: url("../../assets/img/order_frame.svg");
+        transition-duration: 0.3s;
+        background-image: url("../../assets/img/order_full_img/order_full_img_1.svg");
         @include imagePosition();
         background-size: 99%;
         margin-top: 2vh;
-
+        position: relative;
         img.order_frame {
           visibility: hidden;
+        }
+        .stepBtn {
+          height: 18px;
+          position: absolute;
+          bottom: 1.5vh;
+          &.review {
+            left: 1.5vw;
+          }
+          &.next {
+            right: 1.5vw;
+          }
+          &.start {
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            bottom: 2.5vh;
+          }
+        }
+        p {
+          position: absolute;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
         }
       }
     }
@@ -217,6 +242,7 @@ section.tutorial {
       bottom: 6vh;
 
       img {
+        transition-duration: 0.1s;
         position: absolute;
       }
 
@@ -315,9 +341,10 @@ section.tutorial {
       }
 
       .level_switch {
+        transition-duration: 0.3s;
         width: 65.5px;
-        left: 80px;
-        top: 252px;
+        left: 70px;
+        top: 262px;
       }
 
       .screen {
