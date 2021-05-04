@@ -249,10 +249,10 @@ section.tutorial article.displayArea {
           flex: 7;
   position: relative;
   overflow: hidden;
-  height: 70vh;
+  height: 74vh;
   -ms-flex-item-align: end;
       align-self: flex-end;
-  margin-bottom: 6vh;
+  margin-bottom: 4vh;
   margin-right: 6vh;
   -webkit-transition-duration: 0.3s;
           transition-duration: 0.3s;
@@ -274,7 +274,7 @@ section.tutorial article.displayArea .instrument {
           transform: scale(0.9);
   position: absolute;
   right: 5vh;
-  bottom: 3vh;
+  bottom: 0vh;
 }
 
 section.tutorial article.displayArea .instrument img {

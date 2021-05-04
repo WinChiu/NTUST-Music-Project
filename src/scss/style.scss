@@ -229,9 +229,9 @@ section.tutorial {
     flex: 7;
     position: relative;
     overflow: hidden;
-    height: 70vh;
+    height: 74vh;
     align-self: flex-end;
-    margin-bottom: 6vh;
+    margin-bottom: 4vh;
     margin-right: 6vh;
     transition-duration: 0.3s;
     .instrument {
@@ -244,7 +244,7 @@ section.tutorial {
       transform: scale(0.9);
       position: absolute;
       right: 5vh;
-      bottom: 3vh;
+      bottom: 0vh;
 
       img {
         transition-duration: 0.1s;
