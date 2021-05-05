@@ -58,6 +58,7 @@ let step15IsPlaying = false;
 let instrumentComponentSrc = "./assets/img/instrumentComponent/";
 let longFlagMode = false;
 
+if (function1Pressing) alert("hi");
 function leaveTutorial() {
   $("#logoRed #menu h3.play").css("color", "#DBDBDD");
   $(".tutorial").fadeOut();
