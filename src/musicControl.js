@@ -1044,13 +1044,19 @@ $(".stepBtn.start").click(() => {
   $(".stepBtn.next").css("display", "block");
   $(".stepBtn.review").css("display", "block");
   $(".stepBtn.start").css("display", "none");
-  $(".instructionContainer .step").css(
-    "background-image",
-    `url("../../assets/img/order_full_img/order_full_img_2.svg")`
-  );
+  // $(".instructionContainer .step").css(
+  //   "background-image",
+  //   `url("../../assets/img/order_full_img/order_full_img_2.svg")`
+  // );
+  // $(".instructionContainer .instruction").css(
+  //   "background-image",
+  //   `url("../../assets/img/detail_full_img/detail_full_img_2.png")`
+  // );
+
+  $(".instructionContainer .step").css("background-image", `url("../assets/img/order_full_img/order_full_img_2.svg")`);
   $(".instructionContainer .instruction").css(
     "background-image",
-    `url("../../assets/img/detail_full_img/detail_full_img_2.png")`
+    `url("../assets/img/detail_full_img/detail_full_img_2.png")`
   );
 
   setListener(currentStep);
