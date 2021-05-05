@@ -14,7 +14,6 @@ const umbrella4 = $(".umbrella4");
 const level_switch = $(".level_switch");
 const function_1 = $(".function_1");
 const function_2 = $(".function_2");
-
 const drumSound = ["#BeiguanC1", "#BeiguanC4", "#BeiguanC6", "#BeiguanC8", "#BeiguanD1", "#BeiguanD3", "#BeiguanD7"];
 const melodySound = []; //to be added
 const umbrellaA = ["#A1", "#A2", "#A3", "#A4"];
@@ -1081,4 +1080,54 @@ $(".stepBtn.jump").click(() => {
     `url("../../assets/img/detail_full_img/detail_full_img_1.png")`
   );
   setListener(currentStep);
+});
+
+// disable img dragging
+leftDrum.on("dragstart", () => {
+  return false;
+});
+rightDrum.on("dragstart", () => {
+  return false;
+});
+string.on("dragstart", () => {
+  return false;
+});
+god_button_1.on("dragstart", () => {
+  return false;
+});
+god_button_2.on("dragstart", () => {
+  return false;
+});
+flag_cut_top.on("dragstart", () => {
+  return false;
+});
+flag_cut_bottom.on("dragstart", () => {
+  return false;
+});
+head_flag.on("dragstart", () => {
+  return false;
+});
+long_flag.on("dragstart", () => {
+  return false;
+});
+umbrella1.on("dragstart", () => {
+  return false;
+});
+umbrella2.on("dragstart", () => {
+  return false;
+});
+umbrella3.on("dragstart", () => {
+  return false;
+});
+umbrella4.on("dragstart", () => {
+  return false;
+});
+level_switch.on("dragstart", () => {
+  return false;
+});
+function_1.on("dragstart", () => {
+  return false;
+});
+function_2.on("dragstart", () => {
+  return false;
 });
