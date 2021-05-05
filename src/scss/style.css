@@ -261,8 +261,8 @@ section.tutorial article.displayArea .instrument .flag_cut_bottom {
 section.tutorial article.displayArea .instrument .head_flag {
   border-radius: 50%;
   width: 22.35px;
-  left: 402px;
-  top: 130.5px;
+  left: 403.5px;
+  top: 132px;
 }
 section.tutorial article.displayArea .instrument .long_flag_l,
 section.tutorial article.displayArea .instrument .long_flag_r {
@@ -274,29 +274,29 @@ section.tutorial article.displayArea .instrument .umbrella1 {
   transform-origin: center center;
   border-radius: 50%;
   width: 15px;
-  left: 606px;
-  top: 108px;
+  left: 608px;
+  top: 109.8px;
 }
 section.tutorial article.displayArea .instrument .umbrella2 {
   transform-origin: center center;
   border-radius: 50%;
   width: 15px;
-  left: 656.8px;
-  top: 108px;
+  left: 659px;
+  top: 109.8px;
 }
 section.tutorial article.displayArea .instrument .umbrella3 {
   transform-origin: center center;
   border-radius: 50%;
   width: 15px;
-  left: 580.7px;
-  top: 159px;
+  left: 582.5px;
+  top: 160.8px;
 }
 section.tutorial article.displayArea .instrument .umbrella4 {
   transform-origin: center center;
   border-radius: 50%;
   width: 15px;
-  left: 631.5px;
-  top: 159.5px;
+  left: 633.6px;
+  top: 160.8px;
 }
 section.tutorial article.displayArea .instrument .level_switch {
   transition-duration: 0.3s;
