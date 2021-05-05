@@ -1,5 +1,11 @@
 let arrowClick = false;
 
+window.oncontextmenu = function (event) {
+  event.preventDefault();
+  event.stopPropagation();
+  return false;
+};
+
 function moveHomePageUp_Hand() {
   $(".home .bigBackground img.background").css("transform", "translateY(0)");
   $(".home .bigBackground .introContainer").css("top", "100vh");
@@ -142,11 +148,11 @@ function leaveDescription() {
 function checkOrientation() {
   var window_w = $(window).innerWidth();
   var window_h = $(window).innerHeight();
-  console.log(window_w,", ", window_h);
-  if(window_h>window_w){
+  console.log(window_w, ", ", window_h);
+  if (window_h > window_w) {
     alert("Rotate! Rotate!");
     $("#rotate").fadeIn();
-  }else{
+  } else {
     $("#rotate").fadeOut();
   }
 }
