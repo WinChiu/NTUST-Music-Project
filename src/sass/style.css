@@ -19,6 +19,17 @@
     transform: translateY(1vh);
   }
 }
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(30deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+}
 ::-webkit-scrollbar {
   width: 1vw;
   background-color: rgba(255, 255, 255, 0.6);
@@ -59,6 +70,23 @@ html, body {
 
 body {
   background-color: #d32b2d;
+  transform: rotate(0deg);
+}
+
+#rotate {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: none;
+}
+#rotate img {
+  width: 10vw;
+  left: 50vw;
+  top: 50vh;
+  transform: translate(-50%, -50%) rotate(45deg);
+  animation: rotate 1s infinite;
 }
 
 #sectionDescription {
