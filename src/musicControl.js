@@ -38,11 +38,7 @@ const longFlagZoomIn = () => {
   instrumentDisplayArea.css("margin-bottom", "4vh");
 };
 const umbrellaZoomIn = () => {
-<<<<<<< HEAD
   instrumentContainer.css("transform", "translate(10vw, 10vh) scale(1.2) ");
-=======
-  instrumentContainer.css("transform", "translate(0vw, 45vh) scale(1.8) rotate(0deg)");
->>>>>>> a0f0afb11ed53f809aec0b8606b946be50c1db07
   instrumentDisplayArea.css("margin-bottom", "4vh");
 };
 const headFlagZoomIn = () => {
@@ -608,12 +604,12 @@ const setListener = (step) => {
       unBindAll();
       level_switch.css({
         top: "262px",
-        left: "70px"
+        left: "70px",
       });
       level_switch.on("swiped-up", function () {
         level_switch.css({
           top: "252px",
-          left: "80px"
+          left: "80px",
         });
       });
       // //Nothing happen
@@ -626,7 +622,7 @@ const setListener = (step) => {
       unBindAll();
       level_switch.css({
         top: "252px",
-        left: "80px"
+        left: "80px",
       });
       // //Nothing happen
       break;
@@ -759,7 +755,7 @@ const setListener = (step) => {
       level_switch.on("swiped-up", function () {
         level_switch.css({
           top: "242px",
-          left: "90px"
+          left: "90px",
         });
       });
       //Nothing happen
@@ -772,7 +768,7 @@ const setListener = (step) => {
       unBindAll();
       level_switch.css({
         top: "242px",
-        left: "90px"
+        left: "90px",
       });
       //Nothing happen
       break;
@@ -939,6 +935,7 @@ const setListener = (step) => {
       selectInstrumentComponent(god_button_1, "god_button_1_select.svg", false);
       selectInstrumentComponent(god_button_2, "god_button_2_select.svg", false);
       unBindAll();
+      if (unMutedTracks.length === 0) unMutedTracks = ["#track1", "#track2"];
       head_flag.click(() => {
         stopPlaying();
         if (!isHeadFlagOpen) {
