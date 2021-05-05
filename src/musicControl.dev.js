@@ -426,7 +426,7 @@ var setListener = function setListener(step) {
       unBindAll();
       var nowPlayingUmbrellaASound = 0;
       umbrella1.click(function () {
-        console.log(nowPlayingUmbrellaASound);
+
 
         if (nowPlayingUmbrellaASound === umbrellaA.length - 1) {
           nowPlayingUmbrellaASound = 0;
@@ -812,7 +812,7 @@ var setListener = function setListener(step) {
             selectedTrack--;
           }
 
-          console.log(tracks[selectedTrack]);
+
         }
       });
       string.on("swiped-right", function () {
@@ -823,7 +823,7 @@ var setListener = function setListener(step) {
             selectedTrack++;
           }
 
-          console.log(tracks[selectedTrack]);
+
         }
       });
       leftDrum.click(function () {
@@ -833,7 +833,7 @@ var setListener = function setListener(step) {
           });
         }
 
-        console.log(unMutedTracks);
+
       });
       rightDrum.click(function () {
         if (function1Pressing) {
@@ -842,7 +842,7 @@ var setListener = function setListener(step) {
           })) unMutedTracks.push(tracks[selectedTrack]);
         }
 
-        console.log(unMutedTracks);
+
       });
       break;
 
@@ -928,7 +928,7 @@ $(".stepBtn.next").css("display", "none");
 $(".stepBtn.review").css("display", "none");
 $(".stepBtn.next").click(function () {
   if (currentStep < 24) currentStep++;
-  console.log(currentStep);
+
   $(".instructionContainer .step").css("background-image", "url(\"../../assets/img/order_full_img/order_full_img_".concat(currentStep + 1, ".svg\")"));
   $(".instructionContainer .instruction").css("background-image", "url(\"../../assets/img/detail_full_img/detail_full_img_".concat(currentStep + 1, ".png\")"));
   setListener(currentStep);

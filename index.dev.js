@@ -31,8 +31,7 @@ function moveHomePageDown_Hand() {
 
 function controlInstrumentSize() {
   var vw = window.innerWidth;
-  console.log("controllingSize");
-  console.log(vw);
+
   $("section.tutorial article.displayArea .instrument").css("transform", "scale(" + 0.9 * vw / 1280 + ")");
 }
 
@@ -159,7 +158,7 @@ function leaveDescription() {
 function checkOrientation() {
   var window_w = $(window).innerWidth();
   var window_h = $(window).innerHeight();
-  console.log(window_w, ", ", window_h);
+
 
   if (window_h > window_w) {
     alert("Rotate! Rotate!");

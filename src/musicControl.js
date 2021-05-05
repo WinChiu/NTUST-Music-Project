@@ -224,12 +224,10 @@ const setListener = (step) => {
       let nowPlayingDrumSound = 0;
       function_1.on("touchstart", () => {
         function1Pressing = true;
-        console.log(function1Pressing);
       });
 
       function_1.on("touchend", () => {
         function1Pressing = false;
-        console.log(function1Pressing);
       });
 
       leftDrum.click(() => {
@@ -429,7 +427,6 @@ const setListener = (step) => {
       let nowPlayingUmbrellaASound = 0;
 
       umbrella1.click(() => {
-        console.log(nowPlayingUmbrellaASound);
         if (nowPlayingUmbrellaASound === umbrellaA.length - 1) {
           nowPlayingUmbrellaASound = 0;
         } else {
@@ -870,7 +867,6 @@ const setListener = (step) => {
           } else {
             selectedTrack--;
           }
-          console.log(tracks[selectedTrack]);
         }
       });
       string.on("swiped-right", () => {
@@ -880,7 +876,6 @@ const setListener = (step) => {
           } else {
             selectedTrack++;
           }
-          console.log(tracks[selectedTrack]);
         }
       });
       string.on("touchstart", () => {
@@ -894,25 +889,21 @@ const setListener = (step) => {
 
         if (stringLeftBoundary < mousePosition && mousePosition < stringLeftBoundary + oneSectionWidth) {
           if (!selectedTrack.find((track) => track === tracks[0])) selectedTrack.push(tracks[0]);
-          console.log(selectedTrack);
         } else if (
           stringLeftBoundary + oneSectionWidth < mousePosition &&
           mousePosition < stringLeftBoundary + oneSectionWidth * 2
         ) {
           if (!selectedTrack.find((track) => track === tracks[1])) selectedTrack.push(tracks[1]);
-          console.log(selectedTrack);
         } else if (
           stringLeftBoundary + oneSectionWidth * 2 < mousePosition &&
           mousePosition < stringLeftBoundary + oneSectionWidth * 3
         ) {
           if (!selectedTrack.find((track) => track === tracks[2])) selectedTrack.push(tracks[2]);
-          console.log(selectedTrack);
         } else if (
           stringLeftBoundary + oneSectionWidth * 3 < mousePosition &&
           mousePosition < stringLeftBoundary + oneSectionWidth * 4
         ) {
           if (!selectedTrack.find((track) => track === tracks[3])) selectedTrack.push(tracks[3]);
-          console.log(selectedTrack);
         }
       });
       leftDrum.click(() => {
@@ -921,7 +912,6 @@ const setListener = (step) => {
             unMutedTracks = unMutedTracks.filter((unmuteTrack) => !selectedTrack.find((item) => item === unmuteTrack));
           });
         }
-        console.log(unMutedTracks);
       });
       rightDrum.click(() => {
         if (function1Pressing) {
@@ -929,7 +919,6 @@ const setListener = (step) => {
             if (!unMutedTracks.find((unmuteTrack) => unmuteTrack === track)) unMutedTracks.push(track);
           });
         }
-        console.log(unMutedTracks);
       });
 
       break;
@@ -1018,7 +1007,7 @@ $(".stepBtn.review").css("display", "none");
 $(".stepBtn.jump").css("display", "none");
 $(".stepBtn.next").click(() => {
   if (currentStep < 24) currentStep++;
-  console.log(currentStep);
+
   $(".instructionContainer .step").css(
     "background-image",
     `url("../../assets/img/order_full_img/order_full_img_${currentStep + 1}.svg")`
