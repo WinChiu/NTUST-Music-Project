@@ -140,6 +140,8 @@ function leaveDescription() {
   $("#sectionDescription").fadeOut();
 }
 
+//Lock Rotation
+// screen.orientation.lock();
 //Arrow Control
 $("#logoRed #menu").click(controlArrow);
 //Home Page Control

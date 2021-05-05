@@ -154,7 +154,9 @@ function leaveDescription() {
   $("#logoRed img.logo").attr("src", "./assets/img/brand.svg");
   $("#logoRed #menu img.arrow").attr("src", "./assets/img/menu/meun_arrow.svg");
   $("#sectionDescription").fadeOut();
-} //Arrow Control
+} //Lock Rotation
+// screen.orientation.lock();
+//Arrow Control
 
 
 $("#logoRed #menu").click(controlArrow); //Home Page Control
