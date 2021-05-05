@@ -192,9 +192,11 @@ const setListener = (step) => {
   switch (step) {
     case 0:
       unSelectAll();
+      originalSize();
       break;
     case 1:
       unSelectAll();
+      originalSize();
       selectInstrumentComponent(leftDrum, "left_drum_select.svg", false);
       selectInstrumentComponent(rightDrum, "right_drum_select.svg", false);
       unBindAll();
@@ -207,9 +209,9 @@ const setListener = (step) => {
       break;
     case 2:
       unSelectAll();
+      originalSize();
       selectInstrumentComponent(leftDrum, "left_drum_select.svg", false);
       selectInstrumentComponent(rightDrum, "right_drum_select.svg", false);
-
       selectInstrumentComponent(function_1, "function_1_select.svg", false);
       unBindAll();
       let nowPlayingDrumSound = 0;
@@ -249,7 +251,7 @@ const setListener = (step) => {
       break;
     case 3:
       unSelectAll();
-
+      originalSize();
       selectInstrumentComponent(string, "string_select.svg", false);
       unBindAll();
 
@@ -279,6 +281,7 @@ const setListener = (step) => {
       break;
     case 4:
       unSelectAll();
+      originalSize();
       selectInstrumentComponent(string, "string_select.svg", false);
       selectInstrumentComponent(function_1, "function_1_select.svg", false);
       unBindAll();
@@ -488,6 +491,7 @@ const setListener = (step) => {
       break;
     case 10:
       unSelectAll();
+      umbrellaZoomIn();
       selectInstrumentComponent(umbrella4, "umbrella.svg", true);
       selectInstrumentComponent(leftDrum, "left_drum_select.svg", false);
       selectInstrumentComponent(rightDrum, "right_drum_select.svg", false);
@@ -588,6 +592,7 @@ const setListener = (step) => {
       break;
     case 13:
       unSelectAll();
+      originalSize();
       selectInstrumentComponent(level_switch, "level_switch.svg", true);
       unBindAll();
       level_switch.css({ top: "262px", left: "70px" });
@@ -598,6 +603,7 @@ const setListener = (step) => {
       break;
     case 14:
       unSelectAll();
+      originalSize();
       selectInstrumentComponent(function_1, "function_1_select.svg", false);
       selectInstrumentComponent(string, "string_select.svg", false);
       unBindAll();
@@ -606,6 +612,7 @@ const setListener = (step) => {
       break;
     case 15:
       unSelectAll();
+      originalSize();
       selectInstrumentComponent(function_1, "function_1_select.svg", false);
       selectInstrumentComponent(leftDrum, "left_drum_select.svg", false);
       selectInstrumentComponent(rightDrum, "right_drum_select.svg", false);
@@ -628,6 +635,7 @@ const setListener = (step) => {
       break;
     case 16:
       unSelectAll();
+      originalSize();
       selectInstrumentComponent(function_2, "function_2_select.svg", false);
       selectInstrumentComponent(leftDrum, "left_drum_select.svg", false);
       selectInstrumentComponent(rightDrum, "right_drum_select.svg", false);
@@ -669,6 +677,7 @@ const setListener = (step) => {
       break;
     case 17:
       unSelectAll();
+      originalSize();
       selectInstrumentComponent(god_button_1, "god_button_1_select.svg", false);
       selectInstrumentComponent(god_button_2, "god_button_2_select.svg", false);
       selectInstrumentComponent(leftDrum, "left_drum_select.svg", false);
@@ -721,6 +730,7 @@ const setListener = (step) => {
       break;
     case 18:
       unSelectAll();
+      originalSize();
       selectInstrumentComponent(level_switch, "level_switch.svg", true);
       unBindAll();
       stopPlaying();
@@ -733,6 +743,7 @@ const setListener = (step) => {
       break;
     case 19:
       unSelectAll();
+      originalSize();
       selectInstrumentComponent(function_1, "function_1_select.svg", false);
       selectInstrumentComponent(string, "string_select.svg", false);
       unBindAll();
@@ -755,7 +766,7 @@ const setListener = (step) => {
           isHeadFlagOpen = true;
         } else {
           pauseSound("#track1");
-          playPausedSound("#track2");
+          pauseSound("#track2");
           head_flag.css("transform", "rotate(0deg)");
           isHeadFlagOpen = false;
         }
@@ -792,12 +803,15 @@ const setListener = (step) => {
       break;
     case 22:
       unSelectAll();
+      originalSize();
+      stopPlaying();
       selectInstrumentComponent(leftDrum, "left_drum_select.svg", false);
       selectInstrumentComponent(rightDrum, "right_drum_select.svg", false);
       selectInstrumentComponent(function_1, "function_1_select.svg", false);
       selectInstrumentComponent(head_flag, "head_flag.svg", true);
       selectInstrumentComponent(string, "string_select.svg", false);
       unBindAll();
+      head_flag.css("transform", "rotate(0deg)");
       tracks.forEach((track) => {
         $(`${track}`)[0].loop = true;
       });
@@ -805,11 +819,14 @@ const setListener = (step) => {
         stopPlaying();
         if (!isHeadFlagOpen) {
           alignSoundTracks();
+
+          head_flag.css("transform", "rotate(90deg)");
           unMutedTracks.forEach((track) => {
             playPausedSound(track);
           });
           isHeadFlagOpen = true;
         } else {
+          head_flag.css("transform", "rotate(0deg)");
           unMutedTracks.forEach((track) => {
             pauseSound(track);
           });
@@ -888,6 +905,7 @@ const setListener = (step) => {
       break;
     case 23:
       unSelectAll();
+      originalSize();
       selectInstrumentComponent(leftDrum, "left_drum_select.svg", false);
       selectInstrumentComponent(rightDrum, "right_drum_select.svg", false);
       selectInstrumentComponent(head_flag, "head_flag.svg", true);
@@ -899,11 +917,13 @@ const setListener = (step) => {
         stopPlaying();
         if (!isHeadFlagOpen) {
           alignSoundTracks();
+          head_flag.css("transform", "rotate(90deg)");
           unMutedTracks.forEach((track) => {
             playPausedSound(track);
           });
           isHeadFlagOpen = true;
         } else {
+          head_flag.css("transform", "rotate(0deg)");
           unMutedTracks.forEach((track) => {
             pauseSound(track);
           });
@@ -952,6 +972,7 @@ const setListener = (step) => {
       break;
     case 24:
       unBindAll();
+      originalSize();
       stopPlaying();
       $(".stepBtn.next").css("display", "none");
       $(".stepBtn.review").css("display", "none");
@@ -1027,6 +1048,5 @@ $(".stepBtn.jump").click(() => {
     "background-image",
     `url("../../assets/img/detail_full_img/detail_full_img_1.png")`
   );
-
   setListener(currentStep);
 });
