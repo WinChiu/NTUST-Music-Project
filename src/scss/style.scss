@@ -2,6 +2,7 @@ $FontColor: #d6d2c7;
 $BGColor: #d32b2d;
 $Color_Orange: #ee8948;
 $Color_OrangeGlass: #ee8848af;
+
 @font-face {
   font-family: "GenWanMin SB";
   src: url(../../assets/font/GenWanMin-SB.ttf);
@@ -19,6 +20,24 @@ $Color_OrangeGlass: #ee8848af;
 
   100% {
     transform: translateY(1vh);
+  }
+}
+
+@keyframes shadowBreath_Double {
+  0% {
+    filter: drop-shadow(0px 0px 1vh #ee8948) drop-shadow(0px 0px .5vh #ee8948);
+  }
+  100%{
+    filter: drop-shadow(0px 0px 3vh #ee8948) drop-shadow(0px 0px 1.5vh #ee8948);
+  }
+}
+
+@keyframes shadowBreath {
+  0% {
+    filter: drop-shadow(0px 0px 1vh #ee8948);
+  }
+  100% {
+    filter: drop-shadow(0px 0px 3vh #ee8948);
   }
 }
 
@@ -195,19 +214,24 @@ section.tutorial {
         background-size: 99%;
         margin-top: 2vh;
         position: relative;
+
         img.order_frame {
           visibility: hidden;
         }
+
         .stepBtn {
           height: 18px;
           position: absolute;
           bottom: 1.5vh;
+
           &.review {
             left: 1.5vw;
           }
+
           &.next {
             right: 1.5vw;
           }
+
           &.start {
             left: 0;
             right: 0;
@@ -215,6 +239,7 @@ section.tutorial {
             bottom: 2.5vh;
           }
         }
+
         p {
           position: absolute;
           left: 0;
@@ -234,6 +259,7 @@ section.tutorial {
     margin-bottom: 4vh;
     margin-right: 6vh;
     transition-duration: 0.3s;
+
     .instrument {
       transition-duration: 0.3s;
       background-image: url("../../assets/img/instrumentComponent/gongche\ body.svg");
@@ -247,6 +273,7 @@ section.tutorial {
       bottom: 0vh;
 
       img {
+        box-sizing: initial;
         transition-duration: 0.1s;
         position: absolute;
       }
@@ -309,9 +336,10 @@ section.tutorial {
       }
 
       .head_flag {
+        border-radius: 50%;
         width: 22.35px;
-        left: 403px;
-        top: 133px;
+        left: 402px;
+        top: 130.5px;
       }
 
       .long_flag_l,
@@ -322,27 +350,35 @@ section.tutorial {
       }
 
       .umbrella1 {
-        width: 15.69px;
-        left: 608px;
-        top: 110px;
+        transform-origin: center center;
+        border-radius: 50%;
+        width: 15px;
+        left: 606px;
+        top: 108px;
       }
 
       .umbrella2 {
-        width: 15.69px;
-        left: 659px;
-        top: 110px;
+        transform-origin: center center;
+        border-radius: 50%;
+        width: 15px;
+        left: 656.8px;
+        top: 108px;
       }
 
       .umbrella3 {
-        width: 15.69px;
-        left: 583px;
-        top: 161px;
+        transform-origin: center center;
+        border-radius: 50%;
+        width: 15px;
+        left: 580.7px;
+        top: 159px;
       }
 
       .umbrella4 {
-        width: 15.69px;
-        left: 633px;
-        top: 161px;
+        transform-origin: center center;
+        border-radius: 50%;
+        width: 15px;
+        left: 631.5px;
+        top: 159.5px;
       }
 
       .level_switch {
@@ -387,6 +423,7 @@ section.tutorial {
     z-index: 1000;
     width: 100vw;
     height: 100vh;
+
     img.manual_opening {
       position: absolute;
       height: 72vh;
