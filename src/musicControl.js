@@ -1053,10 +1053,13 @@ $(".stepBtn.start").click(() => {
   //   `url("../../assets/img/detail_full_img/detail_full_img_2.png")`
   // );
 
-  $(".instructionContainer .step").css("background-image", `url("assets/img/order_full_img/order_full_img_2.svg")`);
+  $(".instructionContainer .step").css(
+    "background-image",
+    `url("NTUST-Music-Project/assets/img/order_full_img/order_full_img_2.svg")`
+  );
   $(".instructionContainer .instruction").css(
     "background-image",
-    `url("assets/img/detail_full_img/detail_full_img_2.png")`
+    `url("NTUST-Music-Project/assets/img/detail_full_img/detail_full_img_2.png")`
   );
 
   setListener(currentStep);
