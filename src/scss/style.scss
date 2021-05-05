@@ -67,18 +67,12 @@ $Color_OrangeGlass: #ee8848af;
 // }
 
 * {
-  -webkit-user-select: none;
+  -webkit-user-select: none !important;
   -khtml-user-select: none;
   -moz-user-select: none;
   -o-user-select: none;
   user-select: none;
-  -webkit-user-select: text;
-  -khtml-user-select: text;
-  -moz-user-select: text;
-  -o-user-select: text;
-  user-select: text;
-  -webkit-touch-callout: none;
-
+  -webkit-touch-callout: none !important;
   -ms-touch-action: manipulation;
   touch-action: manipulation;
 }
