@@ -224,10 +224,12 @@ const setListener = (step) => {
       let nowPlayingDrumSound = 0;
       function_1.on("touchstart", () => {
         function1Pressing = true;
+        console.log(function1Pressing);
       });
 
       function_1.on("touchend", () => {
         function1Pressing = false;
+        console.log(function1Pressing);
       });
 
       leftDrum.click(() => {
@@ -620,6 +622,8 @@ const setListener = (step) => {
       selectInstrumentComponent(function_1, "function_1_select.svg", false);
       selectInstrumentComponent(string, "string_select.svg", false);
       unBindAll();
+      $("#BeiguanD1")[0].loop = false;
+      $("#BeiguanD1")[0].playbackRate = 1;
       level_switch.css({
         top: "252px",
         left: "80px",
@@ -656,6 +660,7 @@ const setListener = (step) => {
       selectInstrumentComponent(leftDrum, "left_drum_select.svg", false);
       selectInstrumentComponent(rightDrum, "right_drum_select.svg", false);
       $("#BeiguanD1")[0].loop = false;
+      $("#BeiguanD1")[0].playbackRate = 1;
       unBindAll();
       let isRecording = false;
 
@@ -751,6 +756,7 @@ const setListener = (step) => {
       unBindAll();
       stopPlaying();
       $("#BeiguanD1")[0].loop = false;
+      $("#BeiguanD1")[0].playbackRate = 1;
       level_switch.css({ top: "252px", left: "80px" });
       level_switch.on("swiped-up", function () {
         level_switch.css({
@@ -766,6 +772,8 @@ const setListener = (step) => {
       selectInstrumentComponent(function_1, "function_1_select.svg", false);
       selectInstrumentComponent(string, "string_select.svg", false);
       unBindAll();
+      $("#track1")[0].loop = false;
+      $("#track2")[0].loop = false;
       level_switch.css({
         top: "242px",
         left: "90px",
@@ -1084,51 +1092,51 @@ $(".stepBtn.jump").click(() => {
 });
 
 // disable img dragging
-leftDrum.on("dragstart", () => {
-  return false;
-});
-rightDrum.on("dragstart", () => {
-  return false;
-});
-string.on("dragstart", () => {
-  return false;
-});
-god_button_1.on("dragstart", () => {
-  return false;
-});
-god_button_2.on("dragstart", () => {
-  return false;
-});
-flag_cut_top.on("dragstart", () => {
-  return false;
-});
-flag_cut_bottom.on("dragstart", () => {
-  return false;
-});
-head_flag.on("dragstart", () => {
-  return false;
-});
-long_flag.on("dragstart", () => {
-  return false;
-});
-umbrella1.on("dragstart", () => {
-  return false;
-});
-umbrella2.on("dragstart", () => {
-  return false;
-});
-umbrella3.on("dragstart", () => {
-  return false;
-});
-umbrella4.on("dragstart", () => {
-  return false;
-});
-level_switch.on("dragstart", () => {
-  return false;
-});
-function_1.on("dragstart", () => {
-  return false;
-});
-function_2.on("dragstart", () => {
-  return false;
-});
+// leftDrum.on("dragstart", () => {
+//   return false;
+// });
+// rightDrum.on("dragstart", () => {
+//   return false;
+// });
+// string.on("dragstart", () => {
+//   return false;
+// });
+// god_button_1.on("dragstart", () => {
+//   return false;
+// });
+// god_button_2.on("dragstart", () => {
+//   return false;
+// });
+// flag_cut_top.on("dragstart", () => {
+//   return false;
+// });
+// flag_cut_bottom.on("dragstart", () => {
+//   return false;
+// });
+// head_flag.on("dragstart", () => {
+//   return false;
+// });
+// long_flag.on("dragstart", () => {
+//   return false;
+// });
+// umbrella1.on("dragstart", () => {
+//   return false;
+// });
+// umbrella2.on("dragstart", () => {
+//   return false;
+// });
+// umbrella3.on("dragstart", () => {
+//   return false;
+// });
+// umbrella4.on("dragstart", () => {
+//   return false;
+// });
+// level_switch.on("dragstart", () => {
+//   return false;
+// });
+// function_1.on("dragstart", () => {
+//   return false;
+// });
+// function_2.on("dragstart", () => {
+//   return false;
+// });
