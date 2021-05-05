@@ -2,31 +2,32 @@
   font-family: "GenWanMin SB";
   src: url(../../assets/font/GenWanMin-SB.ttf);
 }
-
 @font-face {
   font-family: "Myanmar MN";
   src: url(../../assets/font/MyanmarMN.ttf);
 }
-
-@-webkit-keyframes arrowMove {
-  0% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  100% {
-    -webkit-transform: translateY(1vh);
-            transform: translateY(1vh);
-  }
-}
-
 @keyframes arrowMove {
   0% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
   }
   100% {
-    -webkit-transform: translateY(1vh);
-            transform: translateY(1vh);
+    transform: translateY(1vh);
+  }
+}
+@keyframes shadowBreath_Double {
+  0% {
+    filter: drop-shadow(0px 0px 1vh #ee8948) drop-shadow(0px 0px 0.5vh #ee8948);
+  }
+  100% {
+    filter: drop-shadow(0px 0px 3vh #ee8948) drop-shadow(0px 0px 0.5vh #ee8948);
+  }
+}
+@keyframes shadowBreath {
+  0% {
+    filter: drop-shadow(0px 0px 1vh #ee8948);
+  }
+  100% {
+    filter: drop-shadow(0px 0px 3vh #ee8948);
   }
 }
 
@@ -51,53 +52,36 @@ section.home {
   position: relative;
   overflow: hidden;
 }
-
 section.home .bigBackground {
   width: 100%;
   height: 100%;
 }
-
 section.home .bigBackground img.background {
-  -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
+  transition-duration: 0.5s;
   position: absolute;
   width: 100vw;
   z-index: -1;
 }
-
 section.home .bigBackground .introContainer {
-  -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
+  transition-duration: 0.5s;
   z-index: 10;
   transition-duration: 0.5s;
   margin-top: 15vh;
   top: 100vh;
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+  transform: translateY(0);
   opacity: 1;
   position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   width: 100%;
   height: 100vh;
 }
-
 section.home .bigBackground .introContainer img.brand {
   width: 100%;
   margin-top: 40px;
 }
-
 section.home .bigBackground .introContainer .introFrame {
   background-image: url("../../assets/img/introFrame.svg");
   background-repeat: no-repeat;
@@ -106,117 +90,79 @@ section.home .bigBackground .introContainer .introFrame {
   width: 80vw;
   height: 70vh;
   background-size: 95%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
+  justify-content: center;
+  align-items: flex-start;
+  flex-shrink: 0;
   margin-top: 8vh;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 7vh 10vh 0 10vh;
 }
-
 section.home .bigBackground .introContainer .introFrame img {
   visibility: hidden;
 }
-
 section.home .bigBackground .introContainer .introFrame p {
   margin-top: 6vh;
   max-width: 65vw;
 }
-
 section.home .bigBackground .introContainer .introFrame p span.ch {
   font-family: "GenWanMin SB";
   font-size: 1.5vw;
   line-height: 3vw;
   color: #d6d2c7;
 }
-
 section.home .bigBackground .introContainer .introFrame span.en {
   font-family: "Myanmar MN";
   font-size: 1.5vw;
   line-height: 2.5vw;
   color: #d6d2c7;
 }
-
 section.home .bigBackground .introContainer img.arrowIcon {
   cursor: pointer;
   margin-top: -1vh;
   width: 3vw;
-  -webkit-animation: arrowMove 0.5s alternate infinite;
-          animation: arrowMove 0.5s alternate infinite;
+  animation: arrowMove 0.5s alternate infinite;
 }
 
 section.tutorial {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
+  user-select: none;
+  transition-duration: 0.5s;
   background-color: #d32b2d;
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  transform: translateY(0);
+  box-sizing: border-box;
   width: 100vw;
   height: 100vh;
   position: relative;
   display: none;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   position: absolute;
   top: 0;
 }
-
 section.tutorial article.instructionArea {
-  -webkit-box-flex: 3;
-      -ms-flex: 3;
-          flex: 3;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  flex: 3;
+  box-sizing: border-box;
 }
-
 section.tutorial article.instructionArea .instructionContainer {
   position: absolute;
   bottom: 4vh;
   left: 3vw;
   width: 75%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
-
 section.tutorial article.instructionArea .instructionContainer .instruction {
-  -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
+  transition-duration: 0.3s;
   background-image: url("../../assets/img/detail_full_img/detail_full_img_1.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-size: 99%;
 }
-
 section.tutorial article.instructionArea .instructionContainer .instruction img {
   visibility: hidden;
 }
-
 section.tutorial article.instructionArea .instructionContainer .step {
-  -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
+  transition-duration: 0.3s;
   background-image: url("../../assets/img/order_full_img/order_full_img_1.svg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -225,25 +171,20 @@ section.tutorial article.instructionArea .instructionContainer .step {
   margin-top: 2vh;
   position: relative;
 }
-
 section.tutorial article.instructionArea .instructionContainer .step img.order_frame {
   visibility: hidden;
 }
-
 section.tutorial article.instructionArea .instructionContainer .step .stepBtn {
   height: 18px;
   position: absolute;
   bottom: 1.5vh;
 }
-
 section.tutorial article.instructionArea .instructionContainer .step .stepBtn.review {
   left: 1.5vw;
 }
-
 section.tutorial article.instructionArea .instructionContainer .step .stepBtn.next {
   right: 1.5vw;
 }
-
 section.tutorial article.instructionArea .instructionContainer .step .stepBtn.start {
   left: 0;
   right: 0;
@@ -264,25 +205,18 @@ section.tutorial article.instructionArea .instructionContainer .step p {
   right: 0;
   margin: 0 auto;
 }
-
 section.tutorial article.displayArea {
-  -webkit-box-flex: 7;
-      -ms-flex: 7;
-          flex: 7;
+  flex: 7;
   position: relative;
   overflow: hidden;
   height: 74vh;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+  align-self: flex-end;
   margin-bottom: 4vh;
   margin-right: 6vh;
-  -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
+  transition-duration: 0.3s;
 }
-
 section.tutorial article.displayArea .instrument {
-  -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
+  transition-duration: 0.3s;
   background-image: url("../../assets/img/instrumentComponent/gongche body.svg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -290,153 +224,133 @@ section.tutorial article.displayArea .instrument {
   width: 900px;
   height: 480px;
   background-size: 99%;
-  -webkit-transform-origin: right bottom;
-          transform-origin: right bottom;
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
+  transform-origin: right bottom;
+  transform: scale(0.9);
   position: absolute;
   right: 5vh;
   bottom: 0vh;
 }
-
 section.tutorial article.displayArea .instrument img {
-  -webkit-transition-duration: 0.1s;
-          transition-duration: 0.1s;
+  box-sizing: initial;
+  transition-duration: 0.1s;
   position: absolute;
 }
-
 section.tutorial article.displayArea .instrument .drum {
   width: 106.5px;
 }
-
 section.tutorial article.displayArea .instrument .leftDrum {
   left: 120px;
   top: 11px;
 }
-
 section.tutorial article.displayArea .instrument .rightDrum {
   left: 229px;
   top: 11px;
 }
-
 section.tutorial article.displayArea .instrument .body {
   visibility: hidden;
   position: relative;
 }
-
 section.tutorial article.displayArea .instrument .string {
   width: 604.5px;
   right: 2px;
   bottom: 1px;
 }
-
 section.tutorial article.displayArea .instrument .godButtons {
   width: 166px;
   left: 100px;
   top: 260px;
 }
-
 section.tutorial article.displayArea .instrument .god_button_1 {
   width: 53.22px;
   left: 234px;
   top: 275px;
 }
-
 section.tutorial article.displayArea .instrument .god_button_2 {
   width: 53.22px;
   left: 251px;
   top: 339px;
 }
-
 section.tutorial article.displayArea .instrument .flag_cut_top {
-  -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
+  transition-duration: 0.3s;
   width: 80px;
   left: 485px;
   top: 101px;
 }
-
 section.tutorial article.displayArea .instrument .flag_cut_bottom {
-  -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
+  transition-duration: 0.3s;
   width: 80px;
   left: 458px;
   top: 152px;
 }
-
 section.tutorial article.displayArea .instrument .head_flag {
+  border-radius: 50%;
   width: 22.35px;
-  left: 403px;
-  top: 133px;
+  left: 403.5px;
+  top: 132px;
 }
-
 section.tutorial article.displayArea .instrument .long_flag_l,
 section.tutorial article.displayArea .instrument .long_flag_r {
   width: 26.24px;
   left: 795px;
   top: 130px;
 }
-
 section.tutorial article.displayArea .instrument .umbrella1 {
-  width: 15.69px;
+  transform-origin: center center;
+  border-radius: 50%;
+  width: 15px;
   left: 608px;
-  top: 110px;
+  top: 109.8px;
 }
-
 section.tutorial article.displayArea .instrument .umbrella2 {
-  width: 15.69px;
+  transform-origin: center center;
+  border-radius: 50%;
+  width: 15px;
   left: 659px;
-  top: 110px;
+  top: 109.8px;
 }
-
 section.tutorial article.displayArea .instrument .umbrella3 {
-  width: 15.69px;
-  left: 583px;
-  top: 161px;
+  transform-origin: center center;
+  border-radius: 50%;
+  width: 15px;
+  left: 582.5px;
+  top: 160.8px;
 }
-
 section.tutorial article.displayArea .instrument .umbrella4 {
-  width: 15.69px;
-  left: 633px;
-  top: 161px;
+  transform-origin: center center;
+  border-radius: 50%;
+  width: 15px;
+  left: 633.6px;
+  top: 160.8px;
 }
-
 section.tutorial article.displayArea .instrument .level_switch {
-  -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
+  transition-duration: 0.3s;
   width: 65.5px;
   left: 70px;
   top: 262px;
 }
-
 section.tutorial article.displayArea .instrument .screen {
   width: 64.6px;
   left: 698px;
   top: 111px;
 }
-
 section.tutorial article.displayArea .instrument .function_1 {
   width: 55px;
   left: 314px;
   top: 145px;
 }
-
 section.tutorial article.displayArea .instrument .function_2 {
   width: 71px;
   left: 255px;
   top: 204px;
 }
-
 section.tutorial img.manual {
   cursor: pointer;
   position: absolute;
   width: 8vh;
   right: 5vh;
   bottom: 4vh;
-  -webkit-transform: scale(0.99);
-          transform: scale(0.99);
+  transform: scale(0.99);
 }
-
 section.tutorial .openingPage {
   display: none;
   position: absolute;
@@ -444,11 +358,9 @@ section.tutorial .openingPage {
   width: 100vw;
   height: 100vh;
 }
-
 section.tutorial .openingPage img.manual_opening {
   position: absolute;
   height: 72vh;
   right: 5vw;
   bottom: 3vw;
 }
-/*# sourceMappingURL=style.css.map */

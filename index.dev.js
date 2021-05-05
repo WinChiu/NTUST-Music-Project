@@ -154,8 +154,24 @@ function leaveDescription() {
   $("#logoRed img.logo").attr("src", "./assets/img/brand.svg");
   $("#logoRed #menu img.arrow").attr("src", "./assets/img/menu/meun_arrow.svg");
   $("#sectionDescription").fadeOut();
-} //Arrow Control
+}
 
+function checkOrientation() {
+  var window_w = $(window).innerWidth();
+  var window_h = $(window).innerHeight();
+  console.log(window_w, ", ", window_h);
+
+  if (window_h > window_w) {
+    alert("Rotate! Rotate!");
+    $("#rotate").fadeIn();
+  } else {
+    $("#rotate").fadeOut();
+  }
+} //Lock Rotation
+
+
+checkOrientation();
+$(window).resize(checkOrientation); //Arrow Control
 
 $("#logoRed #menu").click(controlArrow); //Home Page Control
 
