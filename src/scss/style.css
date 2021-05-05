@@ -251,6 +251,13 @@ section.tutorial article.instructionArea .instructionContainer .step .stepBtn.st
   bottom: 2.5vh;
 }
 
+section.tutorial article.instructionArea .instructionContainer .step .stepBtn.jump {
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 2.5vh;
+}
+
 section.tutorial article.instructionArea .instructionContainer .step p {
   position: absolute;
   left: 0;

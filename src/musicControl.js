@@ -955,7 +955,7 @@ const setListener = (step) => {
       stopPlaying();
       $(".stepBtn.next").css("display", "none");
       $(".stepBtn.review").css("display", "none");
-      $(".stepBtn.start").css("display", "block");
+      $(".stepBtn.jump").css("display", "block");
       break;
     default:
       console.log("error");
@@ -963,7 +963,7 @@ const setListener = (step) => {
 };
 $(".stepBtn.next").css("display", "none");
 $(".stepBtn.review").css("display", "none");
-
+$(".stepBtn.jump").css("display", "none");
 $(".stepBtn.next").click(() => {
   if (currentStep < 24) currentStep++;
   console.log(currentStep);
@@ -995,24 +995,37 @@ $(".stepBtn.review").click(() => {
 $(".stepBtn.start").click(() => {
   unSelectAll();
 
-  if (currentStep === 24) {
-    leaveTutorial();
-    toDescription();
-    currentStep = 0;
-  } else {
-    currentStep = 22;
-  }
+  currentStep = 1;
 
   $(".stepBtn.next").css("display", "block");
   $(".stepBtn.review").css("display", "block");
   $(".stepBtn.start").css("display", "none");
   $(".instructionContainer .step").css(
     "background-image",
-    `url("../../assets/img/order_full_img/order_full_img_${currentStep + 1}.svg")`
+    `url("../../assets/img/order_full_img/order_full_img_2.svg")`
   );
   $(".instructionContainer .instruction").css(
     "background-image",
-    `url("../../assets/img/detail_full_img/detail_full_img_${currentStep + 1}.png")`
+    `url("../../assets/img/detail_full_img/detail_full_img_2.png")`
+  );
+
+  setListener(currentStep);
+});
+$(".stepBtn.jump").click(() => {
+  unSelectAll();
+  leaveTutorial();
+  toDescription();
+  currentStep = 0;
+
+  $(".stepBtn.start").css("display", "block");
+  $(".stepBtn.jump").css("display", "none");
+  $(".instructionContainer .step").css(
+    "background-image",
+    `url("../../assets/img/order_full_img/order_full_img_1.svg")`
+  );
+  $(".instructionContainer .instruction").css(
+    "background-image",
+    `url("../../assets/img/detail_full_img/detail_full_img_1.png")`
   );
 
   setListener(currentStep);
