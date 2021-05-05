@@ -46,8 +46,8 @@ const headFlagZoomIn = () => {
   instrumentDisplayArea.css("margin-bottom", "4vh");
 };
 let rotate = 0;
-let function1Pressing = true;
-let function2Pressing = true;
+let function1Pressing = false;
+let function2Pressing = false;
 let godButtonMode = 1;
 let nowPlayingUmbrellaDSound = 0;
 let nowPlayingUmbrellaDelay1Sound = 0;
