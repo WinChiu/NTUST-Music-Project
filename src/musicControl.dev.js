@@ -745,6 +745,14 @@ var setListener = function setListener(step) {
       $("#BeiguanD1")[0].loop = false;
       $("#BeiguanD1")[0].playbackRate = 1;
       unBindAll();
+      $(".god_button_1").click(function () {
+        selectInstrumentComponent(god_button_1, "god_button_1_select.svg", false);
+        unSelectInstrumentComponent(god_button_2, "god_button_2.svg");
+      });
+      $(".god_button_2").click(function () {
+        selectInstrumentComponent(god_button_2, "god_button_2_select.svg", false);
+        unSelectInstrumentComponent(god_button_1, "god_button_1.svg");
+      });
       var isRecording = false;
       function_2.on("touchstart", function () {
         if (godButtonMode === 1) playPausedSound(drumSound[5]);
