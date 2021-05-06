@@ -37,7 +37,7 @@ const longFlagZoomIn = () => {
   instrumentDisplayArea.css("margin-bottom", "4vh");
 };
 const umbrellaZoomIn = () => {
-  instrumentContainer.css("transform", "translate(10vw, 10vh) scale(1.2) ");
+  instrumentContainer.css("transform", "translate(19vw, 32vh) scale(1.35) ");
   instrumentDisplayArea.css("margin-bottom", "4vh");
 };
 const headFlagZoomIn = () => {
