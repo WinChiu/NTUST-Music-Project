@@ -32,6 +32,11 @@ var originalSize = function originalSize() {
   instrumentDisplayArea.css("margin-bottom", "6vh");
 };
 
+var case_2_ZoomIn = function case_2_ZoomIn() {
+  instrumentContainer.css("transform", "translate(10vw, 30vh) scale(1.5)");
+  instrumentDisplayArea.css("margin-bottom", "4vh");
+};
+
 var cutFlagZoomIn = function cutFlagZoomIn() {
   instrumentContainer.css("transform", "translate(10vw, 30vh) scale(1.5)");
   instrumentDisplayArea.css("margin-bottom", "4vh");
@@ -135,9 +140,13 @@ var selectInstrumentComponent = function selectInstrumentComponent(target, fileN
   if (isDouble) {
     // target.css("filter", "drop-shadow(0px 0px 0vh #ee8948) drop-shadow(0px 0px 0vh #ee8948)");
     target.css("animation", "shadowBreath_Double 1s alternate infinite");
+    target.css("cursor", "pointer");
+    target.addClass("select");
   } else {
     // target.css("filter", "drop-shadow(0px 0px 0vh #ee8948)");
     target.css("animation", "shadowBreath 1s alternate infinite");
+    target.css("cursor", "pointer");
+    target.addClass("select");
   }
 
   target.attr("src", instrumentComponentSrc + fileName); // setTimeout(() => {
@@ -149,6 +158,8 @@ var unSelectInstrumentComponent = function unSelectInstrumentComponent(target, f
   target.attr("src", instrumentComponentSrc + fileName); // target.css("filter", "none");
 
   target.css("animation", "none");
+  target.css("cursor", "initial");
+  target.removeClass("select");
 };
 
 var unSelectAll = function unSelectAll() {
@@ -604,7 +615,13 @@ var setListener = function setListener(step) {
       originalSize();
       selectInstrumentComponent(god_button_1, "god_button_1_select.svg", false);
       selectInstrumentComponent(god_button_2, "god_button_2_select.svg", false);
-      unBindAll(); // //Nothing happen
+      unBindAll();
+      $(".god_button_1").click(function () {
+        unSelectInstrumentComponent(god_button_1, "god_button_1.svg");
+      });
+      $(".god_button_2").click(function () {
+        unSelectInstrumentComponent(god_button_2, "god_button_2.svg");
+      }); // //Nothing happen
 
       break;
 
@@ -952,6 +969,14 @@ var setListener = function setListener(step) {
       selectInstrumentComponent(god_button_1, "god_button_1_select.svg", false);
       selectInstrumentComponent(god_button_2, "god_button_2_select.svg", false);
       unBindAll();
+      $(".god_button_1").click(function () {
+        selectInstrumentComponent(god_button_1, "god_button_1_select.svg", false);
+        unSelectInstrumentComponent(god_button_2, "god_button_2.svg");
+      });
+      $(".god_button_2").click(function () {
+        selectInstrumentComponent(god_button_2, "god_button_2_select.svg", false);
+        unSelectInstrumentComponent(god_button_1, "god_button_1.svg");
+      });
       if (unMutedTracks.length === 0) unMutedTracks = ["#track1", "#track2"];
       head_flag.click(function () {
         stopPlaying();

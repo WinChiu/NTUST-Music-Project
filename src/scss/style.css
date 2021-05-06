@@ -236,9 +236,15 @@ section.tutorial article.displayArea .instrument .leftDrum {
   left: 120px;
   top: 11px;
 }
+section.tutorial article.displayArea .instrument .leftDrum.select:active {
+  transform: translate(1.5px, 1.5px);
+}
 section.tutorial article.displayArea .instrument .rightDrum {
   left: 229px;
   top: 11px;
+}
+section.tutorial article.displayArea .instrument .rightDrum.select:active {
+  transform: translate(1.5px, 1.5px);
 }
 section.tutorial article.displayArea .instrument .body {
   visibility: hidden;
@@ -258,6 +264,12 @@ section.tutorial article.displayArea .instrument .god_button_1 {
   width: 53.22px;
   left: 234px;
   top: 275px;
+}
+section.tutorial article.displayArea .instrument .god_button_1.select:active {
+  transform: translate(1.5px, 1.5px);
+}
+section.tutorial article.displayArea .instrument .god_button_2.select:active {
+  transform: translate(1.5px, 1.5px);
 }
 section.tutorial article.displayArea .instrument .god_button_2 {
   width: 53.22px;
@@ -332,10 +344,16 @@ section.tutorial article.displayArea .instrument .function_1 {
   left: 314px;
   top: 145px;
 }
+section.tutorial article.displayArea .instrument .function_1.select:active {
+  transform: translate(1.5px, 1.5px);
+}
 section.tutorial article.displayArea .instrument .function_2 {
   width: 71px;
   left: 255px;
   top: 204px;
+}
+section.tutorial article.displayArea .instrument .function_2.select:active {
+  transform: translate(1.5px, 1.5px);
 }
 section.tutorial img.manual {
   cursor: pointer;

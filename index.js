@@ -1,4 +1,5 @@
 let arrowClick = false;
+var idleTime = 0;
 
 window.oncontextmenu = function (event) {
   event.preventDefault();
@@ -6,6 +7,28 @@ window.oncontextmenu = function (event) {
   return false;
 };
 
+$(document).ready(function () {
+    //Increment the idle time counter every minute.
+    var idleInterval = setInterval(timerIncrement, 1000); // 1 sec
+
+    //Zero the idle timer on mouse movement.
+    $(this).mousemove(function () {
+        idleTime = 0;
+    });
+    $(this).click(function () {
+        idleTime = 0;
+    });
+    $(this).scroll(function(){
+        idleTime = 0;
+    });
+});
+
+function timerIncrement() {
+    idleTime = idleTime + 1;
+    if (idleTime > 45) { // 45 secs
+        window.location.reload();
+    }
+}
 function moveHomePageUp_Hand() {
   $(".home .bigBackground img.background").css("transform", "translateY(0)");
   $(".home .bigBackground .introContainer").css("top", "100vh");

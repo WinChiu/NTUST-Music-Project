@@ -303,10 +303,15 @@ section.tutorial {
         left: 120px;
         top: 11px;
       }
-
+      .leftDrum.select:active{
+        transform: translate(1.5px,1.5px);
+      }
       .rightDrum {
         left: 229px;
         top: 11px;
+      }
+      .rightDrum.select:active{
+        transform: translate(1.5px,1.5px);
       }
 
       .body {
@@ -330,6 +335,12 @@ section.tutorial {
         width: 53.22px;
         left: 234px;
         top: 275px;
+      }
+      .god_button_1.select:active{
+        transform: translate(1.5px,1.5px);
+      }
+      .god_button_2.select:active{
+        transform: translate(1.5px,1.5px);
       }
 
       .god_button_2 {
@@ -416,12 +427,19 @@ section.tutorial {
         left: 314px;
         top: 145px;
       }
+      .function_1.select:active{
+          transform: translate(1.5px,1.5px);
+      }
 
       .function_2 {
         width: 71px;
         left: 255px;
         top: 204px;
       }
+      .function_2.select:active{
+        transform: translate(1.5px,1.5px);
+    }
+
     }
   }
 
