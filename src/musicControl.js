@@ -255,6 +255,7 @@ const setListener = (step) => {
     case 0:
       unSelectAll();
       originalSize();
+      unBindAll();
       break;
     case 1:
       unSelectAll();
@@ -789,6 +790,7 @@ const setListener = (step) => {
       selectInstrumentComponent(leftDrum, "left_drum_select.svg", false);
       selectInstrumentComponent(rightDrum, "right_drum_select.svg", false);
       selectInstrumentComponent(string, "string_select.svg", false);
+      unBindAll();
       $("#BeiguanD1")[0].loop = true;
       $("#BeiguanD1")[0].playbackRate = 4.58;
       $("#BeiguanD1")[0].volume = 1;
