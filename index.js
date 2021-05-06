@@ -55,7 +55,6 @@ function moveHomePageDown_Hand() {
 }
 function controlInstrumentSize() {
   var vw = window.innerWidth;
-
   $("section.tutorial article.displayArea .instrument").css("transform", "scale(" + (0.9 * vw) / 1280 + ")");
 }
 function closeOpeningPage() {

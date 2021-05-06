@@ -30,9 +30,54 @@ const originalSize = () => {
   instrumentDisplayArea.css("margin-bottom", "6vh");
 };
 const case_2_ZoomIn = () => {
-  instrumentContainer.css("transform", "translate(10vw, 30vh) scale(1.5)");
+  instrumentContainer.css("transform", "translate(30vw, 35vh) scale(1.4)");
   instrumentDisplayArea.css("margin-bottom", "4vh");
 }
+const case_15_ZoomIn = () => {
+  instrumentContainer.css("transform", "translate(30vw, 35vh) scale(1.4)");
+  instrumentDisplayArea.css("margin-bottom", "4vh");
+}
+const case_16_ZoomIn = () => {
+  instrumentContainer.css("transform", "translate(30vw, 35vh) scale(1.4)");
+  instrumentDisplayArea.css("margin-bottom", "4vh");
+}
+const case_21_ZoomIn = () => {
+  instrumentContainer.css("transform", "translate(30vw, 35vh) scale(1.4)");
+  instrumentDisplayArea.css("margin-bottom", "4vh");
+}
+const case_3_ZoomIn = () => {
+  instrumentContainer.css("transform", "translate(-5vw, 10vh) scale(1.2) rotate(10deg)");
+  instrumentDisplayArea.css("margin-bottom", "4vh");
+}
+const case_4_ZoomIn = () => {
+  instrumentContainer.css("transform", "translate(5vw, -20vh) scale(1.1) rotate(-12deg)");
+  instrumentDisplayArea.css("margin-bottom", "4vh");
+}
+const case_14_ZoomIn = () => {
+  instrumentContainer.css("transform", "translate(5vw, -20vh) scale(1.1) rotate(-12deg)");
+  instrumentDisplayArea.css("margin-bottom", "4vh");
+}
+const case_19_ZoomIn = () => {
+  instrumentContainer.css("transform", "translate(5vw, -20vh) scale(1.1) rotate(-12deg)");
+  instrumentDisplayArea.css("margin-bottom", "4vh");
+}
+const case_6_ZoomIn = () => {
+  instrumentContainer.css("transform", "translate(30vw, 35vh) scale(1.4)");
+  instrumentDisplayArea.css("margin-bottom", "4vh");
+}
+const case_12_ZoomIn = () => {
+  instrumentContainer.css("transform", "translate(30vw, 0) scale(1.4) rotate(0)");
+  instrumentDisplayArea.css("margin-bottom", "4vh");
+}
+const case_13_ZoomIn = () => {
+  instrumentContainer.css("transform", "translate(40vw, 5vh) scale(1.5) rotate(0)");
+  instrumentDisplayArea.css("margin-bottom", "4vh");
+}
+const case_18_ZoomIn = () => {
+  instrumentContainer.css("transform", "translate(40vw, 5vh) scale(1.5) rotate(0)");
+  instrumentDisplayArea.css("margin-bottom", "4vh");
+}
+
 const cutFlagZoomIn = () => {
   instrumentContainer.css("transform", "translate(10vw, 30vh) scale(1.5)");
   instrumentDisplayArea.css("margin-bottom", "4vh");
@@ -228,7 +273,7 @@ const setListener = (step) => {
       break;
     case 2:
       unSelectAll();
-      originalSize();
+      case_2_ZoomIn();
       selectInstrumentComponent(leftDrum, "left_drum_select.svg", false);
       selectInstrumentComponent(rightDrum, "right_drum_select.svg", false);
       selectInstrumentComponent(function_1, "function_1_select.svg", false);
@@ -270,7 +315,7 @@ const setListener = (step) => {
       break;
     case 3:
       unSelectAll();
-      originalSize();
+      case_3_ZoomIn();
       selectInstrumentComponent(string, "string_select.svg", false);
       unBindAll();
 
@@ -300,7 +345,7 @@ const setListener = (step) => {
       break;
     case 4:
       unSelectAll();
-      originalSize();
+      case_4_ZoomIn();
       selectInstrumentComponent(string, "string_select.svg", false);
       selectInstrumentComponent(function_1, "function_1_select.svg", false);
       unBindAll();
@@ -420,7 +465,7 @@ const setListener = (step) => {
       break;
     case 6:
       unSelectAll();
-      originalSize();
+      case_6_ZoomIn();
       selectInstrumentComponent(function_2, "function_2_select.svg", false);
       selectInstrumentComponent(leftDrum, "left_drum_select.svg", false);
       selectInstrumentComponent(rightDrum, "right_drum_select.svg", false);
@@ -602,7 +647,7 @@ const setListener = (step) => {
       break;
     case 12:
       unSelectAll();
-      originalSize();
+      case_12_ZoomIn();
       selectInstrumentComponent(god_button_1, "god_button_1_select.svg", false);
       selectInstrumentComponent(god_button_2, "god_button_2_select.svg", false);
       unBindAll();
@@ -617,7 +662,7 @@ const setListener = (step) => {
       break;
     case 13:
       unSelectAll();
-      originalSize();
+      case_13_ZoomIn();
       selectInstrumentComponent(level_switch, "level_switch.svg", true);
       unBindAll();
       level_switch.css({
@@ -634,7 +679,7 @@ const setListener = (step) => {
       break;
     case 14:
       unSelectAll();
-      originalSize();
+      case_14_ZoomIn();
       selectInstrumentComponent(function_1, "function_1_select.svg", false);
       selectInstrumentComponent(string, "string_select.svg", false);
       unBindAll();
@@ -648,7 +693,7 @@ const setListener = (step) => {
       break;
     case 15:
       unSelectAll();
-      originalSize();
+      case_15_ZoomIn();
       selectInstrumentComponent(function_1, "function_1_select.svg", false);
       selectInstrumentComponent(leftDrum, "left_drum_select.svg", false);
       selectInstrumentComponent(rightDrum, "right_drum_select.svg", false);
@@ -671,7 +716,7 @@ const setListener = (step) => {
       break;
     case 16:
       unSelectAll();
-      originalSize();
+      case_16_ZoomIn();
       selectInstrumentComponent(function_2, "function_2_select.svg", false);
       selectInstrumentComponent(leftDrum, "left_drum_select.svg", false);
       selectInstrumentComponent(rightDrum, "right_drum_select.svg", false);
@@ -767,7 +812,7 @@ const setListener = (step) => {
       break;
     case 18:
       unSelectAll();
-      originalSize();
+      case_18_ZoomIn();
       selectInstrumentComponent(level_switch, "level_switch.svg", true);
       unBindAll();
       stopPlaying();
@@ -784,7 +829,7 @@ const setListener = (step) => {
       break;
     case 19:
       unSelectAll();
-      originalSize();
+      case_19_ZoomIn();
       selectInstrumentComponent(function_1, "function_1_select.svg", false);
       selectInstrumentComponent(string, "string_select.svg", false);
       unBindAll();
@@ -822,7 +867,7 @@ const setListener = (step) => {
     case 21:
       isHeadFlagOpen = false;
       unSelectAll();
-      originalSize();
+      case_21_ZoomIn();
       selectInstrumentComponent(leftDrum, "left_drum_select.svg", false);
       selectInstrumentComponent(rightDrum, "right_drum_select.svg", false);
       selectInstrumentComponent(function_1, "function_1_select.svg", false);

@@ -284,7 +284,7 @@ section.tutorial {
       @include size(900px, 480px);
       background-size: 99%;
       transform-origin: right bottom;
-      transform: scale(0.9);
+      transform: translate(0, 0) scale(.9) rotate(0);
       position: absolute;
       right: 5vh;
       bottom: 0vh;
