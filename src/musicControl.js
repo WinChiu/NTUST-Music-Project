@@ -675,7 +675,7 @@ const setListener = (step) => {
           left: "80px",
         });
       });
-      level_switch.on("touchstart", function () {
+      level_switch.click(function () {
         level_switch.css({
           top: "252px",
           left: "80px",
@@ -851,7 +851,7 @@ const setListener = (step) => {
           left: "90px",
         });
       });
-      level_switch.on("touchstart", function () {
+      level_switch.click(function () {
         level_switch.css({
           top: "242px",
           left: "90px",
