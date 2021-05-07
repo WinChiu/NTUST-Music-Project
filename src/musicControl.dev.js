@@ -125,7 +125,6 @@ var selectedTrack = [];
 var step15IsPlaying = false;
 var instrumentComponentSrc = "./assets/img/instrumentComponent/";
 var longFlagMode = false;
-if (function1Pressing) alert("hi");
 
 function leaveTutorial() {
   $("#logoRed #menu h3.play").css("color", "#DBDBDD");
@@ -236,36 +235,35 @@ var unSelectAll = function unSelectAll() {
   unSelectInstrumentComponent(function_2, "function_2.svg");
 }; //For string==============
 
-
 var player1 = new Tone.Player({
   url: "./assets/audio/菜刀旗/sona0 0_noStop.mp3",
-  loop: true
+  loop: true,
 });
 var player2 = new Tone.Player({
   url: "./assets/audio/菜刀旗/sona0 0_noStop.mp3",
-  loop: true
+  loop: true,
 });
 var pitchShift1 = new Tone.PitchShift({
-  pitch: 0
+  pitch: 0,
 }).toMaster();
 var pitchShift2 = new Tone.PitchShift({
-  pitch: 0
+  pitch: 0,
 }).toMaster();
 player1.connect(pitchShift1);
 player2.connect(pitchShift2);
 var player3 = new Tone.Player({
   url: "./assets/audio/壓帆旗/sonahigh_noStop.mp3",
-  loop: true
+  loop: true,
 });
 var player4 = new Tone.Player({
   url: "./assets/audio/菜刀旗/sonahigh_noStop.mp3",
-  loop: true
+  loop: true,
 });
 var pitchShift3 = new Tone.PitchShift({
-  pitch: 0
+  pitch: 0,
 }).toMaster();
 var pitchShift4 = new Tone.PitchShift({
-  pitch: 0
+  pitch: 0,
 }).toMaster();
 player3.connect(pitchShift3);
 player4.connect(pitchShift4); //===========================
@@ -687,12 +685,12 @@ var setListener = function setListener(step) {
       unBindAll();
       level_switch.css({
         top: "262px",
-        left: "70px"
+        left: "70px",
       });
       level_switch.on("swiped-up", function () {
         level_switch.css({
           top: "252px",
-          left: "80px"
+          left: "80px",
         });
       }); // //Nothing happen
 
@@ -708,7 +706,7 @@ var setListener = function setListener(step) {
       $("#BeiguanD1")[0].playbackRate = 1;
       level_switch.css({
         top: "252px",
-        left: "80px"
+        left: "80px",
       }); // //Nothing happen
 
       break;
@@ -847,12 +845,12 @@ var setListener = function setListener(step) {
       $("#BeiguanD1")[0].playbackRate = 1;
       level_switch.css({
         top: "252px",
-        left: "80px"
+        left: "80px",
       });
       level_switch.on("swiped-up", function () {
         level_switch.css({
           top: "242px",
-          left: "90px"
+          left: "90px",
         });
       }); //Nothing happen
 
@@ -868,7 +866,7 @@ var setListener = function setListener(step) {
       $("#track2")[0].loop = false;
       level_switch.css({
         top: "242px",
-        left: "90px"
+        left: "90px",
       }); //Nothing happen
 
       break;
@@ -983,21 +981,42 @@ var setListener = function setListener(step) {
         var mousePosition = e.touches[0].clientX;
 
         if (stringLeftBoundary < mousePosition && mousePosition < stringLeftBoundary + oneSectionWidth) {
-          if (!selectedTrack.find(function (track) {
-            return track === tracks[0];
-          })) selectedTrack.push(tracks[0]);
-        } else if (stringLeftBoundary + oneSectionWidth < mousePosition && mousePosition < stringLeftBoundary + oneSectionWidth * 2) {
-          if (!selectedTrack.find(function (track) {
-            return track === tracks[1];
-          })) selectedTrack.push(tracks[1]);
-        } else if (stringLeftBoundary + oneSectionWidth * 2 < mousePosition && mousePosition < stringLeftBoundary + oneSectionWidth * 3) {
-          if (!selectedTrack.find(function (track) {
-            return track === tracks[2];
-          })) selectedTrack.push(tracks[2]);
-        } else if (stringLeftBoundary + oneSectionWidth * 3 < mousePosition && mousePosition < stringLeftBoundary + oneSectionWidth * 4) {
-          if (!selectedTrack.find(function (track) {
-            return track === tracks[3];
-          })) selectedTrack.push(tracks[3]);
+          if (
+            !selectedTrack.find(function (track) {
+              return track === tracks[0];
+            })
+          )
+            selectedTrack.push(tracks[0]);
+        } else if (
+          stringLeftBoundary + oneSectionWidth < mousePosition &&
+          mousePosition < stringLeftBoundary + oneSectionWidth * 2
+        ) {
+          if (
+            !selectedTrack.find(function (track) {
+              return track === tracks[1];
+            })
+          )
+            selectedTrack.push(tracks[1]);
+        } else if (
+          stringLeftBoundary + oneSectionWidth * 2 < mousePosition &&
+          mousePosition < stringLeftBoundary + oneSectionWidth * 3
+        ) {
+          if (
+            !selectedTrack.find(function (track) {
+              return track === tracks[2];
+            })
+          )
+            selectedTrack.push(tracks[2]);
+        } else if (
+          stringLeftBoundary + oneSectionWidth * 3 < mousePosition &&
+          mousePosition < stringLeftBoundary + oneSectionWidth * 4
+        ) {
+          if (
+            !selectedTrack.find(function (track) {
+              return track === tracks[3];
+            })
+          )
+            selectedTrack.push(tracks[3]);
         }
       });
       leftDrum.click(function () {
@@ -1014,9 +1033,12 @@ var setListener = function setListener(step) {
       rightDrum.click(function () {
         if (function1Pressing) {
           selectedTrack.forEach(function (track) {
-            if (!unMutedTracks.find(function (unmuteTrack) {
-              return unmuteTrack === track;
-            })) unMutedTracks.push(track);
+            if (
+              !unMutedTracks.find(function (unmuteTrack) {
+                return unmuteTrack === track;
+              })
+            )
+              unMutedTracks.push(track);
           });
         }
       });
@@ -1118,15 +1140,27 @@ $(".stepBtn.review").css("display", "none");
 $(".stepBtn.jump").css("display", "none");
 $(".stepBtn.next").click(function () {
   if (currentStep < 24) currentStep++;
-  $(".instructionContainer .step").css("background-image", "url(\"../../assets/img/order_full_img/order_full_img_".concat(currentStep + 1, ".svg\")"));
-  $(".instructionContainer .instruction").css("background-image", "url(\"../../assets/img/detail_full_img/detail_full_img_".concat(currentStep + 1, ".png\")"));
+  $(".instructionContainer .step").css(
+    "background-image",
+    'url("../../assets/img/order_full_img/order_full_img_'.concat(currentStep + 1, '.svg")')
+  );
+  $(".instructionContainer .instruction").css(
+    "background-image",
+    'url("../../assets/img/detail_full_img/detail_full_img_'.concat(currentStep + 1, '.png")')
+  );
   setListener(currentStep);
 });
 $(".stepBtn.review").click(function () {
   stopPlaying();
   if (currentStep >= 1) currentStep--;
-  $(".instructionContainer .step").css("background-image", "url(\"../../assets/img/order_full_img/order_full_img_".concat(currentStep + 1, ".svg\")"));
-  $(".instructionContainer .instruction").css("background-image", "url(\"../../assets/img/detail_full_img/detail_full_img_".concat(currentStep + 1, ".png\")"));
+  $(".instructionContainer .step").css(
+    "background-image",
+    'url("../../assets/img/order_full_img/order_full_img_'.concat(currentStep + 1, '.svg")')
+  );
+  $(".instructionContainer .instruction").css(
+    "background-image",
+    'url("../../assets/img/detail_full_img/detail_full_img_'.concat(currentStep + 1, '.png")')
+  );
   setListener(currentStep);
 });
 $(".stepBtn.start").click(function () {
@@ -1135,8 +1169,14 @@ $(".stepBtn.start").click(function () {
   $(".stepBtn.next").css("display", "block");
   $(".stepBtn.review").css("display", "block");
   $(".stepBtn.start").css("display", "none");
-  $(".instructionContainer .step").css("background-image", "url(\"../../assets/img/order_full_img/order_full_img_2.svg\")");
-  $(".instructionContainer .instruction").css("background-image", "url(\"../../assets/img/detail_full_img/detail_full_img_2.png\")"); // $(".instructionContainer .step").css(
+  $(".instructionContainer .step").css(
+    "background-image",
+    'url("../../assets/img/order_full_img/order_full_img_2.svg")'
+  );
+  $(".instructionContainer .instruction").css(
+    "background-image",
+    'url("../../assets/img/detail_full_img/detail_full_img_2.png")'
+  ); // $(".instructionContainer .step").css(
   //   "background-image",
   //   `url("NTUST-Music-Project/assets/img/order_full_img/order_full_img_2.svg")`
   // );
@@ -1154,8 +1194,14 @@ $(".stepBtn.jump").click(function () {
   currentStep = 0;
   $(".stepBtn.start").css("display", "block");
   $(".stepBtn.jump").css("display", "none");
-  $(".instructionContainer .step").css("background-image", "url(\"../../assets/img/order_full_img/order_full_img_1.svg\")");
-  $(".instructionContainer .instruction").css("background-image", "url(\"../../assets/img/detail_full_img/detail_full_img_1.png\")");
+  $(".instructionContainer .step").css(
+    "background-image",
+    'url("../../assets/img/order_full_img/order_full_img_1.svg")'
+  );
+  $(".instructionContainer .instruction").css(
+    "background-image",
+    'url("../../assets/img/detail_full_img/detail_full_img_1.png")'
+  );
   setListener(currentStep);
 }); // disable img dragging
 // leftDrum.on("dragstart", () => {
