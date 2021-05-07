@@ -113,8 +113,8 @@ var headFlagZoomIn = function headFlagZoomIn() {
 };
 
 var rotate = 0;
-var function1Pressing = false;
-var function2Pressing = false;
+var function1Pressing = true;
+var function2Pressing = true;
 var godButtonMode = 1;
 var nowPlayingUmbrellaDSound = 0;
 var nowPlayingUmbrellaDelay1Sound = 0;
@@ -235,35 +235,36 @@ var unSelectAll = function unSelectAll() {
   unSelectInstrumentComponent(function_2, "function_2.svg");
 }; //For string==============
 
+
 var player1 = new Tone.Player({
   url: "./assets/audio/菜刀旗/sona0 0_noStop.mp3",
-  loop: true,
+  loop: true
 });
 var player2 = new Tone.Player({
   url: "./assets/audio/菜刀旗/sona0 0_noStop.mp3",
-  loop: true,
+  loop: true
 });
 var pitchShift1 = new Tone.PitchShift({
-  pitch: 0,
+  pitch: 0
 }).toMaster();
 var pitchShift2 = new Tone.PitchShift({
-  pitch: 0,
+  pitch: 0
 }).toMaster();
 player1.connect(pitchShift1);
 player2.connect(pitchShift2);
 var player3 = new Tone.Player({
   url: "./assets/audio/壓帆旗/sonahigh_noStop.mp3",
-  loop: true,
+  loop: true
 });
 var player4 = new Tone.Player({
   url: "./assets/audio/菜刀旗/sonahigh_noStop.mp3",
-  loop: true,
+  loop: true
 });
 var pitchShift3 = new Tone.PitchShift({
-  pitch: 0,
+  pitch: 0
 }).toMaster();
 var pitchShift4 = new Tone.PitchShift({
-  pitch: 0,
+  pitch: 0
 }).toMaster();
 player3.connect(pitchShift3);
 player4.connect(pitchShift4); //===========================
@@ -275,6 +276,7 @@ var setListener = function setListener(step) {
     case 0:
       unSelectAll();
       originalSize();
+      unBindAll();
       break;
 
     case 1:
@@ -298,13 +300,13 @@ var setListener = function setListener(step) {
       selectInstrumentComponent(rightDrum, "right_drum_select.svg", false);
       selectInstrumentComponent(function_1, "function_1_select.svg", false);
       unBindAll();
-      var nowPlayingDrumSound = 0;
-      function_1.on("touchstart", function () {
-        function1Pressing = true;
-      });
-      function_1.on("touchend", function () {
-        function1Pressing = false;
-      });
+      var nowPlayingDrumSound = 0; // function_1.on("touchstart", () => {
+      //   function1Pressing = true;
+      // });
+      // function_1.on("touchend", () => {
+      //   function1Pressing = false;
+      // });
+
       leftDrum.click(function () {
         if (function1Pressing) {
           if (nowPlayingDrumSound === 0) {
@@ -472,6 +474,7 @@ var setListener = function setListener(step) {
       string.on("touchstart", function () {
         $("#".concat(flagCutTopStatus, "_").concat(flagCutBottomStatus))[0].loop = true;
         playSound("#".concat(flagCutTopStatus, "_").concat(flagCutBottomStatus));
+        console.log("#".concat(flagCutTopStatus, "_").concat(flagCutBottomStatus));
       });
       string.on("touchend", function () {
         $("#".concat(flagCutTopStatus, "_").concat(flagCutBottomStatus))[0].loop = false;
@@ -685,12 +688,18 @@ var setListener = function setListener(step) {
       unBindAll();
       level_switch.css({
         top: "262px",
-        left: "70px",
+        left: "70px"
       });
       level_switch.on("swiped-up", function () {
         level_switch.css({
           top: "252px",
-          left: "80px",
+          left: "80px"
+        });
+      });
+      level_switch.click(function () {
+        level_switch.css({
+          top: "252px",
+          left: "80px"
         });
       }); // //Nothing happen
 
@@ -706,7 +715,7 @@ var setListener = function setListener(step) {
       $("#BeiguanD1")[0].playbackRate = 1;
       level_switch.css({
         top: "252px",
-        left: "80px",
+        left: "80px"
       }); // //Nothing happen
 
       break;
@@ -740,47 +749,48 @@ var setListener = function setListener(step) {
       selectInstrumentComponent(function_2, "function_2_select.svg", false);
       selectInstrumentComponent(leftDrum, "left_drum_select.svg", false);
       selectInstrumentComponent(rightDrum, "right_drum_select.svg", false);
-      $("#BeiguanD1")[0].loop = false;
-      $("#BeiguanD1")[0].playbackRate = 1;
+      $("#BeiguanD1")[0].loop = true;
+      $("#BeiguanD1")[0].playbackRate = 4.68;
+      $("#BeiguanD1")[0].volume = 0.5;
       unBindAll();
-      $(".god_button_1").click(function () {
-        selectInstrumentComponent(god_button_1, "god_button_1_select.svg", false);
-        unSelectInstrumentComponent(god_button_2, "god_button_2.svg");
-      });
-      $(".god_button_2").click(function () {
-        selectInstrumentComponent(god_button_2, "god_button_2_select.svg", false);
-        unSelectInstrumentComponent(god_button_1, "god_button_1.svg");
-      });
-      var isRecording = false;
-      function_2.on("touchstart", function () {
-        if (godButtonMode === 1) playPausedSound(drumSound[5]);
-      });
-      string.on("touchstart", function () {
-        if (godButtonMode === 2) {
-          player1.start();
-          setTimeout(function () {
-            player2.start();
-          }, 5);
-        }
-      });
-      string.on("touchmove", function (e) {
-        var stringRightBoundary = this.getBoundingClientRect().right - 30;
-        var stringLeftBoundary = this.getBoundingClientRect().left + 50;
-        var mousePosition = e.touches[0].clientX;
-        var middle = (stringRightBoundary + stringLeftBoundary) / 2;
+      var isRecording = false; // function_2.on("touchstart", () => {
+      //   function2Pressing = true;
+      // });
+      // function_2.on("touchend", () => {
+      //   function2Pressing = false;
+      // });
 
-        if (mousePosition < stringRightBoundary && mousePosition > stringLeftBoundary) {
-          pitchShift1.pitch = mousePosition / 1000 + (mousePosition - middle) / 300;
-          pitchShift2.pitch = mousePosition / 1000 + (mousePosition - middle) / 300;
-        } else {
-          player1.stop();
-          player2.stop();
-        }
+      rightDrum.click(function () {
+        if (function2Pressing) playPausedSound("#BeiguanD1");
       });
-      string.on("touchend", function () {
-        player1.stop();
-        player2.stop();
-      });
+      leftDrum.click(function () {
+        if (function2Pressing) pauseSound("#BeiguanD1");
+      }); // string.on("touchstart", () => {
+      //   if (godButtonMode === 2) {
+      //     player1.start();
+      //     setTimeout(() => {
+      //       player2.start();
+      //     }, 5);
+      //   }
+      // });
+      // string.on("touchmove", function (e) {
+      //   let stringRightBoundary = this.getBoundingClientRect().right - 30;
+      //   let stringLeftBoundary = this.getBoundingClientRect().left + 50;
+      //   let mousePosition = e.touches[0].clientX;
+      //   let middle = (stringRightBoundary + stringLeftBoundary) / 2;
+      //   if (mousePosition < stringRightBoundary && mousePosition > stringLeftBoundary) {
+      //     pitchShift1.pitch = mousePosition / 1000 + (mousePosition - middle) / 300;
+      //     pitchShift2.pitch = mousePosition / 1000 + (mousePosition - middle) / 300;
+      //   } else {
+      //     player1.stop();
+      //     player2.stop();
+      //   }
+      // });
+      // string.on("touchend", () => {
+      //   player1.stop();
+      //   player2.stop();
+      // });
+
       break;
 
     case 17:
@@ -791,10 +801,19 @@ var setListener = function setListener(step) {
       selectInstrumentComponent(leftDrum, "left_drum_select.svg", false);
       selectInstrumentComponent(rightDrum, "right_drum_select.svg", false);
       selectInstrumentComponent(string, "string_select.svg", false);
+      unBindAll();
       $("#BeiguanD1")[0].loop = true;
       $("#BeiguanD1")[0].playbackRate = 4.58;
       $("#BeiguanD1")[0].volume = 1;
       playPausedSound("#BeiguanD1");
+      $(".god_button_1").click(function () {
+        selectInstrumentComponent(god_button_1, "god_button_1_select.svg", false);
+        unSelectInstrumentComponent(god_button_2, "god_button_2.svg");
+      });
+      $(".god_button_2").click(function () {
+        selectInstrumentComponent(god_button_2, "god_button_2_select.svg", false);
+        unSelectInstrumentComponent(god_button_1, "god_button_1.svg");
+      });
       god_button_1.click(function () {
         godButtonMode = 1;
       });
@@ -845,12 +864,18 @@ var setListener = function setListener(step) {
       $("#BeiguanD1")[0].playbackRate = 1;
       level_switch.css({
         top: "252px",
-        left: "80px",
+        left: "80px"
       });
       level_switch.on("swiped-up", function () {
         level_switch.css({
           top: "242px",
-          left: "90px",
+          left: "90px"
+        });
+      });
+      level_switch.click(function () {
+        level_switch.css({
+          top: "242px",
+          left: "90px"
         });
       }); //Nothing happen
 
@@ -866,7 +891,7 @@ var setListener = function setListener(step) {
       $("#track2")[0].loop = false;
       level_switch.css({
         top: "242px",
-        left: "90px",
+        left: "90px"
       }); //Nothing happen
 
       break;
@@ -981,42 +1006,21 @@ var setListener = function setListener(step) {
         var mousePosition = e.touches[0].clientX;
 
         if (stringLeftBoundary < mousePosition && mousePosition < stringLeftBoundary + oneSectionWidth) {
-          if (
-            !selectedTrack.find(function (track) {
-              return track === tracks[0];
-            })
-          )
-            selectedTrack.push(tracks[0]);
-        } else if (
-          stringLeftBoundary + oneSectionWidth < mousePosition &&
-          mousePosition < stringLeftBoundary + oneSectionWidth * 2
-        ) {
-          if (
-            !selectedTrack.find(function (track) {
-              return track === tracks[1];
-            })
-          )
-            selectedTrack.push(tracks[1]);
-        } else if (
-          stringLeftBoundary + oneSectionWidth * 2 < mousePosition &&
-          mousePosition < stringLeftBoundary + oneSectionWidth * 3
-        ) {
-          if (
-            !selectedTrack.find(function (track) {
-              return track === tracks[2];
-            })
-          )
-            selectedTrack.push(tracks[2]);
-        } else if (
-          stringLeftBoundary + oneSectionWidth * 3 < mousePosition &&
-          mousePosition < stringLeftBoundary + oneSectionWidth * 4
-        ) {
-          if (
-            !selectedTrack.find(function (track) {
-              return track === tracks[3];
-            })
-          )
-            selectedTrack.push(tracks[3]);
+          if (!selectedTrack.find(function (track) {
+            return track === tracks[0];
+          })) selectedTrack.push(tracks[0]);
+        } else if (stringLeftBoundary + oneSectionWidth < mousePosition && mousePosition < stringLeftBoundary + oneSectionWidth * 2) {
+          if (!selectedTrack.find(function (track) {
+            return track === tracks[1];
+          })) selectedTrack.push(tracks[1]);
+        } else if (stringLeftBoundary + oneSectionWidth * 2 < mousePosition && mousePosition < stringLeftBoundary + oneSectionWidth * 3) {
+          if (!selectedTrack.find(function (track) {
+            return track === tracks[2];
+          })) selectedTrack.push(tracks[2]);
+        } else if (stringLeftBoundary + oneSectionWidth * 3 < mousePosition && mousePosition < stringLeftBoundary + oneSectionWidth * 4) {
+          if (!selectedTrack.find(function (track) {
+            return track === tracks[3];
+          })) selectedTrack.push(tracks[3]);
         }
       });
       leftDrum.click(function () {
@@ -1033,12 +1037,9 @@ var setListener = function setListener(step) {
       rightDrum.click(function () {
         if (function1Pressing) {
           selectedTrack.forEach(function (track) {
-            if (
-              !unMutedTracks.find(function (unmuteTrack) {
-                return unmuteTrack === track;
-              })
-            )
-              unMutedTracks.push(track);
+            if (!unMutedTracks.find(function (unmuteTrack) {
+              return unmuteTrack === track;
+            })) unMutedTracks.push(track);
           });
         }
       });
@@ -1140,27 +1141,16 @@ $(".stepBtn.review").css("display", "none");
 $(".stepBtn.jump").css("display", "none");
 $(".stepBtn.next").click(function () {
   if (currentStep < 24) currentStep++;
-  $(".instructionContainer .step").css(
-    "background-image",
-    'url("../../assets/img/order_full_img/order_full_img_'.concat(currentStep + 1, '.svg")')
-  );
-  $(".instructionContainer .instruction").css(
-    "background-image",
-    'url("../../assets/img/detail_full_img/detail_full_img_'.concat(currentStep + 1, '.png")')
-  );
+  console.log(currentStep);
+  $(".instructionContainer .step").css("background-image", "url(\"../../assets/img/order_full_img/order_full_img_".concat(currentStep + 1, ".svg\")"));
+  $(".instructionContainer .instruction").css("background-image", "url(\"../../assets/img/detail_full_img/detail_full_img_".concat(currentStep + 1, ".png\")"));
   setListener(currentStep);
 });
 $(".stepBtn.review").click(function () {
   stopPlaying();
   if (currentStep >= 1) currentStep--;
-  $(".instructionContainer .step").css(
-    "background-image",
-    'url("../../assets/img/order_full_img/order_full_img_'.concat(currentStep + 1, '.svg")')
-  );
-  $(".instructionContainer .instruction").css(
-    "background-image",
-    'url("../../assets/img/detail_full_img/detail_full_img_'.concat(currentStep + 1, '.png")')
-  );
+  $(".instructionContainer .step").css("background-image", "url(\"../../assets/img/order_full_img/order_full_img_".concat(currentStep + 1, ".svg\")"));
+  $(".instructionContainer .instruction").css("background-image", "url(\"../../assets/img/detail_full_img/detail_full_img_".concat(currentStep + 1, ".png\")"));
   setListener(currentStep);
 });
 $(".stepBtn.start").click(function () {
@@ -1169,14 +1159,8 @@ $(".stepBtn.start").click(function () {
   $(".stepBtn.next").css("display", "block");
   $(".stepBtn.review").css("display", "block");
   $(".stepBtn.start").css("display", "none");
-  $(".instructionContainer .step").css(
-    "background-image",
-    'url("../../assets/img/order_full_img/order_full_img_2.svg")'
-  );
-  $(".instructionContainer .instruction").css(
-    "background-image",
-    'url("../../assets/img/detail_full_img/detail_full_img_2.png")'
-  ); // $(".instructionContainer .step").css(
+  $(".instructionContainer .step").css("background-image", "url(\"../../assets/img/order_full_img/order_full_img_2.svg\")");
+  $(".instructionContainer .instruction").css("background-image", "url(\"../../assets/img/detail_full_img/detail_full_img_2.png\")"); // $(".instructionContainer .step").css(
   //   "background-image",
   //   `url("NTUST-Music-Project/assets/img/order_full_img/order_full_img_2.svg")`
   // );
@@ -1194,61 +1178,7 @@ $(".stepBtn.jump").click(function () {
   currentStep = 0;
   $(".stepBtn.start").css("display", "block");
   $(".stepBtn.jump").css("display", "none");
-  $(".instructionContainer .step").css(
-    "background-image",
-    'url("../../assets/img/order_full_img/order_full_img_1.svg")'
-  );
-  $(".instructionContainer .instruction").css(
-    "background-image",
-    'url("../../assets/img/detail_full_img/detail_full_img_1.png")'
-  );
+  $(".instructionContainer .step").css("background-image", "url(\"../../assets/img/order_full_img/order_full_img_1.svg\")");
+  $(".instructionContainer .instruction").css("background-image", "url(\"../../assets/img/detail_full_img/detail_full_img_1.png\")");
   setListener(currentStep);
-}); // disable img dragging
-// leftDrum.on("dragstart", () => {
-//   return false;
-// });
-// rightDrum.on("dragstart", () => {
-//   return false;
-// });
-// string.on("dragstart", () => {
-//   return false;
-// });
-// god_button_1.on("dragstart", () => {
-//   return false;
-// });
-// god_button_2.on("dragstart", () => {
-//   return false;
-// });
-// flag_cut_top.on("dragstart", () => {
-//   return false;
-// });
-// flag_cut_bottom.on("dragstart", () => {
-//   return false;
-// });
-// head_flag.on("dragstart", () => {
-//   return false;
-// });
-// long_flag.on("dragstart", () => {
-//   return false;
-// });
-// umbrella1.on("dragstart", () => {
-//   return false;
-// });
-// umbrella2.on("dragstart", () => {
-//   return false;
-// });
-// umbrella3.on("dragstart", () => {
-//   return false;
-// });
-// umbrella4.on("dragstart", () => {
-//   return false;
-// });
-// level_switch.on("dragstart", () => {
-//   return false;
-// });
-// function_1.on("dragstart", () => {
-//   return false;
-// });
-// function_2.on("dragstart", () => {
-//   return false;
-// });
+});

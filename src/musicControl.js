@@ -730,14 +730,6 @@ const setListener = (step) => {
       $("#BeiguanD1")[0].playbackRate = 4.68;
       $("#BeiguanD1")[0].volume = 0.5;
       unBindAll();
-      $(".god_button_1").click(function () {
-        selectInstrumentComponent(god_button_1, "god_button_1_select.svg", false);
-        unSelectInstrumentComponent(god_button_2, "god_button_2.svg");
-      });
-      $(".god_button_2").click(function () {
-        selectInstrumentComponent(god_button_2, "god_button_2_select.svg", false);
-        unSelectInstrumentComponent(god_button_1, "god_button_1.svg");
-      });
       let isRecording = false;
 
       // function_2.on("touchstart", () => {
@@ -795,7 +787,14 @@ const setListener = (step) => {
       $("#BeiguanD1")[0].playbackRate = 4.58;
       $("#BeiguanD1")[0].volume = 1;
       playPausedSound("#BeiguanD1");
-
+      $(".god_button_1").click(function () {
+        selectInstrumentComponent(god_button_1, "god_button_1_select.svg", false);
+        unSelectInstrumentComponent(god_button_2, "god_button_2.svg");
+      });
+      $(".god_button_2").click(function () {
+        selectInstrumentComponent(god_button_2, "god_button_2_select.svg", false);
+        unSelectInstrumentComponent(god_button_1, "god_button_1.svg");
+      });
       god_button_1.click(() => {
         godButtonMode = 1;
       });
