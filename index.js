@@ -7,28 +7,9 @@ window.oncontextmenu = function (event) {
   return false;
 };
 
-$(document).ready(function () {
-    //Increment the idle time counter every minute.
-    var idleInterval = setInterval(timerIncrement, 1000); // 1 sec
-
-    //Zero the idle timer on mouse movement.
-    $(this).mousemove(function () {
-        idleTime = 0;
-    });
-    $(this).click(function () {
-        idleTime = 0;
-    });
-    $(this).scroll(function(){
-        idleTime = 0;
-    });
+$(document).ready(function(){
+  console.log("documentReady");
 });
-
-function timerIncrement() {
-    idleTime = idleTime + 1;
-    if (idleTime > 45) { // 45 secs
-        window.location.reload();
-    }
-}
 function moveHomePageUp_Hand() {
   $(".home .bigBackground img.background").css("transform", "translateY(0)");
   $(".home .bigBackground .introContainer").css("top", "100vh");
@@ -177,6 +158,91 @@ function checkOrientation() {
     $("#rotate").fadeOut();
   }
 }
+function circleToCenter() {
+	const loaderTimelineCenter = new TimelineMax({ repeat: 0 });
+	loaderTimelineCenter
+		.to(
+			".loader-top",
+			0.85,
+			{
+				attr: {
+					cx: 25,
+					cy: 25
+				}
+			},
+			"l12_1"
+		)
+		.to(
+			".loader-left",
+			0.85,
+			{
+				attr: {
+					cx: 25,
+					cy: 25
+				}
+			},
+			"l12_1"
+		)
+		.to(
+			".loader-right",
+			0.85,
+			{
+				attr: {
+					cx: 25,
+					cy: 25
+				}
+			},
+			"l12_1"
+		);
+}
+function circleMove() {
+	const loaderTimeline = new TimelineMax({ repeat: 8 });
+	loaderTimeline
+		.to(
+			".loader-top",
+			0.85,
+			{
+				attr: {
+					cx: 50,
+					cy: 50
+				}
+			},
+			"l12_1"
+		)
+		.to(
+			".loader-left",
+			0.85,
+			{
+				attr: {
+					cx: 27,
+					cy: 5
+				}
+			},
+			"l12_1"
+		)
+		.to(
+			".loader-right",
+			0.85,
+			{
+				attr: {
+					cx: 5,
+					cy: 50
+				}
+			},
+			"l12_1"
+		);
+	setTimeout(circleToCenter, 7000);
+}
+function loaderFaded() {
+	setTimeout(function () {
+		$("#loader").fadeOut();
+	}, 7500);
+}
+//PreLoader
+$(document).ready(function(){
+  circleMove();
+  loaderFaded();  
+});
 
 //Lock Rotation
 checkOrientation();
