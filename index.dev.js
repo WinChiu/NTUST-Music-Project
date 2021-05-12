@@ -9,10 +9,6 @@ window.oncontextmenu = function (event) {
   return false;
 };
 
-$(document).ready(function () {
-  console.log("documentReady");
-});
-
 function moveHomePageUp_Hand() {
   $(".home .bigBackground img.background").css("transform", "translateY(0)");
   $(".home .bigBackground .introContainer").css("top", "100vh");
