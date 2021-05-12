@@ -73,18 +73,6 @@ body {
   background-color: #d32b2d;
 }
 
-#loader {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #e74c3c;
-  z-index: 2000;
-  transition-delay: -0.5s;
-}
-
 #rotate {
   width: 100vw;
   height: 100vh;

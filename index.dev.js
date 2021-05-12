@@ -171,64 +171,8 @@ function checkOrientation() {
   } else {
     $("#rotate").fadeOut();
   }
-}
+} //Lock Rotation
 
-function circleToCenter() {
-  var loaderTimelineCenter = new TimelineMax({
-    repeat: 0
-  });
-  loaderTimelineCenter.to(".loader-top", 0.85, {
-    attr: {
-      cx: 25,
-      cy: 25
-    }
-  }, "l12_1").to(".loader-left", 0.85, {
-    attr: {
-      cx: 25,
-      cy: 25
-    }
-  }, "l12_1").to(".loader-right", 0.85, {
-    attr: {
-      cx: 25,
-      cy: 25
-    }
-  }, "l12_1");
-}
-
-function circleMove() {
-  var loaderTimeline = new TimelineMax({
-    repeat: 8
-  });
-  loaderTimeline.to(".loader-top", 0.85, {
-    attr: {
-      cx: 50,
-      cy: 50
-    }
-  }, "l12_1").to(".loader-left", 0.85, {
-    attr: {
-      cx: 27,
-      cy: 5
-    }
-  }, "l12_1").to(".loader-right", 0.85, {
-    attr: {
-      cx: 5,
-      cy: 50
-    }
-  }, "l12_1");
-  setTimeout(circleToCenter, 7000);
-}
-
-function loaderFaded() {
-  setTimeout(function () {
-    $("#loader").fadeOut();
-  }, 7500);
-} //PreLoader
-
-
-$(document).ready(function () {
-  circleMove();
-  loaderFaded();
-}); //Lock Rotation
 
 checkOrientation();
 $(window).resize(checkOrientation); //Arrow Control

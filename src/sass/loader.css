@@ -1,0 +1,41 @@
+@keyframes moveCircles {
+  0% {
+    cx: 5;
+    cy: 50;
+  }
+  33% {
+    cx: 27;
+    cy: 5;
+  }
+  66% {
+    cx: 50;
+    cy: 50;
+  }
+  100% {
+    cx: 5;
+    cy: 50;
+  }
+}
+#loader {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e74c3c;
+  z-index: 2000;
+}
+#loader svg circle {
+  animation: moveCircles 3s infinite;
+  transiton: 0.5s;
+}
+#loader svg circle:nth-child(1) {
+  animation-delay: -1s;
+}
+#loader svg circle:nth-child(2) {
+  animation-delay: -2s;
+}
+#loader svg circle:nth-child(3) {
+  animation-delay: -3s;
+}
