@@ -74,6 +74,7 @@ function addWindowScrollControl() {
   window.addEventListener("swiped-down", moveHomePageUp_Hand);
 }
 function toHome() {
+  $("body").css("overflow","hidden");
   $("#logoRed #menu .toggle h3.home").css("color", "rgba(0,0,0,0.6)");
   $("section.home").fadeIn();
   $("#logoRed").fadeIn(1000);
@@ -112,6 +113,7 @@ function toTutorial() {
   $("#logoRed #menu").fadeIn();
 }
 function leaveTutorialToHome() {
+  $("body").css("overflow","hidden");
   $(".tutorial").fadeOut();
   $(".tutorial").css("transform", "translateY(100vh)");
   setTimeout(function () {
@@ -150,9 +152,17 @@ function checkOrientation() {
   var window_h = $(window).innerHeight();
 
   if (window_h > window_w) {
+  $("html, body").animate(
+    {
+      scrollTop: 0,
+    },
+    500
+  );
+    $("body").css("overflow-y","hidden");
     $("#rotate").fadeIn();
     alert("Rotate! Rotate!");
   } else {
+    $("body").css("overflow-y","initial");
     $("#rotate").fadeOut();
   }
 }

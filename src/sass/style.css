@@ -458,6 +458,10 @@ body {
   }
 }
 @media screen and (max-aspect-ratio: 3/2) and (orientation: landscape) {
+  body {
+    overflow: hidden;
+  }
+
   #logoRed #menu .toggle {
     width: 50vw;
   }
