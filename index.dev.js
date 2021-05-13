@@ -166,8 +166,8 @@ function checkOrientation() {
   var window_h = $(window).innerHeight();
 
   if (window_h > window_w) {
-    alert("Rotate! Rotate!");
     $("#rotate").fadeIn();
+    alert("Rotate! Rotate!");
   } else {
     $("#rotate").fadeOut();
   }
@@ -175,6 +175,7 @@ function checkOrientation() {
 
 
 checkOrientation();
+controlInstrumentSize();
 $(window).resize(checkOrientation); //Arrow Control
 
 $("#logoRed #menu").click(controlArrow); //Home Page Control

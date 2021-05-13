@@ -54,6 +54,7 @@
 }
 
 * {
+  border: solid 1px rgba(0, 0, 0, 0.3);
   position: relative;
   box-sizing: border-box;
   font-family: "GenWanMin-SB", "MyanmarMN";
@@ -243,14 +244,14 @@ body {
   margin-top: 15vh;
 }
 #sectionDescription #background .culture .left {
-  flex: 6;
+  flex: 5.5;
 }
 #sectionDescription #background .culture .left img {
   width: 95%;
   margin-left: 3vh;
 }
 #sectionDescription #background .culture .right {
-  flex: 4;
+  flex: 4.5;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -344,7 +345,7 @@ body {
 }
 
 #sectionDescription #counterfactual .level {
-  margin: 10vh 0 10vh 0;
+  margin: 10vh 0 20vh 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -402,4 +403,125 @@ body {
 }
 #sectionDescription #footer .contributor b {
   color: #375A77;
+}
+
+@media screen and (max-width: 1024px) {
+  body section.home .bigBackground .introContainer .introFrame {
+    transform: scale(0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: 99%;
+  }
+  body section.home .bigBackground .introContainer .introFrame p {
+    top: -3vh;
+    max-width: 66vw;
+    margin: 0;
+  }
+
+  #sectionDescription #background .synthesizer .keyboard {
+    height: 80vh;
+  }
+
+  #sectionDescription #background .culture {
+    margin-top: 15vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #sectionDescription #background .culture .left img {
+    width: 100vw;
+    margin-left: 0;
+  }
+  #sectionDescription #background .culture .right {
+    padding-top: 10vh;
+    max-width: 80vw;
+  }
+  #sectionDescription #background .culture .right p {
+    max-width: 60vw;
+  }
+
+  #sectionDescription #counterfactual {
+    margin-top: 20vh;
+  }
+
+  #sectionDescription #counterfactual .level img {
+    max-width: 45vw;
+  }
+
+  #sectionDescription #counterfactual .level {
+    margin-top: 20vh;
+  }
+
+  body section.tutorial {
+    transform: translateY(0vh) scale(0.95) !important;
+  }
+}
+@media screen and (max-aspect-ratio: 3/2) and (orientation: landscape) {
+  #logoRed #menu .toggle {
+    width: 50vw;
+  }
+
+  body section.home .bigBackground img.background {
+    width: 115vw;
+  }
+
+  body section.home .bigBackground .introContainer .introFrame {
+    width: 90vw;
+    top: -5vh;
+  }
+  body section.home .bigBackground .introContainer .introFrame p span.ch {
+    font-size: 2.2vh;
+  }
+  body section.home .bigBackground .introContainer .introFrame p span.en {
+    font-size: 2.2vh;
+  }
+
+  body section.home .bigBackground .introContainer img.arrowIcon {
+    margin-top: -3vh;
+  }
+
+  body section.tutorial {
+    transform: translateY(0) scale(1) !important;
+  }
+
+  body section.tutorial article.instructionArea {
+    display: flex;
+    justify-content: center;
+  }
+
+  body section.tutorial article.instructionArea .instructionContainer {
+    margin-bottom: 12vh;
+    width: 90%;
+    left: initial;
+  }
+
+  body section.tutorial article.displayArea {
+    display: flex;
+    justify-content: center;
+    bottom: 15vh;
+  }
+
+  body section.tutorial article.displayArea .instrument {
+    right: 1vw;
+  }
+
+  #sectionDescription .title {
+    margin-top: 0;
+  }
+
+  #sectionDescription #background .synthesizer .keyboard .left img {
+    width: 68vw;
+    left: 7vw;
+    top: 6vh;
+  }
+
+  #sectionDescription #background .synthesizer .keyboard {
+    height: 60vh;
+  }
+
+  #sectionDescription #background .culture .left img {
+    width: 95vw;
+  }
 }

@@ -26,72 +26,89 @@ const instrumentContainer = $(".instrument");
 const instrumentDisplayArea = $(".displayArea");
 
 const originalSize = () => {
-  instrumentContainer.css("transform", "translate(0,0) scale(0.9) rotate(0)");
+  var vw = window.innerWidth;
+  instrumentContainer.css("transform", "translate(0,0) scale("+ (0.9 * vw) / 1280 + ") rotate(0)");
   instrumentDisplayArea.css("margin-bottom", "6vh");
 };
 const case_2_ZoomIn = () => {
-  instrumentContainer.css("transform", "translate(30vw, 35vh) scale(1.4)");
+  var vw = window.innerWidth;
+  instrumentContainer.css("transform", "translate(30vw, 35vh) scale("+ vw /1280 * 1.4 + ")");
   instrumentDisplayArea.css("margin-bottom", "4vh");
 };
 const case_15_ZoomIn = () => {
-  instrumentContainer.css("transform", "translate(30vw, 35vh) scale(1.4)");
+  var vw = window.innerWidth;
+  instrumentContainer.css("transform", "translate(30vw, 35vh) scale("+ vw /1280 * 1.4 + ")");
   instrumentDisplayArea.css("margin-bottom", "4vh");
 };
 const case_16_ZoomIn = () => {
-  instrumentContainer.css("transform", "translate(30vw, 35vh) scale(1.4)");
+  var vw = window.innerWidth;
+  instrumentContainer.css("transform", "translate(30vw, 35vh) scale("+ vw /1280 * 1.4 + ")");
   instrumentDisplayArea.css("margin-bottom", "4vh");
 };
 const case_21_ZoomIn = () => {
-  instrumentContainer.css("transform", "translate(30vw, 35vh) scale(1.4)");
+  var vw = window.innerWidth;
+  instrumentContainer.css("transform", "translate(30vw, 35vh) scale("+ vw /1280 * 1.4 + ")");
   instrumentDisplayArea.css("margin-bottom", "4vh");
 };
 const case_3_ZoomIn = () => {
-  instrumentContainer.css("transform", "translate(-5vw, 10vh) scale(1.2) rotate(10deg)");
+  var vw = window.innerWidth;
+  instrumentContainer.css("transform", "translate(-5vw, 10vh) scale("+ vw /1280 * 1.2 + ") rotate(10deg)");
   instrumentDisplayArea.css("margin-bottom", "4vh");
 };
 const case_4_ZoomIn = () => {
-  instrumentContainer.css("transform", "translate(5vw, -20vh) scale(1.1) rotate(-12deg)");
+  var vw = window.innerWidth;
+  instrumentContainer.css("transform", "translate(5vw, -20vh) scale("+ vw /1280 * 1.1 + ") rotate(-12deg)");
   instrumentDisplayArea.css("margin-bottom", "4vh");
 };
 const case_14_ZoomIn = () => {
-  instrumentContainer.css("transform", "translate(5vw, -20vh) scale(1.1) rotate(-12deg)");
+  var vw = window.innerWidth;
+  instrumentContainer.css("transform", "translate(5vw, -20vh) scale("+ vw /1280 * 1.1 + ") rotate(-12deg)");
   instrumentDisplayArea.css("margin-bottom", "4vh");
 };
 const case_19_ZoomIn = () => {
-  instrumentContainer.css("transform", "translate(5vw, -20vh) scale(1.1) rotate(-12deg)");
+  var vw = window.innerWidth;
+  instrumentContainer.css("transform", "translate(5vw, -20vh) scale("+ vw /1280 * 1.1 + ") rotate(-12deg)");
   instrumentDisplayArea.css("margin-bottom", "4vh");
 };
 const case_6_ZoomIn = () => {
-  instrumentContainer.css("transform", "translate(30vw, 35vh) scale(1.4)");
+  var vw = window.innerWidth;
+  instrumentContainer.css("transform", "translate(30vw, 35vh) scale("+ vw /1280 * 1.4 + ")");
   instrumentDisplayArea.css("margin-bottom", "4vh");
 };
 const case_12_ZoomIn = () => {
-  instrumentContainer.css("transform", "translate(30vw, 0) scale(1.4) rotate(0)");
+  var vw = window.innerWidth;
+  instrumentContainer.css("transform", "translate(30vw, 0) scale("+ vw /1280 * 1.4 + ") rotate(0)");
   instrumentDisplayArea.css("margin-bottom", "4vh");
 };
 const case_13_ZoomIn = () => {
-  instrumentContainer.css("transform", "translate(40vw, 5vh) scale(1.5) rotate(0)");
+  var vw = window.innerWidth;
+  instrumentContainer.css("transform", "translate(40vw, 5vh) scale("+ vw /1280 * 1.5 + ") rotate(0)");
   instrumentDisplayArea.css("margin-bottom", "4vh");
 };
 const case_18_ZoomIn = () => {
-  instrumentContainer.css("transform", "translate(40vw, 5vh) scale(1.5) rotate(0)");
+  var vw = window.innerWidth;
+  instrumentContainer.css("transform", "translate(40vw, 5vh) scale("+ vw /1280 * 1.5 + ") rotate(0)");
   instrumentDisplayArea.css("margin-bottom", "4vh");
 };
 
 const cutFlagZoomIn = () => {
-  instrumentContainer.css("transform", "translate(10vw, 30vh) scale(1.5)");
+  var vw = window.innerWidth;
+  instrumentContainer.css("transform", "translate(10vw, 30vh) scale("+ vw /1280 * 1.5 + ")");
   instrumentDisplayArea.css("margin-bottom", "4vh");
 };
 const longFlagZoomIn = () => {
-  instrumentContainer.css("transform", "translate(-3vw, 5vh) scale(1.2) rotate(4deg)");
+  var vw = window.innerWidth;
+  instrumentContainer.css("transform", "translate(-3vw, 5vh) scale("+ vw /1280 * 1.2 + ") rotate(4deg)");
   instrumentDisplayArea.css("margin-bottom", "4vh");
 };
 const umbrellaZoomIn = () => {
-  instrumentContainer.css("transform", "translate(19vw, 32vh) scale(1.35) ");
+  var vw = window.innerWidth;
+  instrumentContainer.css("transform", "translate(19vw, 32vh) scale("+ vw /1280 * 1.35 + ") ");
   instrumentDisplayArea.css("margin-bottom", "4vh");
 };
 const headFlagZoomIn = () => {
-  instrumentContainer.css("transform", "translate(20vw, 50vh) scale(1.8)");
+  var vw = window.innerWidth;
+  instrumentContainer.css("transform", "translate(20vw, 50vh) scale("+ vw /1280 * 1.8 + ")");
   instrumentDisplayArea.css("margin-bottom", "4vh");
 };
 let rotate = 0;
