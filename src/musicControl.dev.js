@@ -29,103 +29,103 @@ var instrumentDisplayArea = $(".displayArea");
 
 var originalSize = function originalSize() {
   var vw = window.innerWidth;
-  instrumentContainer.css("transform", "translate(0,0) scale(" + 0.9 * vw / 1280 + ") rotate(0)");
+  instrumentContainer.css("transform", "translate(" + 0 * 1280 + "," + 0 * 720 + ") scale(" + 0.9 * vw / 1280 + ") rotate(0)");
   instrumentDisplayArea.css("margin-bottom", "6vh");
 };
 
 var case_2_ZoomIn = function case_2_ZoomIn() {
   var vw = window.innerWidth;
-  instrumentContainer.css("transform", "translate(30vw, 35vh) scale(" + vw / 1280 * 1.4 + ")");
+  instrumentContainer.css("transform", "translate(" + 0.30 * 1280 + "px ," + 0.35 * 720 + "px) scale(" + vw / 1280 * 1.4 + ")");
   instrumentDisplayArea.css("margin-bottom", "4vh");
 };
 
 var case_15_ZoomIn = function case_15_ZoomIn() {
   var vw = window.innerWidth;
-  instrumentContainer.css("transform", "translate(30vw, 35vh) scale(" + vw / 1280 * 1.4 + ")");
+  instrumentContainer.css("transform", "translate(" + 0.30 * 1280 + "," + 0.35 * 720 + ") scale(" + vw / 1280 * 1.4 + ")");
   instrumentDisplayArea.css("margin-bottom", "4vh");
 };
 
 var case_16_ZoomIn = function case_16_ZoomIn() {
   var vw = window.innerWidth;
-  instrumentContainer.css("transform", "translate(30vw, 35vh) scale(" + vw / 1280 * 1.4 + ")");
+  instrumentContainer.css("transform", "translate(" + 0.30 * 1280 + "," + 0.35 * 720 + ") scale(" + vw / 1280 * 1.4 + ")");
   instrumentDisplayArea.css("margin-bottom", "4vh");
 };
 
 var case_21_ZoomIn = function case_21_ZoomIn() {
   var vw = window.innerWidth;
-  instrumentContainer.css("transform", "translate(30vw, 35vh) scale(" + vw / 1280 * 1.4 + ")");
+  instrumentContainer.css("transform", "translate(" + 0.30 * 1280 + "," + 0.35 * 720 + ") scale(" + vw / 1280 * 1.4 + ")");
   instrumentDisplayArea.css("margin-bottom", "4vh");
 };
 
 var case_3_ZoomIn = function case_3_ZoomIn() {
   var vw = window.innerWidth;
-  instrumentContainer.css("transform", "translate(-5vw, 10vh) scale(" + vw / 1280 * 1.2 + ") rotate(10deg)");
+  instrumentContainer.css("transform", "translate(" + -0.05 * 1280 + "," + 0.10 * 720 + ") scale(" + vw / 1280 * 1.2 + ") rotate(10deg)");
   instrumentDisplayArea.css("margin-bottom", "4vh");
 };
 
 var case_4_ZoomIn = function case_4_ZoomIn() {
   var vw = window.innerWidth;
-  instrumentContainer.css("transform", "translate(5vw, -20vh) scale(" + vw / 1280 * 1.1 + ") rotate(-12deg)");
+  instrumentContainer.css("transform", "translate(" + 0.05 * 1280 + "," + 0.20 * 720 + ") scale(" + vw / 1280 * 1.1 + ") rotate(-12deg)");
   instrumentDisplayArea.css("margin-bottom", "4vh");
 };
 
 var case_14_ZoomIn = function case_14_ZoomIn() {
   var vw = window.innerWidth;
-  instrumentContainer.css("transform", "translate(5vw, -20vh) scale(" + vw / 1280 * 1.1 + ") rotate(-12deg)");
+  instrumentContainer.css("transform", "translate(" + 0.05 * 1280 + "," + 0.20 * 720 + ") scale(" + vw / 1280 * 1.1 + ") rotate(-12deg)");
   instrumentDisplayArea.css("margin-bottom", "4vh");
 };
 
 var case_19_ZoomIn = function case_19_ZoomIn() {
   var vw = window.innerWidth;
-  instrumentContainer.css("transform", "translate(5vw, -20vh) scale(" + vw / 1280 * 1.1 + ") rotate(-12deg)");
+  instrumentContainer.css("transform", "translate(" + 0.05 * 1280 + "," + 0.20 * 720 + ") scale(" + vw / 1280 * 1.1 + ") rotate(-12deg)");
   instrumentDisplayArea.css("margin-bottom", "4vh");
 };
 
 var case_6_ZoomIn = function case_6_ZoomIn() {
   var vw = window.innerWidth;
-  instrumentContainer.css("transform", "translate(30vw, 35vh) scale(" + vw / 1280 * 1.4 + ")");
+  instrumentContainer.css("transform", "translate(" + 0.3 * 1280 + "," + 0.35 * 720 + ") scale(" + vw / 1280 * 1.4 + ")");
   instrumentDisplayArea.css("margin-bottom", "4vh");
 };
 
 var case_12_ZoomIn = function case_12_ZoomIn() {
   var vw = window.innerWidth;
-  instrumentContainer.css("transform", "translate(30vw, 0) scale(" + vw / 1280 * 1.4 + ") rotate(0)");
+  instrumentContainer.css("transform", "translate(" + 0.3 * 1280 + "," + 0 * 720 + " scale(" + vw / 1280 * 1.4 + ") rotate(0)");
   instrumentDisplayArea.css("margin-bottom", "4vh");
 };
 
 var case_13_ZoomIn = function case_13_ZoomIn() {
   var vw = window.innerWidth;
-  instrumentContainer.css("transform", "translate(40vw, 5vh) scale(" + vw / 1280 * 1.5 + ") rotate(0)");
+  instrumentContainer.css("transform", "translate(" + 0.4 * 1280 + "," + 0.05 * 720 + " scale(" + vw / 1280 * 1.5 + ") rotate(0)");
   instrumentDisplayArea.css("margin-bottom", "4vh");
 };
 
 var case_18_ZoomIn = function case_18_ZoomIn() {
   var vw = window.innerWidth;
-  instrumentContainer.css("transform", "translate(40vw, 5vh) scale(" + vw / 1280 * 1.5 + ") rotate(0)");
+  instrumentContainer.css("transform", "translate(" + 0.4 * 1280 + "," + 0.05 * 720 + " scale(" + vw / 1280 * 1.5 + ") rotate(0)");
   instrumentDisplayArea.css("margin-bottom", "4vh");
 };
 
 var cutFlagZoomIn = function cutFlagZoomIn() {
   var vw = window.innerWidth;
-  instrumentContainer.css("transform", "translate(10vw, 30vh) scale(" + vw / 1280 * 1.5 + ")");
+  instrumentContainer.css("transform", "translate(" + 0.10 * 1280 + "," + "0.30" * 720 + ") scale(" + vw / 1280 * 1.5 + ")");
   instrumentDisplayArea.css("margin-bottom", "4vh");
 };
 
 var longFlagZoomIn = function longFlagZoomIn() {
   var vw = window.innerWidth;
-  instrumentContainer.css("transform", "translate(-3vw, 5vh) scale(" + vw / 1280 * 1.2 + ") rotate(4deg)");
+  instrumentContainer.css("transform", "translate(" + -0.03 * 1280 + "," + "0.05" * 720 + " scale(" + vw / 1280 * 1.2 + ") rotate(4deg)");
   instrumentDisplayArea.css("margin-bottom", "4vh");
 };
 
 var umbrellaZoomIn = function umbrellaZoomIn() {
   var vw = window.innerWidth;
-  instrumentContainer.css("transform", "translate(19vw, 32vh) scale(" + vw / 1280 * 1.35 + ") ");
+  instrumentContainer.css("transform", "translate(" + 0.19 * 1280 + "," + "0.32" * 720 + ") scale(" + vw / 1280 * 1.35 + ") ");
   instrumentDisplayArea.css("margin-bottom", "4vh");
 };
 
 var headFlagZoomIn = function headFlagZoomIn() {
   var vw = window.innerWidth;
-  instrumentContainer.css("transform", "translate(20vw, 50vh) scale(" + vw / 1280 * 1.8 + ")");
+  instrumentContainer.css("transform", "translate(" + 0.20 * 1280 + "," + "0.50" * 720 + ") scale(" + vw / 1280 * 1.8 + ")");
   instrumentDisplayArea.css("margin-bottom", "4vh");
 };
 
